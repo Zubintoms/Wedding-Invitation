@@ -365,9 +365,28 @@ footer {
 
 </head>
 
+<script>
+const weddingMusic = document.getElementById("weddingMusic");
+const musicButton = document.getElementById("musicButton");
 
+function toggleMusic() {
+    if (weddingMusic.paused) {
+        weddingMusic.play();
+        musicButton.innerHTML = "⏸ Pause Music";
+    } else {
+        weddingMusic.pause();
+        musicButton.innerHTML = "🎵 Play Music";
+    }
+}
+</script>
 <body>
+<audio id="weddingMusic" loop>
+    <source src="wedding.mp3" type="audio/mpeg">
+</audio>
 
+<button id="musicButton" onclick="toggleMusic()">
+    🎵 Play Music
+</button>
 
 <!-- =========================
      COVER
