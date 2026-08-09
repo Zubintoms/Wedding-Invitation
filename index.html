@@ -2,16 +2,20 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Nikitha & Tom | Wedding</title>
 
+
 <style>
 
-/* ==============================
-   BASIC SETTINGS
-============================== */
+/* =========================================
+   BASIC PAGE
+========================================= */
 
 * {
     margin: 0;
@@ -26,25 +30,37 @@ html {
 body {
     margin: 0;
     font-family: Georgia, "Times New Roman", serif;
-    background-color: #fffaf7;
+    background: #fffaf7;
     color: #4d403b;
     text-align: center;
 }
 
 
-/* ==============================
+/* =========================================
    COVER
-============================== */
+========================================= */
 
 .hero {
+
     width: 100%;
     height: 100vh;
     min-height: 600px;
 
-    background-image: url("./images/CoverNew1.jpg");
+    /*
+       IMPORTANT:
+       We are using the FULL working image address.
+    */
+
+    background-image:
+    url("https://zubintoms.github.io/Wedding-Invitation/images/CoverNew1.jpg");
+
     background-repeat: no-repeat;
+
     background-position: center center;
+
     background-size: cover;
+
+    background-color: #182313;
 
     position: relative;
 
@@ -54,24 +70,13 @@ body {
 }
 
 
-/* Slight dark overlay so image stays elegant */
-
-.hero::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-
-    background: rgba(0,0,0,0.08);
-
-    pointer-events: none;
-}
-
-
-/* Scroll arrow */
+/* =========================================
+   SCROLL ARROW
+========================================= */
 
 .scroll-down {
+
     position: absolute;
-    z-index: 5;
 
     bottom: 25px;
     left: 50%;
@@ -79,255 +84,455 @@ body {
     transform: translateX(-50%);
 
     color: white;
-    font-size: 32px;
+
+    font-size: 34px;
 
     text-decoration: none;
 
-    text-shadow: 0 2px 8px rgba(0,0,0,0.7);
+    text-shadow:
+    0 2px 8px rgba(0,0,0,0.8);
+
+    z-index: 10;
 
     animation: bounce 2s infinite;
 }
 
+
 @keyframes bounce {
 
     0%, 20%, 50%, 80%, 100% {
-        transform: translate(-50%, 0);
+
+        transform:
+        translate(-50%, 0);
+
     }
 
     40% {
-        transform: translate(-50%, -10px);
+
+        transform:
+        translate(-50%, -10px);
+
     }
 
     60% {
-        transform: translate(-50%, -5px);
+
+        transform:
+        translate(-50%, -5px);
+
     }
+
 }
 
 
-/* ==============================
+/* =========================================
    WELCOME
-============================== */
+========================================= */
 
 .intro {
-    padding: 90px 20px;
+
+    padding:
+    90px 20px;
+
+    background:
+    #fffaf7;
+
 }
+
 
 .intro h1 {
-    color: #b86f79;
-    font-size: 52px;
-    margin-bottom: 25px;
+
+    font-size:
+    52px;
+
+    color:
+    #b86f79;
+
+    margin-bottom:
+    25px;
+
 }
+
 
 .intro p {
-    max-width: 750px;
-    margin: auto;
 
-    font-size: 21px;
-    line-height: 1.8;
+    max-width:
+    750px;
+
+    margin:
+    auto;
+
+    font-size:
+    21px;
+
+    line-height:
+    1.8;
+
 }
 
 
-/* ==============================
+/* =========================================
    WEDDING DETAILS
-============================== */
+========================================= */
 
 .details {
-    padding: 90px 20px;
-    background-color: #f8eeee;
+
+    padding:
+    90px 20px;
+
+    background:
+    #f8eeee;
+
 }
+
 
 .details h2 {
-    color: #b86f79;
-    font-size: 48px;
-    margin-bottom: 30px;
+
+    font-size:
+    48px;
+
+    color:
+    #b86f79;
+
+    margin-bottom:
+    30px;
+
 }
+
 
 .details h3 {
-    font-size: 32px;
-    margin-bottom: 25px;
+
+    font-size:
+    32px;
+
+    margin-bottom:
+    25px;
+
 }
+
 
 .date {
-    font-size: 25px;
-    font-weight: bold;
-    letter-spacing: 3px;
-    margin-bottom: 15px;
+
+    font-size:
+    25px;
+
+    font-weight:
+    bold;
+
+    letter-spacing:
+    3px;
+
+    margin-bottom:
+    15px;
+
 }
+
 
 .location {
-    font-size: 22px;
+
+    font-size:
+    22px;
+
 }
 
 
-/* ==============================
-   MEMORIES
-============================== */
+/* =========================================
+   GALLERY
+========================================= */
 
 .gallery {
-    padding: 90px 25px;
-    background-color: white;
+
+    padding:
+    90px 25px;
+
+    background:
+    white;
+
 }
+
 
 .gallery h2 {
-    color: #b86f79;
-    font-size: 48px;
-    margin-bottom: 20px;
+
+    font-size:
+    48px;
+
+    color:
+    #b86f79;
+
+    margin-bottom:
+    20px;
+
 }
+
 
 .gallery-text {
-    font-size: 20px;
-    margin-bottom: 45px;
-    line-height: 1.7;
+
+    font-size:
+    20px;
+
+    line-height:
+    1.7;
+
+    margin-bottom:
+    45px;
+
 }
 
 
-/* ==============================
+/* =========================================
    PHOTOS
-============================== */
+========================================= */
 
 .photos {
-    width: 100%;
-    max-width: 1250px;
 
-    margin: auto;
+    width:
+    100%;
 
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    max-width:
+    1250px;
 
-    gap: 25px;
+    margin:
+    auto;
+
+    display:
+    grid;
+
+    grid-template-columns:
+    repeat(3, 1fr);
+
+    gap:
+    25px;
+
 }
+
 
 .photos img {
-    display: block;
 
-    width: 100%;
-    height: 420px;
+    display:
+    block;
 
-    object-fit: cover;
+    width:
+    100%;
 
-    border-radius: 14px;
+    height:
+    420px;
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    object-fit:
+    cover;
 
-    transition: transform 0.3s ease;
+    border-radius:
+    14px;
+
+    box-shadow:
+    0 8px 25px rgba(0,0,0,0.15);
+
+    transition:
+    transform 0.3s ease;
+
 }
+
 
 .photos img:hover {
-    transform: scale(1.02);
+
+    transform:
+    scale(1.02);
+
 }
 
 
-/* ==============================
+/* =========================================
    ENDING
-============================== */
+========================================= */
 
 .final {
-    padding: 100px 20px;
-    background-color: #f8eeee;
+
+    padding:
+    100px 20px;
+
+    background:
+    #f8eeee;
+
 }
+
 
 .final h2 {
-    color: #b86f79;
-    font-size: 48px;
-    margin-bottom: 25px;
+
+    color:
+    #b86f79;
+
+    font-size:
+    48px;
+
+    margin-bottom:
+    25px;
+
 }
+
 
 .final p {
-    font-size: 21px;
-    line-height: 1.8;
+
+    font-size:
+    21px;
+
+    line-height:
+    1.8;
+
 }
 
 
-/* ==============================
+/* =========================================
    MUSIC BUTTON
-============================== */
+========================================= */
 
 #musicButton {
-    position: fixed;
 
-    right: 20px;
-    bottom: 20px;
+    position:
+    fixed;
 
-    z-index: 9999;
+    right:
+    20px;
 
-    background-color: #b86f79;
-    color: white;
+    bottom:
+    20px;
 
-    border: 2px solid white;
-    border-radius: 40px;
+    z-index:
+    9999;
 
-    padding: 15px 22px;
+    background:
+    #b86f79;
 
-    font-family: Georgia, serif;
-    font-size: 16px;
+    color:
+    white;
 
-    cursor: pointer;
+    border:
+    2px solid white;
 
-    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+    border-radius:
+    40px;
+
+    padding:
+    15px 22px;
+
+    font-family:
+    Georgia, serif;
+
+    font-size:
+    16px;
+
+    cursor:
+    pointer;
+
+    box-shadow:
+    0 5px 18px rgba(0,0,0,0.25);
+
 }
+
 
 #musicButton:hover {
-    background-color: #9f5d67;
+
+    background:
+    #9f5d67;
+
 }
 
 
-/* ==============================
+/* =========================================
    TABLET
-============================== */
+========================================= */
 
 @media (max-width: 950px) {
 
     .photos {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+        repeat(2, 1fr);
+
     }
 
 }
 
 
-/* ==============================
-   MOBILE
-============================== */
+/* =========================================
+   PHONE
+========================================= */
 
 @media (max-width: 650px) {
 
+
     .hero {
+
         /*
-        Show more of the landscape cover on phones.
+          On phones the image is landscape,
+          so contain shows the complete picture
+          instead of heavily cropping it.
         */
-        background-size: contain;
-        background-position: center center;
-        background-color: #182313;
+
+        background-size:
+        contain;
+
+        background-repeat:
+        no-repeat;
+
+        background-position:
+        center center;
+
+        background-color:
+        #182313;
+
     }
 
-    .intro h1,
-    .details h2,
-    .gallery h2,
-    .final h2 {
-        font-size: 38px;
-    }
 
     .intro,
     .details,
     .gallery,
     .final {
-        padding: 65px 18px;
+
+        padding:
+        65px 18px;
+
     }
+
+
+    .intro h1,
+    .details h2,
+    .gallery h2,
+    .final h2 {
+
+        font-size:
+        38px;
+
+    }
+
 
     .photos {
-        grid-template-columns: 1fr;
+
+        grid-template-columns:
+        1fr;
+
     }
+
 
     .photos img {
-        height: auto;
+
+        height:
+        auto;
+
     }
 
+
     #musicButton {
-        right: 12px;
-        bottom: 12px;
 
-        padding: 12px 16px;
+        right:
+        12px;
 
-        font-size: 14px;
+        bottom:
+        12px;
+
+        padding:
+        12px 16px;
+
+        font-size:
+        14px;
+
     }
 
 }
@@ -340,283 +545,414 @@ body {
 <body>
 
 
-<!-- ==============================
+<!-- =========================================
      MUSIC
-============================== -->
+========================================= -->
 
-<audio id="weddingMusic" loop preload="auto">
+<audio
+id="weddingMusic"
+loop
+preload="auto">
 
-    <source src="./wedding.mp3" type="audio/mpeg">
+<source
+src="./wedding.mp3"
+type="audio/mpeg">
 
 </audio>
 
 
 <button id="musicButton">
-    🎵 Play Music
+
+🎵 Play Music
+
 </button>
 
 
 
-<!-- ==============================
+<!-- =========================================
      COVER
-============================== -->
+========================================= -->
 
 <section class="hero">
 
-    <a href="#welcome" class="scroll-down">
-        ↓
-    </a>
+<a
+href="#welcome"
+class="scroll-down">
+
+↓
+
+</a>
 
 </section>
 
 
 
-<!-- ==============================
+<!-- =========================================
      WELCOME
-============================== -->
+========================================= -->
 
-<section class="intro" id="welcome">
+<section
+class="intro"
+id="welcome">
 
-    <h1>
-        Nikitha & Tom
-    </h1>
 
-    <p>
-        Together with our families, we are delighted
-        to celebrate this beautiful chapter of our lives.
-        <br><br>
-        We look forward to sharing our wedding day
-        with our family and friends.
-    </p>
+<h1>
+
+Nikitha & Tom
+
+</h1>
+
+
+<p>
+
+Together with our families,
+we are delighted to celebrate
+this beautiful chapter of our lives.
+
+<br><br>
+
+We look forward to sharing our wedding day
+with our family and friends.
+
+</p>
+
 
 </section>
 
 
 
-<!-- ==============================
+<!-- =========================================
      WEDDING DETAILS
-============================== -->
+========================================= -->
 
 <section class="details">
 
-    <h2>
-        Wedding Day
-    </h2>
 
-    <h3>
-        Nikitha & Tom
-    </h3>
+<h2>
 
-    <p class="date">
-        SEPTEMBER 10, 2026
-    </p>
+Wedding Day
 
-    <p class="location">
-        Kannur, Kerala
-    </p>
+</h2>
+
+
+<h3>
+
+Nikitha & Tom
+
+</h3>
+
+
+<p class="date">
+
+SEPTEMBER 10, 2026
+
+</p>
+
+
+<p class="location">
+
+Kannur, Kerala
+
+</p>
+
 
 </section>
 
 
 
-<!-- ==============================
+<!-- =========================================
      MEMORIES
-============================== -->
+========================================= -->
 
 <section class="gallery">
 
-    <h2>
-        Our Memories
-    </h2>
 
-    <p class="gallery-text">
-        📸
-        <br><br>
-        A few beautiful moments from our journey together.
-    </p>
+<h2>
+
+Our Memories
+
+</h2>
 
 
-    <div class="photos">
+<p class="gallery-text">
 
-        <img
-            src="./images/Image 1.jpg"
-            alt="Nikitha and Tom"
-            loading="lazy">
+📸
 
-        <img
-            src="./images/Image 2.jpg"
-            alt="Nikitha and Tom"
-            loading="lazy">
+<br><br>
 
-        <img
-            src="./images/Image 3.jpg"
-            alt="Nikitha and Tom"
-            loading="lazy">
+A few beautiful moments
+from our journey together.
 
-        <img
-            src="./images/Image 4.jpg"
-            alt="Nikitha and Tom"
-            loading="lazy">
+</p>
 
-        <img
-            src="./images/Image 5.jpg"
-            alt="Nikitha and Tom"
-            loading="lazy">
 
-        <img
-            src="./images/Image 6.jpg"
-            alt="Nikitha and Tom"
-            loading="lazy">
 
-        <img
-            src="./images/Image 7.jpg"
-            alt="Nikitha and Tom"
-            loading="lazy">
+<div class="photos">
 
-        <img
-            src="./images/Image 8.jpg"
-            alt="Nikitha and Tom"
-            loading="lazy">
 
-    </div>
+<img
+src="./images/Image 1.jpg"
+alt="Nikitha and Tom"
+loading="lazy">
+
+
+<img
+src="./images/Image 2.jpg"
+alt="Nikitha and Tom"
+loading="lazy">
+
+
+<img
+src="./images/Image 3.jpg"
+alt="Nikitha and Tom"
+loading="lazy">
+
+
+<img
+src="./images/Image 4.jpg"
+alt="Nikitha and Tom"
+loading="lazy">
+
+
+<img
+src="./images/Image 5.jpg"
+alt="Nikitha and Tom"
+loading="lazy">
+
+
+<img
+src="./images/Image 6.jpg"
+alt="Nikitha and Tom"
+loading="lazy">
+
+
+<img
+src="./images/Image 7.jpg"
+alt="Nikitha and Tom"
+loading="lazy">
+
+
+<img
+src="./images/Image 8.jpg"
+alt="Nikitha and Tom"
+loading="lazy">
+
+
+</div>
+
 
 </section>
 
 
 
-<!-- ==============================
+<!-- =========================================
      END
-============================== -->
+========================================= -->
 
 <section class="final">
 
-    <h2>
-        Our Forever Begins ❤️
-    </h2>
 
-    <p>
-        We cannot wait to celebrate this beautiful
-        moment with you.
-        <br><br>
+<h2>
 
-        With love,
-        <br><br>
+Our Forever Begins ❤️
 
-        <strong>
-            Nikitha & Tom
-        </strong>
-    </p>
+</h2>
+
+
+<p>
+
+We cannot wait to celebrate
+this beautiful moment with you.
+
+<br><br>
+
+With love,
+
+<br><br>
+
+<strong>
+
+Nikitha & Tom
+
+</strong>
+
+</p>
+
 
 </section>
 
 
 
-<!-- ==============================
+<!-- =========================================
      MUSIC SCRIPT
-============================== -->
+========================================= -->
 
 <script>
 
-const music =
-    document.getElementById("weddingMusic");
 
-const button =
-    document.getElementById("musicButton");
+const music =
+document.getElementById("weddingMusic");
+
+
+const musicButton =
+document.getElementById("musicButton");
+
 
 music.volume = 0.55;
 
 
+
 function updateButton() {
+
 
     if (music.paused) {
 
-        button.innerHTML =
-            "🎵 Play Music";
+
+        musicButton.innerHTML =
+        "🎵 Play Music";
+
 
     } else {
 
-        button.innerHTML =
-            "Ⅱ Pause Music";
+
+        musicButton.innerHTML =
+        "Ⅱ Pause Music";
+
 
     }
 
 }
 
 
-/* Try autoplay */
 
-window.addEventListener("load", function() {
+/*
+Try to autoplay when page opens.
 
-    music.play()
-    .then(function() {
+Chrome, Safari and other browsers
+may block autoplay with sound.
+*/
 
-        updateButton();
-
-    })
-    .catch(function() {
-
-        updateButton();
-
-    });
-
-});
+window.addEventListener(
+"load",
+function() {
 
 
-/* Music button */
+    const playAttempt =
+    music.play();
 
-button.addEventListener("click", function(event) {
 
-    event.stopPropagation();
+    if (playAttempt !== undefined) {
 
-    if (music.paused) {
 
-        music.play();
+        playAttempt
 
-    } else {
+        .then(function() {
 
-        music.pause();
+
+            updateButton();
+
+
+        })
+
+        .catch(function() {
+
+
+            updateButton();
+
+
+        });
+
 
     }
 
-    updateButton();
 
 });
 
 
+
 /*
-If browser blocks autoplay,
-start music on first interaction.
+Music button
+*/
+
+musicButton.addEventListener(
+"click",
+function(event) {
+
+
+    event.stopPropagation();
+
+
+    if (music.paused) {
+
+
+        music.play();
+
+
+    } else {
+
+
+        music.pause();
+
+
+    }
+
+
+    updateButton();
+
+
+});
+
+
+
+/*
+If autoplay is blocked,
+start music when visitor first
+interacts with the website.
 */
 
 function startMusic() {
 
+
     if (music.paused) {
 
+
         music.play()
+
         .then(function() {
+
 
             updateButton();
 
+
         })
-        .catch(function() {});
+
+        .catch(function() {
+
+
+        });
+
 
     }
+
 
 }
 
 
+
 document.addEventListener(
-    "click",
-    startMusic,
-    { once: true }
+"click",
+startMusic,
+{ once: true }
 );
 
 
+
 document.addEventListener(
-    "touchstart",
-    startMusic,
-    { once: true }
+"touchstart",
+startMusic,
+{ once: true }
 );
+
 
 </script>
 
