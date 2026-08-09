@@ -53,14 +53,14 @@ section {
 
 #musicButton {
     position: fixed;
-    bottom: 22px;
-    right: 22px;
+    bottom: 20px;
+    right: 20px;
     z-index: 9999;
 
-    background: rgba(183, 110, 121, 0.95);
+    background: rgba(183,110,121,0.95);
     color: white;
 
-    border: 2px solid rgba(255,255,255,0.8);
+    border: 2px solid rgba(255,255,255,0.85);
     border-radius: 50px;
 
     padding: 13px 20px;
@@ -72,7 +72,7 @@ section {
 
     box-shadow: 0 5px 20px rgba(0,0,0,0.25);
 
-    transition: 0.3s;
+    transition: transform 0.3s, background 0.3s;
 }
 
 #musicButton:hover {
@@ -82,7 +82,7 @@ section {
 
 
 /* =========================
-   COVER
+   HERO / COVER
 ========================= */
 
 .hero {
@@ -90,8 +90,8 @@ section {
 
     background:
         linear-gradient(
-            rgba(0,0,0,0.30),
-            rgba(0,0,0,0.45)
+            rgba(0,0,0,0.28),
+            rgba(0,0,0,0.48)
         ),
         url("images/Cover.jpg");
 
@@ -103,48 +103,52 @@ section {
     justify-content: center;
 
     color: white;
+
     padding: 30px;
 }
 
 .hero-content {
     max-width: 850px;
+    text-shadow: 0 3px 12px rgba(0,0,0,0.45);
 }
 
 .small-title {
-    font-size: 20px;
+    font-size: 19px;
     letter-spacing: 4px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
 }
 
 .hero h1 {
-    font-size: 75px;
+    font-size: 76px;
     font-weight: normal;
-    margin-bottom: 15px;
+    margin: 5px 0;
 }
 
 .heart {
-    font-size: 35px;
+    font-size: 36px;
     margin: 10px;
 }
 
 .hero h2 {
     font-size: 25px;
     font-weight: normal;
-    margin-bottom: 25px;
+    margin: 25px 0;
 }
 
 .hero-date {
     font-size: 22px;
+    letter-spacing: 3px;
 }
 
 
 /* =========================
-   INVITATION
+   INTRODUCTION
 ========================= */
 
 .intro-text {
     max-width: 750px;
     margin: auto;
+
     font-size: 19px;
     line-height: 1.8;
 }
@@ -162,28 +166,38 @@ section {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
     gap: 18px;
+
     margin-top: 35px;
 }
 
 .time-box {
     background: white;
+
     width: 145px;
+
     padding: 25px 10px;
+
     border-radius: 18px;
+
     box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 .time-box span {
     display: block;
+
     font-size: 42px;
     color: #b76e79;
+
     font-weight: bold;
 }
 
 .time-box p {
     margin-top: 7px;
-    font-size: 15px;
+
+    font-size: 14px;
+
     text-transform: uppercase;
     letter-spacing: 2px;
 }
@@ -201,38 +215,49 @@ section {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+
     gap: 30px;
 
     max-width: 1000px;
+
     margin: 40px auto 0;
 }
 
 .event-card {
     background: #fffaf7;
+
     width: 430px;
+
     padding: 45px 30px;
+
     border-radius: 20px;
+
     box-shadow: 0 7px 25px rgba(0,0,0,0.08);
 }
 
 .event-icon {
     font-size: 45px;
+
     margin-bottom: 15px;
 }
 
 .event-card h3 {
     color: #b76e79;
+
     font-size: 29px;
+
     margin-bottom: 20px;
 }
 
 .event-card p {
     font-size: 17px;
+
     line-height: 1.8;
 }
 
 .date-large {
     font-size: 23px !important;
+
     font-weight: bold;
 }
 
@@ -247,13 +272,17 @@ section {
 
 .family-box {
     max-width: 700px;
+
     margin: auto;
+
     font-size: 18px;
+
     line-height: 2;
 }
 
 .family-name {
     color: #b76e79;
+
     font-size: 21px;
 }
 
@@ -268,30 +297,36 @@ section {
 
 .gallery-text {
     font-size: 19px;
+
     margin-bottom: 35px;
 }
 
 .photos {
     max-width: 1100px;
+
     margin: 35px auto 0;
 
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 18px;
 }
 
 .photos img {
     width: 100%;
+
     height: 350px;
 
     object-fit: cover;
+
     display: block;
 
     border-radius: 15px;
 
     box-shadow: 0 5px 18px rgba(0,0,0,0.12);
 
-    transition: 0.3s;
+    transition: transform 0.3s;
 }
 
 .photos img:hover {
@@ -309,12 +344,15 @@ section {
 
 .final-message h2 {
     font-size: 45px;
+
     color: #b76e79;
+
     font-weight: normal;
 }
 
 .final-message p {
     font-size: 19px;
+
     margin-top: 20px;
 }
 
@@ -325,6 +363,7 @@ section {
 
 footer {
     background: #7c5a56;
+
     color: white;
 
     padding: 35px 20px 90px;
@@ -343,6 +382,10 @@ footer {
         padding: 60px 15px;
     }
 
+    .hero {
+        min-height: 100svh;
+    }
+
     .hero h1 {
         font-size: 48px;
     }
@@ -352,7 +395,7 @@ footer {
     }
 
     .small-title {
-        font-size: 15px;
+        font-size: 14px;
         letter-spacing: 3px;
     }
 
@@ -366,6 +409,7 @@ footer {
 
     .photos {
         grid-template-columns: 1fr 1fr;
+
         gap: 10px;
     }
 
@@ -376,9 +420,12 @@ footer {
     #musicButton {
         bottom: 15px;
         right: 15px;
+
         padding: 11px 16px;
+
         font-size: 14px;
     }
+
 }
 
 
@@ -394,7 +441,8 @@ footer {
 
     .photos img {
         height: auto;
-        max-height: 500px;
+
+        max-height: 550px;
     }
 
 }
@@ -411,13 +459,15 @@ footer {
      MUSIC
 ========================= -->
 
-<audio id="weddingMusic" loop preload="metadata">
+<audio
+    id="weddingMusic"
+    autoplay
+    loop
+    preload="auto">
 
     <source
         src="wedding.mp3"
         type="audio/mpeg">
-
-    Your browser does not support audio.
 
 </audio>
 
@@ -425,7 +475,7 @@ footer {
 <button
     id="musicButton"
     type="button"
-    onclick="toggleMusic()">
+    onclick="toggleMusic(event)">
 
     🎵 Play Music
 
@@ -442,21 +492,44 @@ footer {
     <div class="hero-content">
 
         <div class="small-title">
+
             TOGETHER WITH OUR FAMILIES
+
         </div>
 
-        <h1>Nikitha</h1>
 
-        <div class="heart">♥</div>
+        <h1>
 
-        <h1>Tom</h1>
+            Nikitha
+
+        </h1>
+
+
+        <div class="heart">
+
+            ♥
+
+        </div>
+
+
+        <h1>
+
+            Tom
+
+        </h1>
+
 
         <h2>
+
             We're Getting Married!
+
         </h2>
 
+
         <div class="hero-date">
+
             SEPTEMBER 10, 2026
+
         </div>
 
     </div>
@@ -472,12 +545,18 @@ footer {
 <section>
 
     <div class="decor">
+
         🌿 ♥ 🌿
+
     </div>
 
+
     <h2 class="section-title">
+
         You're Invited
+
     </h2>
+
 
     <p class="intro-text">
 
@@ -488,7 +567,9 @@ footer {
         <br><br>
 
         <strong>
+
             Nikitha Joemon &amp; Tom Palakkadan
+
         </strong>
 
         <br><br>
@@ -514,12 +595,18 @@ footer {
 <section class="countdown-section">
 
     <h2 class="section-title">
+
         Countdown to Our Wedding
+
     </h2>
 
+
     <div class="decor">
+
         💍
+
     </div>
+
 
     <div
         class="countdown"
@@ -529,11 +616,15 @@ footer {
         <div class="time-box">
 
             <span id="days">
+
                 0
+
             </span>
 
             <p>
+
                 Days
+
             </p>
 
         </div>
@@ -542,11 +633,15 @@ footer {
         <div class="time-box">
 
             <span id="hours">
+
                 0
+
             </span>
 
             <p>
+
                 Hours
+
             </p>
 
         </div>
@@ -555,11 +650,15 @@ footer {
         <div class="time-box">
 
             <span id="minutes">
+
                 0
+
             </span>
 
             <p>
+
                 Minutes
+
             </p>
 
         </div>
@@ -568,11 +667,15 @@ footer {
         <div class="time-box">
 
             <span id="seconds">
+
                 0
+
             </span>
 
             <p>
+
                 Seconds
+
             </p>
 
         </div>
@@ -591,7 +694,9 @@ footer {
 <section class="events">
 
     <h2 class="section-title">
+
         Wedding Celebrations
+
     </h2>
 
 
@@ -603,12 +708,18 @@ footer {
         <div class="event-card">
 
             <div class="event-icon">
+
                 ⛪
+
             </div>
 
+
             <h3>
+
                 The Wedding
+
             </h3>
+
 
             <p class="date-large">
 
@@ -620,12 +731,16 @@ footer {
 
             </p>
 
+
             <br>
+
 
             <p>
 
                 <strong>
+
                     Mar Thoma Cheriapally
+
                 </strong>
 
                 <br>
@@ -643,12 +758,18 @@ footer {
         <div class="event-card">
 
             <div class="event-icon">
+
                 🥂
+
             </div>
 
+
             <h3>
+
                 The Reception
+
             </h3>
+
 
             <p class="date-large">
 
@@ -660,22 +781,30 @@ footer {
 
             </p>
 
+
             <br>
+
 
             <p>
 
                 <strong>
+
                     12:00 PM
+
                 </strong>
 
             </p>
 
+
             <br>
+
 
             <p>
 
                 <strong>
+
                     Casa Sanjo's Parish Hall
+
                 </strong>
 
                 <br>
@@ -711,7 +840,9 @@ footer {
 
 
         <p>
+
             Bride's Parents
+
         </p>
 
 
@@ -734,7 +865,9 @@ footer {
 
 
         <div>
+
             ♥
+
         </div>
 
 
@@ -742,7 +875,9 @@ footer {
 
 
         <p>
+
             Groom's Parents
+
         </p>
 
 
@@ -768,29 +903,31 @@ footer {
 
 
 <!-- =========================
-     PHOTO GALLERY
+     GALLERY
 ========================= -->
 
 <section class="gallery">
 
 
     <h2 class="section-title">
+
         Our Memories
+
     </h2>
 
 
     <div class="decor">
+
         📸
+
     </div>
 
 
     <p class="gallery-text">
 
-        A few beautiful moments
-        from our journey together.
+        A few beautiful moments from our journey together.
 
     </p>
-
 
 
     <div class="photos">
@@ -798,49 +935,49 @@ footer {
 
         <img
             src="images/Image%201.jpg"
-            alt="Nikitha and Tom memory 1"
+            alt="Nikitha and Tom"
             loading="lazy">
 
 
         <img
             src="images/Image%202.jpg"
-            alt="Nikitha and Tom memory 2"
+            alt="Nikitha and Tom"
             loading="lazy">
 
 
         <img
             src="images/Image%203.jpg"
-            alt="Nikitha and Tom memory 3"
+            alt="Nikitha and Tom"
             loading="lazy">
 
 
         <img
             src="images/Image%204.jpg"
-            alt="Nikitha and Tom memory 4"
+            alt="Nikitha and Tom"
             loading="lazy">
 
 
         <img
             src="images/Image%205.jpg"
-            alt="Nikitha and Tom memory 5"
+            alt="Nikitha and Tom"
             loading="lazy">
 
 
         <img
             src="images/Image%206.jpg"
-            alt="Nikitha and Tom memory 6"
+            alt="Nikitha and Tom"
             loading="lazy">
 
 
         <img
             src="images/Image%207.jpg"
-            alt="Nikitha and Tom memory 7"
+            alt="Nikitha and Tom"
             loading="lazy">
 
 
         <img
             src="images/Image%208.jpg"
-            alt="Nikitha and Tom memory 8"
+            alt="Nikitha and Tom"
             loading="lazy">
 
 
@@ -860,8 +997,7 @@ footer {
 
     <h2>
 
-        We Can't Wait to
-        Celebrate With You!
+        We Can't Wait to Celebrate With You!
 
     </h2>
 
@@ -873,7 +1009,9 @@ footer {
         <br><br>
 
         <strong>
+
             Nikitha &amp; Tom
+
         </strong>
 
         <br><br>
@@ -910,9 +1048,9 @@ footer {
 <script>
 
 
-/* =========================
-   COUNTDOWN
-========================= */
+/* ==================================
+   WEDDING COUNTDOWN
+================================== */
 
 const weddingDate =
     new Date(
@@ -1018,10 +1156,9 @@ setInterval(
 
 
 
-/* =========================
-   MUSIC PLAYER
-========================= */
-
+/* ==================================
+   WEDDING MUSIC
+================================== */
 
 const weddingMusic =
     document.getElementById(
@@ -1035,37 +1172,186 @@ const musicButton =
     );
 
 
-function toggleMusic() {
+let userPausedMusic = false;
+
+
+/* ==================================
+   UPDATE MUSIC BUTTON
+================================== */
+
+function showPlaying() {
+
+    musicButton.innerHTML =
+        "⏸ Pause Music";
+
+}
+
+
+function showPaused() {
+
+    musicButton.innerHTML =
+        "🎵 Play Music";
+
+}
+
+
+
+/* ==================================
+   TRY AUTOPLAY WHEN PAGE LOADS
+================================== */
+
+function attemptAutoplay() {
+
+
+    weddingMusic.play()
+
+        .then(function() {
+
+            showPlaying();
+
+        })
+
+        .catch(function() {
+
+            /*
+            The browser blocked autoplay.
+
+            This is normal on many phones
+            and browsers.
+
+            The first click/tap anywhere
+            will start the music instead.
+            */
+
+            showPaused();
+
+        });
+
+}
+
+
+window.addEventListener(
+    "load",
+    attemptAutoplay
+);
+
+
+
+/* ==================================
+   FIRST TAP / CLICK STARTS MUSIC
+================================== */
+
+function startMusicOnInteraction() {
+
+
+    if (
+        weddingMusic.paused &&
+        !userPausedMusic
+    ) {
+
+
+        weddingMusic.play()
+
+            .then(function() {
+
+                showPlaying();
+
+            })
+
+            .catch(function() {
+
+                showPaused();
+
+            });
+
+
+    }
+
+
+    /*
+    We only need this automatic
+    interaction once.
+    */
+
+    document.removeEventListener(
+        "click",
+        startMusicOnInteraction
+    );
+
+
+    document.removeEventListener(
+        "touchstart",
+        startMusicOnInteraction
+    );
+
+
+}
+
+
+document.addEventListener(
+    "click",
+    startMusicOnInteraction
+);
+
+
+document.addEventListener(
+    "touchstart",
+    startMusicOnInteraction,
+    { passive: true }
+);
+
+
+
+/* ==================================
+   PLAY / PAUSE BUTTON
+================================== */
+
+function toggleMusic(event) {
+
+
+    /*
+    Prevent the page-wide click listener
+    from interfering with the music button.
+    */
+
+    if (event) {
+
+        event.stopPropagation();
+
+    }
 
 
     if (weddingMusic.paused) {
 
 
+        userPausedMusic = false;
+
+
         weddingMusic.play()
-        .then(function() {
 
-            musicButton.innerHTML =
-                "⏸ Pause Music";
+            .then(function() {
 
-        })
-        .catch(function(error) {
+                showPlaying();
 
-            console.log(
-                "Music could not play:",
-                error
-            );
+            })
 
-        });
+            .catch(function() {
+
+                showPaused();
+
+            });
 
 
     } else {
 
 
+        userPausedMusic = true;
+
+
         weddingMusic.pause();
 
 
-        musicButton.innerHTML =
-            "🎵 Play Music";
+        showPaused();
 
 
     }
@@ -1074,23 +1360,26 @@ function toggleMusic() {
 }
 
 
-/* If the song finishes unexpectedly,
-   reset the button.
-   The audio is also set to loop. */
+
+/* ==================================
+   KEEP BUTTON STATUS CORRECT
+================================== */
+
+weddingMusic.addEventListener(
+    "play",
+    function() {
+
+        showPlaying();
+
+    }
+);
+
 
 weddingMusic.addEventListener(
     "pause",
     function() {
 
-        if (
-            weddingMusic.currentTime > 0 &&
-            !weddingMusic.ended
-        ) {
-
-            musicButton.innerHTML =
-                "🎵 Play Music";
-
-        }
+        showPaused();
 
     }
 );
