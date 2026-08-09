@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -35,19 +36,18 @@ body {
 
     background-image:
         linear-gradient(
-            rgba(0,0,0,0.20),
-            rgba(0,0,0,0.32)
+            rgba(0,0,0,0.15),
+            rgba(0,0,0,0.28)
         ),
         url("images/CoverNew.jpg");
 
-    /*
-       CONTAIN prevents the picture from being heavily zoomed/cropped.
-       The whole cover image will remain visible.
-    */
+    /* Keeps the whole photo visible */
     background-size: contain;
+
     background-position: center;
     background-repeat: no-repeat;
-    background-color: #182313;
+
+    background-color: #171712;
 
     display: flex;
     align-items: center;
@@ -56,30 +56,27 @@ body {
     position: relative;
 }
 
-/* Wedding text over cover */
-
 .hero-content {
     color: white;
-    padding: 30px 20px;
-    text-shadow: 0 2px 12px rgba(0,0,0,.75);
+    padding: 30px;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.75);
 }
 
 .hero-small {
     font-size: 20px;
     letter-spacing: 5px;
-    text-transform: uppercase;
     margin-bottom: 25px;
 }
 
 .hero h1 {
     font-size: clamp(55px, 8vw, 105px);
     line-height: 1;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 .heart {
     font-size: 35px;
-    margin: 12px 0;
+    margin: 15px 0;
 }
 
 .hero h2 {
@@ -87,38 +84,11 @@ body {
     margin-top: 25px;
 }
 
-.hero-date {
-    margin-top: 25px;
-    font-size: 24px;
+.date {
+    margin-top: 30px;
+    font-size: 22px;
     letter-spacing: 5px;
-}
-
-/* =========================
-   MUSIC BUTTON
-========================= */
-
-.music-button {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-
-    z-index: 999;
-
-    background: #bb7680;
-    color: white;
-
-    border: 2px solid white;
-    border-radius: 40px;
-
-    padding: 15px 24px;
-
-    font-family: Georgia, serif;
-    font-size: 17px;
     font-weight: bold;
-
-    cursor: pointer;
-
-    box-shadow: 0 4px 15px rgba(0,0,0,.25);
 }
 
 /* =========================
@@ -129,95 +99,45 @@ section {
     padding: 80px 20px;
 }
 
-.section-title {
-    font-size: clamp(38px, 6vw, 60px);
-    color: #bb7680;
-    margin-bottom: 20px;
+section h2 {
+    font-size: clamp(38px, 5vw, 60px);
+    color: #bb7480;
+    margin-bottom: 25px;
 }
 
-.section-subtitle {
+.subtitle {
     font-size: 20px;
-    line-height: 1.7;
-    max-width: 750px;
-    margin: 0 auto 40px;
+    margin-bottom: 40px;
 }
 
 /* =========================
-   COUNTDOWN
-========================= */
-
-.countdown-section {
-    background: #f8efeb;
-}
-
-.countdown {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 18px;
-
-    margin-top: 40px;
-}
-
-.time-box {
-    background: white;
-
-    width: 150px;
-
-    padding: 25px 10px;
-
-    border-radius: 15px;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,.08);
-}
-
-.time-box span {
-    display: block;
-
-    font-size: 42px;
-
-    color: #bb7680;
-
-    font-weight: bold;
-}
-
-.time-box small {
-    font-size: 15px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-}
-
-/* =========================
-   WEDDING INFORMATION
+   WEDDING DETAILS
 ========================= */
 
 .details {
-    background: white;
+    background: #fff5f2;
 }
 
 .detail-container {
-    max-width: 900px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    flex-wrap: wrap;
+    max-width: 1000px;
     margin: auto;
-
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-
-    gap: 30px;
 }
 
 .detail-card {
-    padding: 40px 25px;
-
-    background: #fffaf7;
-
-    border-radius: 15px;
-
-    box-shadow: 0 5px 20px rgba(0,0,0,.07);
+    background: white;
+    padding: 40px 30px;
+    border-radius: 18px;
+    width: 360px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
 }
 
 .detail-card h3 {
-    color: #bb7680;
-    font-size: 30px;
+    color: #bb7480;
+    font-size: 28px;
     margin-bottom: 20px;
 }
 
@@ -227,68 +147,92 @@ section {
 }
 
 /* =========================
-   GALLERY
+   PHOTOS
 ========================= */
 
-.gallery-section {
-    background: #fffaf7;
+.memories {
+    background: white;
 }
 
 .photos {
     max-width: 1200px;
-
     margin: 40px auto 0;
 
     display: grid;
-
-    grid-template-columns:
-        repeat(3, 1fr);
-
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
 }
 
 .photos img {
     width: 100%;
-    height: 420px;
+    height: 500px;
 
     object-fit: cover;
 
-    border-radius: 14px;
+    border-radius: 16px;
 
     box-shadow:
-        0 6px 20px rgba(0,0,0,.12);
+        0 8px 25px rgba(0,0,0,0.15);
 
     transition:
-        transform .3s ease,
-        box-shadow .3s ease;
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
 }
 
 .photos img:hover {
-    transform: scale(1.025);
+    transform: scale(1.02);
 
     box-shadow:
-        0 10px 25px rgba(0,0,0,.18);
+        0 12px 35px rgba(0,0,0,0.22);
 }
 
 /* =========================
-   CLOSING
+   FINAL MESSAGE
 ========================= */
 
-.closing {
-    background: #f8efeb;
+.final {
+    background: #fff5f2;
 }
 
-.closing-heart {
-    font-size: 45px;
-    margin: 20px;
+.final p {
+    font-size: 21px;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: auto;
 }
 
-.closing h2 {
-    color: #bb7680;
+/* =========================
+   MUSIC BUTTON
+========================= */
 
-    font-size: clamp(40px, 6vw, 65px);
+.music-button {
+    position: fixed;
 
-    margin-bottom: 20px;
+    bottom: 25px;
+    right: 25px;
+
+    z-index: 1000;
+
+    background: #bb7480;
+    color: white;
+
+    border: 2px solid white;
+
+    padding: 15px 25px;
+
+    border-radius: 40px;
+
+    font-family: Georgia, serif;
+    font-size: 17px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 5px 15px rgba(0,0,0,0.25);
+}
+
+.music-button:hover {
+    background: #a9616d;
 }
 
 /* =========================
@@ -296,10 +240,6 @@ section {
 ========================= */
 
 @media (max-width: 768px) {
-
-    /*
-       Mobile also keeps the entire CoverNew image visible.
-    */
 
     .hero {
         min-height: 100vh;
@@ -321,13 +261,13 @@ section {
         font-size: 23px;
     }
 
-    .hero-date {
-        font-size: 17px;
+    .date {
+        font-size: 16px;
         letter-spacing: 3px;
     }
 
-    .detail-container {
-        grid-template-columns: 1fr;
+    section {
+        padding: 60px 15px;
     }
 
     .photos {
@@ -336,11 +276,8 @@ section {
 
     .photos img {
         height: auto;
-        max-height: none;
-    }
-
-    .time-box {
-        width: 130px;
+        max-height: 650px;
+        object-fit: cover;
     }
 
     .music-button {
@@ -348,7 +285,6 @@ section {
         right: 15px;
 
         padding: 12px 18px;
-
         font-size: 15px;
     }
 }
@@ -359,9 +295,7 @@ section {
 
 <body>
 
-<!-- =========================
-     MUSIC
-========================= -->
+<!-- MUSIC -->
 
 <audio id="weddingMusic" loop preload="auto">
     <source src="wedding.mp3" type="audio/mpeg">
@@ -379,12 +313,12 @@ section {
      COVER
 ========================= -->
 
-<header class="hero">
+<section class="hero">
 
     <div class="hero-content">
 
         <div class="hero-small">
-            Together With Our Families
+            TOGETHER WITH OUR FAMILIES
         </div>
 
         <h1>
@@ -403,50 +337,8 @@ section {
             We're Getting Married!
         </h2>
 
-        <div class="hero-date">
+        <div class="date">
             SEPTEMBER 10, 2026
-        </div>
-
-    </div>
-
-</header>
-
-
-<!-- =========================
-     COUNTDOWN
-========================= -->
-
-<section class="countdown-section">
-
-    <h2 class="section-title">
-        Counting Down to Forever
-    </h2>
-
-    <p class="section-subtitle">
-        We can't wait to celebrate this special day
-        with our family and friends.
-    </p>
-
-    <div class="countdown">
-
-        <div class="time-box">
-            <span id="days">0</span>
-            <small>Days</small>
-        </div>
-
-        <div class="time-box">
-            <span id="hours">0</span>
-            <small>Hours</small>
-        </div>
-
-        <div class="time-box">
-            <span id="minutes">0</span>
-            <small>Minutes</small>
-        </div>
-
-        <div class="time-box">
-            <span id="seconds">0</span>
-            <small>Seconds</small>
         </div>
 
     </div>
@@ -455,29 +347,25 @@ section {
 
 
 <!-- =========================
-     WEDDING DETAILS
+     WEDDING
 ========================= -->
 
 <section class="details">
 
-    <h2 class="section-title">
-        Wedding Celebration
-    </h2>
+    <h2>Our Wedding</h2>
 
-    <p class="section-subtitle">
-        We joyfully invite you to celebrate
-        the wedding of Nikitha and Tom.
+    <p class="subtitle">
+        We would love for you to celebrate this special day with us.
     </p>
-
 
     <div class="detail-container">
 
         <div class="detail-card">
 
-            <h3>💒 Wedding</h3>
+            <h3>♥ Wedding Ceremony</h3>
 
             <p>
-                <strong>Thursday, September 10, 2026</strong>
+                Thursday, September 10, 2026
             </p>
 
             <p>
@@ -493,10 +381,10 @@ section {
 
         <div class="detail-card">
 
-            <h3>🥂 Reception</h3>
+            <h3>♥ Wedding Reception</h3>
 
             <p>
-                <strong>Monday, September 14, 2026</strong>
+                Monday, September 14, 2026
             </p>
 
             <p>
@@ -519,57 +407,42 @@ section {
 
 
 <!-- =========================
-     PHOTOS
+     MEMORIES
 ========================= -->
 
-<section class="gallery-section">
+<section class="memories">
 
-    <h2 class="section-title">
-        Our Memories
-    </h2>
+    <h2>Our Memories</h2>
 
-    <div style="font-size:35px; margin:15px;">
-        📸
-    </div>
-
-    <p class="section-subtitle">
+    <p class="subtitle">
         A few beautiful moments from our journey together.
     </p>
 
-
     <div class="photos">
 
-        <img
-            src="images/Image 1.jpg"
-            alt="Nikitha and Tom">
+        <img src="images/Image 1.jpg"
+             alt="Nikitha and Tom">
 
-        <img
-            src="images/Image 2.jpg"
-            alt="Nikitha and Tom">
+        <img src="images/Image 2.jpg"
+             alt="Nikitha and Tom">
 
-        <img
-            src="images/Image 3.jpg"
-            alt="Nikitha and Tom">
+        <img src="images/Image 3.jpg"
+             alt="Nikitha and Tom">
 
-        <img
-            src="images/Image 4.jpg"
-            alt="Nikitha and Tom">
+        <img src="images/Image 4.jpg"
+             alt="Nikitha and Tom">
 
-        <img
-            src="images/Image 5.jpg"
-            alt="Nikitha and Tom">
+        <img src="images/Image 5.jpg"
+             alt="Nikitha and Tom">
 
-        <img
-            src="images/Image 6.jpg"
-            alt="Nikitha and Tom">
+        <img src="images/Image 6.jpg"
+             alt="Nikitha and Tom">
 
-        <img
-            src="images/Image 7.jpg"
-            alt="Nikitha and Tom">
+        <img src="images/Image 7.jpg"
+             alt="Nikitha and Tom">
 
-        <img
-            src="images/Image 8.jpg"
-            alt="Nikitha and Tom">
+        <img src="images/Image 8.jpg"
+             alt="Nikitha and Tom">
 
     </div>
 
@@ -577,214 +450,114 @@ section {
 
 
 <!-- =========================
-     CLOSING
+     FINAL MESSAGE
 ========================= -->
 
-<section class="closing">
+<section class="final">
 
-    <div class="closing-heart">
-        ♥
-    </div>
-
-    <h2>
-        Nikitha & Tom
-    </h2>
-
-    <p class="section-subtitle">
-        We look forward to celebrating
-        this beautiful beginning with you.
-    </p>
+    <h2>Celebrate With Us</h2>
 
     <p>
-        September 10, 2026
+        We are so excited to celebrate this beautiful
+        beginning surrounded by our family and friends.
+        Your presence will make our special day even more memorable.
     </p>
 
 </section>
 
 
+<!-- =========================
+     MUSIC SCRIPT
+========================= -->
+
 <script>
 
-/* =========================
-   COUNTDOWN
-========================= */
+const music = document.getElementById("weddingMusic");
+const button = document.getElementById("musicButton");
 
-/*
-   Wedding:
-   September 10, 2026
-
-   Kerala uses India Standard Time:
-   UTC +05:30
-*/
-
-const weddingDate =
-    new Date("2026-09-10T00:00:00+05:30").getTime();
-
-
-function updateCountdown() {
-
-    const now =
-        new Date().getTime();
-
-    const distance =
-        weddingDate - now;
-
-
-    if (distance <= 0) {
-
-        document.getElementById("days").innerText = "0";
-        document.getElementById("hours").innerText = "0";
-        document.getElementById("minutes").innerText = "0";
-        document.getElementById("seconds").innerText = "0";
-
-        return;
-    }
-
-
-    const days =
-        Math.floor(
-            distance /
-            (1000 * 60 * 60 * 24)
-        );
-
-
-    const hours =
-        Math.floor(
-            (distance %
-            (1000 * 60 * 60 * 24)) /
-            (1000 * 60 * 60)
-        );
-
-
-    const minutes =
-        Math.floor(
-            (distance %
-            (1000 * 60 * 60)) /
-            (1000 * 60)
-        );
-
-
-    const seconds =
-        Math.floor(
-            (distance %
-            (1000 * 60)) /
-            1000
-        );
-
-
-    document.getElementById("days").innerText =
-        days;
-
-    document.getElementById("hours").innerText =
-        hours;
-
-    document.getElementById("minutes").innerText =
-        minutes;
-
-    document.getElementById("seconds").innerText =
-        seconds;
-}
-
-
-updateCountdown();
-
-setInterval(
-    updateCountdown,
-    1000
-);
-
-
-/* =========================
-   MUSIC
-========================= */
-
-const music =
-    document.getElementById("weddingMusic");
-
-const musicButton =
-    document.getElementById("musicButton");
-
-
-function startMusic() {
-
-    music.volume = 0.6;
-
-    music.play()
-        .then(() => {
-
-            musicButton.innerHTML =
-                "Ⅱ Pause Music";
-
-        })
-        .catch(() => {
-
-            musicButton.innerHTML =
-                "♫ Play Music";
-
-        });
-}
+let musicPlaying = false;
 
 
 /*
-   Try autoplay.
+Try autoplay.
 
-   IMPORTANT:
-   Chrome, Safari, iPhone and Android may
-   block music with sound until the visitor
-   interacts with the page.
+Most modern browsers may block autoplay
+with sound until the visitor interacts
+with the webpage.
 */
 
-window.addEventListener(
-    "load",
-    startMusic
-);
+window.addEventListener("load", function () {
 
+    music.volume = 0.7;
 
-/*
-   If autoplay is blocked, the visitor's
-   first click/touch anywhere on the page
-   starts the music.
-*/
+    const playAttempt = music.play();
 
-function firstInteraction() {
+    if (playAttempt !== undefined) {
 
-    if (music.paused) {
+        playAttempt
+            .then(function () {
 
-        music.play()
-            .then(() => {
-
-                musicButton.innerHTML =
-                    "Ⅱ Pause Music";
+                musicPlaying = true;
+                button.innerHTML = "Ⅱ Pause Music";
 
             })
-            .catch(() => {});
+            .catch(function () {
+
+                musicPlaying = false;
+                button.innerHTML = "♫ Play Music";
+
+            });
+
+    }
+
+});
+
+
+/*
+If autoplay was blocked, the first interaction
+with the page attempts to start the music.
+*/
+
+function startMusicOnInteraction() {
+
+    if (!musicPlaying) {
+
+        music.play()
+            .then(function () {
+
+                musicPlaying = true;
+                button.innerHTML = "Ⅱ Pause Music";
+
+            })
+            .catch(function () {});
 
     }
 
     document.removeEventListener(
         "click",
-        firstInteraction
+        startMusicOnInteraction
     );
 
     document.removeEventListener(
         "touchstart",
-        firstInteraction
+        startMusicOnInteraction
     );
-}
 
+}
 
 document.addEventListener(
     "click",
-    firstInteraction
+    startMusicOnInteraction
 );
 
 document.addEventListener(
     "touchstart",
-    firstInteraction
+    startMusicOnInteraction
 );
 
 
 /*
-   Music button
+Play / Pause button
 */
 
 function toggleMusic() {
@@ -793,7 +566,9 @@ function toggleMusic() {
 
         music.play();
 
-        musicButton.innerHTML =
+        musicPlaying = true;
+
+        button.innerHTML =
             "Ⅱ Pause Music";
 
     }
@@ -802,13 +577,17 @@ function toggleMusic() {
 
         music.pause();
 
-        musicButton.innerHTML =
+        musicPlaying = false;
+
+        button.innerHTML =
             "♫ Play Music";
 
     }
+
 }
 
 </script>
+
 
 </body>
 </html>
