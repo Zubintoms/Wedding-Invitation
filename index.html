@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Nikitha & Tom | Wedding</title>
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #fffaf7;
+    color: #4d403b;
+    text-align: center;
+}
+
+/* =========================
+   COVER
+========================= */
+
+.hero {
+    min-height: 100vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.30), rgba(0,0,0,0.45)),
+        url("images/cover.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: white;
+    padding: 30px;
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.small-title {
+    font-size: 20px;
+    letter-spacing: 4px;
+    margin-bottom: 20px;
+}
+
+.hero h1 {
+    font-size: 75px;
+    font-weight: normal;
+    margin-bottom: 15px;
+}
+
+.heart {
+    font-size: 35px;
+    margin: 10px;
+}
+
+.hero h2 {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.hero-date {
+    font-size: 22px;
+}
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+section {
+    padding: 80px 20px;
+}
+
+.section-title {
+    font-size: 42px;
+    color: #b76e79;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+
+.decor {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+.intro-text {
+    max-width: 750px;
+    margin: auto;
+    font-size: 19px;
+    line-height: 1.8;
+}
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown-section {
+    background: #f9eee9;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.time-box {
+    background: white;
+    width: 145px;
+    padding: 25px 10px;
+    border-radius: 18px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+}
+
+.time-box span {
+    display: block;
+    font-size: 42px;
+    color: #b76e79;
+    font-weight: bold;
+}
+
+.time-box p {
+    margin-top: 7px;
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* =========================
+   DETAILS
+========================= */
+
+.events {
+    background: white;
+}
+
+.event-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    max-width: 1000px;
+    margin: 40px auto 0;
+}
+
+.event-card {
+    background: #fffaf7;
+    width: 430px;
+    padding: 45px 30px;
+    border-radius: 20px;
+
+    box-shadow: 0 7px 25px rgba(0,0,0,0.08);
+}
+
+.event-icon {
+    font-size: 45px;
+    margin-bottom: 15px;
+}
+
+.event-card h3 {
+    color: #b76e79;
+    font-size: 29px;
+    margin-bottom: 20px;
+}
+
+.event-card p {
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.date-large {
+    font-size: 23px !important;
+    font-weight: bold;
+}
+
+/* =========================
+   FAMILY
+========================= */
+
+.family {
+    background: #f9eee9;
+}
+
+.family-box {
+    max-width: 700px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 2;
+}
+
+.family-name {
+    color: #b76e79;
+    font-size: 21px;
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery {
+    background: white;
+}
+
+.photos {
+    max-width: 1100px;
+    margin: 35px auto 0;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.photos img {
+    width: 100%;
+    height: 350px;
+
+    object-fit: cover;
+
+    border-radius: 15px;
+
+    transition: 0.3s;
+}
+
+.photos img:hover {
+    transform: scale(1.03);
+}
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+.final-message {
+    background: #f9eee9;
+}
+
+.final-message h2 {
+    font-size: 45px;
+    color: #b76e79;
+    font-weight: normal;
+}
+
+.final-message p {
+    font-size: 19px;
+    margin-top: 20px;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    background: #7c5a56;
+    color: white;
+    padding: 35px 20px;
+    font-size: 17px;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .hero h1 {
+        font-size: 48px;
+    }
+
+    .hero h2 {
+        font-size: 20px;
+    }
+
+    .section-title {
+        font-size: 34px;
+    }
+
+    .time-box {
+        width: 42%;
+    }
+
+    .photos {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .photos img {
+        height: 260px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+
+<!-- ===================================
+     COVER
+=================================== -->
+
+<section class="hero">
+
+<div class="hero-content">
+
+    <div class="small-title">
+        TOGETHER WITH OUR FAMILIES
+    </div>
+
+    <h1>Nikitha</h1>
+
+    <div class="heart">♥</div>
+
+    <h1>Tom</h1>
+
+    <h2>We're Getting Married!</h2>
+
+    <div class="hero-date">
+        SEPTEMBER 10, 2026
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ===================================
+     INVITATION
+=================================== -->
+
+<section>
+
+    <div class="decor">🌿 ♥ 🌿</div>
+
+    <h2 class="section-title">
+        You're Invited
+    </h2>
+
+    <p class="intro-text">
+
+        Together with our families, we joyfully invite you
+        to celebrate the wedding of
+
+        <br><br>
+
+        <strong>Nikitha Joemon & Tom Palakkadan</strong>
+
+        <br><br>
+
+        as we begin a beautiful new chapter of our lives.
+
+        <br><br>
+
+        Your presence and blessings will make our
+        celebration even more special.
+
+    </p>
+
+</section>
+
+
+
+<!-- ===================================
+     COUNTDOWN
+=================================== -->
+
+<section class="countdown-section">
+
+    <h2 class="section-title">
+        Countdown to Our Wedding
+    </h2>
+
+    <div class="decor">💍</div>
+
+    <div class="countdown" id="countdown">
+
+        <div class="time-box">
+            <span id="days">0</span>
+            <p>Days</p>
+        </div>
+
+        <div class="time-box">
+            <span id="hours">0</span>
+            <p>Hours</p>
+        </div>
+
+        <div class="time-box">
+            <span id="minutes">0</span>
+            <p>Minutes</p>
+        </div>
+
+        <div class="time-box">
+            <span id="seconds">0</span>
+            <p>Seconds</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ===================================
+     EVENTS
+=================================== -->
+
+<section class="events">
+
+<h2 class="section-title">
+    Wedding Celebrations
+</h2>
+
+<div class="event-container">
+
+
+    <!-- WEDDING -->
+
+    <div class="event-card">
+
+        <div class="event-icon">⛪</div>
+
+        <h3>The Wedding</h3>
+
+        <p class="date-large">
+            Thursday
+            <br>
+            September 10, 2026
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Mar Thoma Cheriapally</strong>
+            <br>
+            Kothamangalam
+        </p>
+
+    </div>
+
+
+
+    <!-- RECEPTION -->
+
+    <div class="event-card">
+
+        <div class="event-icon">🥂</div>
+
+        <h3>The Reception</h3>
+
+        <p class="date-large">
+            Monday
+            <br>
+            September 14, 2026
+        </p>
+
+        <br>
+
+        <p>
+            <strong>12:00 PM</strong>
+        </p>
+
+        <br>
+
+        <p>
+            <strong>Casa Sanjo's Parish Hall</strong>
+            <br>
+            Thundiyil
+        </p>
+
+    </div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- ===================================
+     FAMILY
+=================================== -->
+
+<section class="family">
+
+<h2 class="section-title">
+    With the Blessings of Our Families
+</h2>
+
+<div class="family-box">
+
+    <p>
+        Bride's Parents
+    </p>
+
+    <p class="family-name">
+        <strong>
+        Mr. Joemon V Jacob
+        <br>
+        & Mrs. Rinta Joemon
+        </strong>
+    </p>
+
+    <br>
+
+    <div>♥</div>
+
+    <br>
+
+    <p>
+        Groom's Parents
+    </p>
+
+    <p class="family-name">
+        <strong>
+        Binu Palakkadan
+        <br>
+        & Mini
+        </strong>
+    </p>
+
+</div>
+
+</section>
+
+
+
+<!-- ===================================
+     PHOTOS
+=================================== -->
+
+<section class="gallery">
+
+<h2 class="section-title">
+    Our Memories
+</h2>
+
+<div class="decor">📸</div>
+
+<p>
+    A few beautiful moments from our journey together.
+</p>
+
+
+<div class="photos">
+
+    <img src="images/photo1.jpg" alt="Nikitha and Tom">
+
+    <img src="images/photo2.jpg" alt="Nikitha and Tom">
+
+    <img src="images/photo3.jpg" alt="Nikitha and Tom">
+
+    <img src="images/photo4.jpg" alt="Nikitha and Tom">
+
+    <img src="images/photo5.jpg" alt="Nikitha and Tom">
+
+    <img src="images/photo6.jpg" alt="Nikitha and Tom">
+
+</div>
+
+</section>
+
+
+
+<!-- ===================================
+     FINAL MESSAGE
+=================================== -->
+
+<section class="final-message">
+
+    <h2>
+        We Can't Wait to Celebrate With You!
+    </h2>
+
+    <p>
+        With love,
+        <br><br>
+        <strong>Nikitha & Tom</strong>
+        <br>
+        ♥
+    </p>
+
+</section>
+
+
+
+<footer>
+
+    Nikitha ♥ Tom
+    <br><br>
+    September 10, 2026
+
+</footer>
+
+
+
+<!-- ===================================
+     COUNTDOWN JAVASCRIPT
+=================================== -->
+
+<script>
+
+/*
+ Wedding Date:
+ September 10, 2026
+*/
+
+const weddingDate =
+    new Date("2026-09-10T00:00:00+05:30").getTime();
+
+
+const timer = setInterval(function() {
+
+    const now = new Date().getTime();
+
+    const distance = weddingDate - now;
+
+
+    if (distance <= 0) {
+
+        clearInterval(timer);
+
+        document.getElementById("countdown").innerHTML =
+        "<h2>Today is the Big Day! 💍❤️</h2>";
+
+        return;
+    }
+
+
+    const days =
+        Math.floor(
+            distance / (1000 * 60 * 60 * 24)
+        );
+
+
+    const hours =
+        Math.floor(
+            (distance % (1000 * 60 * 60 * 24))
+            / (1000 * 60 * 60)
+        );
+
+
+    const minutes =
+        Math.floor(
+            (distance % (1000 * 60 * 60))
+            / (1000 * 60)
+        );
+
+
+    const seconds =
+        Math.floor(
+            (distance % (1000 * 60))
+            / 1000
+        );
+
+
+    document.getElementById("days").innerText =
+        days;
+
+    document.getElementById("hours").innerText =
+        hours;
+
+    document.getElementById("minutes").innerText =
+        minutes;
+
+    document.getElementById("seconds").innerText =
+        seconds;
+
+
+}, 1000);
+
+</script>
+
+
+</body>
+</html>
