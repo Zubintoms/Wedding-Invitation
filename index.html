@@ -2,804 +2,1117 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+<title>Nikitha Joemon & Tom Palakkadan | Wedding</title>
 
-    <title>Nikitha & Tom | Wedding</title>
+<style>
 
-    <style>
+/* ==========================================
+   BASIC PAGE
+========================================== */
 
-        /* ==========================================
-           RESET
-        ========================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+html {
+    scroll-behavior: smooth;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+body {
+    font-family: Georgia, "Times New Roman", serif;
+    background: #fffaf7;
+    color: #4d403b;
+    text-align: center;
+}
 
-        body {
-            margin: 0;
-            font-family: Georgia, "Times New Roman", serif;
-            background: #fffaf7;
-            color: #4d403b;
-            text-align: center;
-        }
 
+/* ==========================================
+   COVER
+========================================== */
 
-        /* ==========================================
-           COVER
-        ========================================== */
+.hero {
+    width: 100%;
+    height: 100vh;
+    min-height: 600px;
 
-        .hero {
-            width: 100%;
-            height: 100vh;
-            min-height: 600px;
+    position: relative;
+    overflow: hidden;
 
-            position: relative;
-            overflow: hidden;
+    background: #182313;
+}
 
-            background: #182313;
-        }
+.hero-image {
+    position: absolute;
 
+    width: 100%;
+    height: 100%;
 
-        /*
-           IMPORTANT:
-           The cover is now a REAL IMAGE,
-           not a CSS background.
-        */
+    top: 0;
+    left: 0;
 
-        .hero-image {
-            position: absolute;
+    object-fit: cover;
+    object-position: center center;
 
-            width: 100%;
-            height: 100%;
+    display: block;
+}
 
-            top: 0;
-            left: 0;
+.hero-overlay {
+    position: absolute;
 
-            object-fit: cover;
-            object-position: center center;
+    inset: 0;
 
-            display: block;
-        }
+    background: rgba(0,0,0,0.05);
 
+    z-index: 2;
 
-        /* Very light overlay */
+    pointer-events: none;
+}
 
-        .hero-overlay {
-            position: absolute;
 
-            top: 0;
-            left: 0;
+/* ==========================================
+   SCROLL ARROW
+========================================== */
 
-            width: 100%;
-            height: 100%;
+.scroll-down {
+    position: absolute;
 
-            background: rgba(0, 0, 0, 0.05);
+    left: 50%;
+    bottom: 25px;
 
-            z-index: 2;
+    transform: translateX(-50%);
 
-            pointer-events: none;
-        }
+    z-index: 5;
 
+    color: white;
 
-        /* Scroll arrow */
+    font-size: 34px;
 
-        .scroll-down {
-            position: absolute;
+    text-decoration: none;
 
-            left: 50%;
-            bottom: 25px;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 
-            transform: translateX(-50%);
+    animation: bounce 2s infinite;
+}
 
-            z-index: 5;
+@keyframes bounce {
 
-            color: white;
+    0%,20%,50%,80%,100% {
+        transform: translate(-50%,0);
+    }
 
-            font-size: 34px;
+    40% {
+        transform: translate(-50%,-10px);
+    }
 
-            text-decoration: none;
+    60% {
+        transform: translate(-50%,-5px);
+    }
+}
 
-            text-shadow:
-                0 2px 8px rgba(0,0,0,0.8);
 
-            animation: bounce 2s infinite;
-        }
+/* ==========================================
+   WELCOME
+========================================== */
 
+.welcome {
+    padding: 90px 20px;
+    background: #fffaf7;
+}
 
-        @keyframes bounce {
+.small-title {
+    text-transform: uppercase;
+    letter-spacing: 4px;
 
-            0%, 20%, 50%, 80%, 100% {
-                transform: translate(-50%, 0);
-            }
+    color: #947a62;
 
-            40% {
-                transform: translate(-50%, -10px);
-            }
+    font-size: 15px;
 
-            60% {
-                transform: translate(-50%, -5px);
-            }
-        }
+    margin-bottom: 25px;
+}
 
+.welcome h1 {
+    color: #b86f79;
 
-        /* ==========================================
-           WELCOME
-        ========================================== */
+    font-size: 52px;
 
-        .welcome {
-            padding: 90px 20px;
-            background: #fffaf7;
-        }
+    margin-bottom: 20px;
+}
 
-        .welcome h1 {
-            color: #b86f79;
-            font-size: 52px;
-            margin-bottom: 25px;
-        }
+.heart {
+    color: #b86f79;
 
-        .heart {
-            color: #b86f79;
-            font-size: 30px;
-            margin-bottom: 25px;
-        }
+    font-size: 30px;
 
-        .welcome p {
-            max-width: 760px;
-            margin: auto;
+    margin: 20px 0;
+}
 
-            font-size: 21px;
-            line-height: 1.8;
-        }
+.welcome p {
+    max-width: 760px;
 
+    margin: auto;
 
-        /* ==========================================
-           WEDDING DETAILS
-        ========================================== */
+    font-size: 21px;
 
-        .details {
-            padding: 90px 20px;
-            background: #f8eeee;
-        }
+    line-height: 1.8;
+}
 
-        .details h2 {
-            color: #b86f79;
-            font-size: 48px;
-            margin-bottom: 35px;
-        }
 
-        .details h3 {
-            font-size: 32px;
-            margin-bottom: 25px;
-        }
+/* ==========================================
+   COUNTDOWN
+========================================== */
 
-        .date {
-            font-size: 25px;
-            font-weight: bold;
-            letter-spacing: 3px;
-            margin-bottom: 18px;
-        }
+.countdown-section {
+    padding: 80px 20px;
 
-        .location {
-            font-size: 22px;
-        }
+    background: #f8eeee;
+}
 
+.countdown-section h2 {
+    color: #b86f79;
 
-        /* ==========================================
-           GALLERY
-        ========================================== */
+    font-size: 43px;
 
-        .gallery {
-            padding: 90px 25px;
-            background: white;
-        }
+    margin-bottom: 15px;
+}
 
-        .gallery h2 {
-            color: #b86f79;
-            font-size: 48px;
-            margin-bottom: 20px;
-        }
+.countdown-subtitle {
+    font-size: 19px;
 
-        .gallery-description {
-            font-size: 20px;
-            line-height: 1.7;
-            margin-bottom: 45px;
-        }
+    margin-bottom: 40px;
+}
 
+.countdown {
+    display: flex;
 
-        /* ==========================================
-           PHOTOS
-        ========================================== */
+    justify-content: center;
 
-        .photos {
-            width: 100%;
-            max-width: 1250px;
+    flex-wrap: wrap;
 
-            margin: auto;
+    gap: 18px;
+}
 
-            display: grid;
+.count-box {
+    background: white;
 
-            grid-template-columns:
-                repeat(3, 1fr);
+    width: 145px;
 
-            gap: 25px;
-        }
+    padding: 25px 15px;
 
+    border-radius: 14px;
 
-        .photos img {
-            width: 100%;
-            height: 420px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.10);
+}
 
-            display: block;
+.count-number {
+    display: block;
 
-            object-fit: cover;
+    color: #b86f79;
 
-            border-radius: 14px;
+    font-size: 43px;
 
-            box-shadow:
-                0 8px 25px rgba(0,0,0,0.15);
+    font-weight: bold;
 
-            transition:
-                transform 0.3s ease,
-                box-shadow 0.3s ease;
-        }
+    margin-bottom: 7px;
+}
 
+.count-label {
+    font-size: 14px;
 
-        .photos img:hover {
-            transform: scale(1.02);
+    text-transform: uppercase;
 
-            box-shadow:
-                0 12px 30px rgba(0,0,0,0.20);
-        }
+    letter-spacing: 2px;
+}
 
 
-        /* ==========================================
-           FINAL MESSAGE
-        ========================================== */
+/* ==========================================
+   EVENTS
+========================================== */
 
-        .final {
-            padding: 100px 20px;
-            background: #f8eeee;
-        }
+.events {
+    padding: 90px 20px;
 
-        .final h2 {
-            color: #b86f79;
-            font-size: 48px;
-            margin-bottom: 25px;
-        }
+    background: #fffaf7;
+}
 
-        .final p {
-            font-size: 21px;
-            line-height: 1.8;
-        }
+.events-title {
+    color: #b86f79;
 
+    font-size: 48px;
 
-        /* ==========================================
-           MUSIC BUTTON
-        ========================================== */
+    margin-bottom: 50px;
+}
 
-        #musicButton {
-            position: fixed;
+.event-container {
+    max-width: 1000px;
 
-            right: 20px;
-            bottom: 20px;
+    margin: auto;
 
-            z-index: 9999;
+    display: grid;
 
-            padding: 15px 22px;
+    grid-template-columns: repeat(2, 1fr);
 
-            background: #b86f79;
+    gap: 30px;
+}
 
-            color: white;
+.event-card {
+    background: white;
 
-            border: 2px solid white;
+    padding: 50px 30px;
 
-            border-radius: 40px;
+    border-radius: 16px;
 
-            font-family: Georgia, serif;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.10);
+}
 
-            font-size: 16px;
+.event-icon {
+    font-size: 35px;
 
-            cursor: pointer;
+    margin-bottom: 20px;
+}
 
-            box-shadow:
-                0 5px 18px rgba(0,0,0,0.25);
-        }
+.event-card h3 {
+    color: #b86f79;
 
+    font-size: 32px;
 
-        #musicButton:hover {
-            background: #9f5d67;
-        }
+    margin-bottom: 25px;
+}
 
+.event-date {
+    font-size: 20px;
 
-        /* ==========================================
-           TABLET
-        ========================================== */
+    font-weight: bold;
 
-        @media (max-width: 950px) {
+    letter-spacing: 1px;
 
-            .photos {
-                grid-template-columns:
-                    repeat(2, 1fr);
-            }
+    margin-bottom: 15px;
+}
 
-        }
+.event-time {
+    font-size: 19px;
 
+    margin-bottom: 15px;
+}
 
-        /* ==========================================
-           MOBILE
-        ========================================== */
+.event-location {
+    font-size: 19px;
 
-        @media (max-width: 650px) {
+    line-height: 1.7;
+}
 
-            /*
-               On phones, showing the complete
-               cover is more important than filling
-               every pixel of the screen.
-            */
+.more-details {
+    margin-top: 20px;
 
-            .hero-image {
-                object-fit: contain;
-                object-position: center center;
-            }
+    font-size: 15px;
 
+    color: #8a7770;
 
-            .hero {
-                background: #182313;
-            }
+    font-style: italic;
+}
 
 
-            .welcome,
-            .details,
-            .gallery,
-            .final {
-                padding: 65px 18px;
-            }
+/* ==========================================
+   MEMORIES
+========================================== */
 
+.gallery {
+    padding: 90px 25px;
 
-            .welcome h1,
-            .details h2,
-            .gallery h2,
-            .final h2 {
-                font-size: 38px;
-            }
+    background: #f8eeee;
+}
 
+.gallery h2 {
+    color: #b86f79;
 
-            .photos {
-                grid-template-columns: 1fr;
-            }
+    font-size: 48px;
 
+    margin-bottom: 20px;
+}
 
-            .photos img {
-                height: auto;
-            }
+.gallery-description {
+    font-size: 20px;
 
+    line-height: 1.7;
 
-            #musicButton {
-                right: 12px;
-                bottom: 12px;
+    margin-bottom: 45px;
+}
 
-                padding: 12px 16px;
 
-                font-size: 14px;
-            }
+/* ==========================================
+   PHOTOS - 6 TOTAL
+========================================== */
 
-        }
+.photos {
+    width: 100%;
 
-    </style>
+    max-width: 1250px;
 
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 25px;
+}
+
+.photos img {
+    width: 100%;
+
+    height: 420px;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+
+    transition: transform 0.3s ease;
+}
+
+.photos img:hover {
+    transform: scale(1.02);
+}
+
+
+/* ==========================================
+   FINAL MESSAGE
+========================================== */
+
+.final {
+    padding: 100px 20px;
+
+    background: #fffaf7;
+}
+
+.final h2 {
+    color: #b86f79;
+
+    font-size: 48px;
+
+    margin-bottom: 25px;
+}
+
+.final p {
+    font-size: 21px;
+
+    line-height: 1.8;
+}
+
+
+/* ==========================================
+   MUSIC BUTTON
+========================================== */
+
+#musicButton {
+    position: fixed;
+
+    right: 20px;
+    bottom: 20px;
+
+    z-index: 9999;
+
+    background: #b86f79;
+
+    color: white;
+
+    border: 2px solid white;
+
+    border-radius: 40px;
+
+    padding: 15px 22px;
+
+    font-family: Georgia, serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+}
+
+#musicButton:hover {
+    background: #9f5d67;
+}
+
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width: 950px) {
+
+    .photos {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .event-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+    .hero-image {
+        object-fit: contain;
+
+        object-position: center center;
+    }
+
+    .hero {
+        background: #182313;
+    }
+
+    .welcome,
+    .countdown-section,
+    .events,
+    .gallery,
+    .final {
+        padding: 65px 18px;
+    }
+
+    .welcome h1 {
+        font-size: 38px;
+    }
+
+    .countdown-section h2,
+    .events-title,
+    .gallery h2,
+    .final h2 {
+        font-size: 36px;
+    }
+
+    .countdown {
+        gap: 10px;
+    }
+
+    .count-box {
+        width: calc(50% - 10px);
+
+        padding: 20px 10px;
+    }
+
+    .count-number {
+        font-size: 35px;
+    }
+
+    .photos {
+        grid-template-columns: 1fr;
+    }
+
+    .photos img {
+        height: auto;
+    }
+
+    #musicButton {
+        right: 12px;
+        bottom: 12px;
+
+        padding: 12px 16px;
+
+        font-size: 14px;
+    }
+}
+
+</style>
 </head>
 
 
 <body>
 
 
-    <!-- ==========================================
-         MUSIC
-    ========================================== -->
+<!-- ==========================================
+     MUSIC
+========================================== -->
 
-    <audio id="weddingMusic"
-           loop
-           preload="auto">
+<audio id="weddingMusic" loop preload="auto">
 
-        <source src="wedding.mp3"
-                type="audio/mpeg">
+    <source src="wedding.mp3" type="audio/mpeg">
 
-    </audio>
+</audio>
 
 
-    <button id="musicButton">
-        🎵 Play Music
-    </button>
+<button id="musicButton">
+    🎵 Play Music
+</button>
 
 
 
-    <!-- ==========================================
-         COVER
-    ========================================== -->
+<!-- ==========================================
+     COVER
+========================================== -->
 
-    <section class="hero">
+<section class="hero">
+
+    <img
+        class="hero-image"
+        src="https://zubintoms.github.io/Wedding-Invitation/images/CoverNew1.jpg"
+        alt="Nikitha Joemon and Tom Palakkadan Wedding"
+    >
+
+    <div class="hero-overlay"></div>
+
+    <a href="#welcome" class="scroll-down">
+        ↓
+    </a>
+
+</section>
 
 
-        <!--
-            DIRECT WORKING COVER IMAGE
 
-            This is intentionally a normal IMG tag.
-        -->
+<!-- ==========================================
+     WELCOME
+========================================== -->
+
+<section class="welcome" id="welcome">
+
+    <div class="small-title">
+        Together With Our Families
+    </div>
+
+    <h1>
+        Nikitha Joemon
+    </h1>
+
+    <div class="heart">
+        ♥
+    </div>
+
+    <h1>
+        Tom Palakkadan
+    </h1>
+
+    <p>
+        We are delighted to invite you to celebrate
+        this beautiful chapter of our lives.
+
+        <br><br>
+
+        Your presence will make our celebration
+        even more special.
+    </p>
+
+</section>
+
+
+
+<!-- ==========================================
+     COUNTDOWN
+========================================== -->
+
+<section class="countdown-section">
+
+    <h2>
+        Counting Down to Our Wedding ❤️
+    </h2>
+
+    <p class="countdown-subtitle">
+        Thursday, September 10, 2026
+    </p>
+
+
+    <div class="countdown">
+
+        <div class="count-box">
+
+            <span class="count-number" id="days">
+                00
+            </span>
+
+            <span class="count-label">
+                Days
+            </span>
+
+        </div>
+
+
+        <div class="count-box">
+
+            <span class="count-number" id="hours">
+                00
+            </span>
+
+            <span class="count-label">
+                Hours
+            </span>
+
+        </div>
+
+
+        <div class="count-box">
+
+            <span class="count-number" id="minutes">
+                00
+            </span>
+
+            <span class="count-label">
+                Minutes
+            </span>
+
+        </div>
+
+
+        <div class="count-box">
+
+            <span class="count-number" id="seconds">
+                00
+            </span>
+
+            <span class="count-label">
+                Seconds
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     WEDDING + RECEPTION
+========================================== -->
+
+<section class="events">
+
+    <h2 class="events-title">
+        Wedding Celebrations
+    </h2>
+
+
+    <div class="event-container">
+
+
+        <!-- WEDDING -->
+
+        <div class="event-card">
+
+            <div class="event-icon">
+                💍
+            </div>
+
+            <h3>
+                The Wedding
+            </h3>
+
+            <p class="event-date">
+                Thursday, September 10, 2026
+            </p>
+
+            <p class="event-location">
+                Muvattupuzha, Kerala
+            </p>
+
+            <p class="more-details">
+                Ceremony time and venue details
+                will be added soon.
+            </p>
+
+        </div>
+
+
+
+        <!-- RECEPTION -->
+
+        <div class="event-card">
+
+            <div class="event-icon">
+                🥂
+            </div>
+
+            <h3>
+                The Reception
+            </h3>
+
+            <p class="event-date">
+                Monday, September 14, 2026
+            </p>
+
+            <p class="event-time">
+                12:00 PM
+            </p>
+
+            <p class="event-location">
+
+                Casa Sanjo's Parish Hall
+
+                <br>
+
+                Thundiyil
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ==========================================
+     MEMORIES
+========================================== -->
+
+<section class="gallery">
+
+    <h2>
+        Our Memories
+    </h2>
+
+    <p class="gallery-description">
+
+        📸
+
+        <br><br>
+
+        A few beautiful moments
+        from our journey together.
+
+    </p>
+
+
+    <div class="photos">
+
 
         <img
-            class="hero-image"
-            src="https://zubintoms.github.io/Wedding-Invitation/images/CoverNew1.jpg"
-            alt="Nikitha and Tom Wedding"
+            src="images/Image 1.jpg"
+            alt="Nikitha and Tom"
+            loading="lazy"
         >
 
 
-        <div class="hero-overlay"></div>
+        <img
+            src="images/Image 2.jpg"
+            alt="Nikitha and Tom"
+            loading="lazy"
+        >
 
 
-        <a href="#welcome"
-           class="scroll-down">
+        <img
+            src="images/Image 3.jpg"
+            alt="Nikitha and Tom"
+            loading="lazy"
+        >
 
-            ↓
 
-        </a>
+        <img
+            src="images/Image 4.jpg"
+            alt="Nikitha and Tom"
+            loading="lazy"
+        >
 
 
-    </section>
+        <img
+            src="images/Image 5.jpg"
+            alt="Nikitha and Tom"
+            loading="lazy"
+        >
 
 
+        <img
+            src="images/Image 6.jpg"
+            alt="Nikitha and Tom"
+            loading="lazy"
+        >
 
-    <!-- ==========================================
-         WELCOME
-    ========================================== -->
 
-    <section class="welcome"
-             id="welcome">
+    </div>
 
+</section>
 
-        <h1>
-            Nikitha & Tom
-        </h1>
 
 
-        <div class="heart">
-            ♥
-        </div>
+<!-- ==========================================
+     FINAL MESSAGE
+========================================== -->
 
+<section class="final">
 
-        <p>
+    <h2>
+        Our Forever Begins ♥
+    </h2>
 
-            Together with our families,
-            we are delighted to celebrate
-            this beautiful chapter of our lives.
+    <p>
 
-            <br><br>
+        We cannot wait to celebrate
+        these beautiful moments with you.
 
-            We look forward to sharing our
-            wedding day with our family
-            and friends.
+        <br><br>
 
-        </p>
+        With love,
 
+        <br><br>
 
-    </section>
+        <strong>
+            Nikitha Joemon & Tom Palakkadan
+        </strong>
 
+    </p>
 
+</section>
 
-    <!-- ==========================================
-         WEDDING DETAILS
-    ========================================== -->
 
-    <section class="details">
 
+<!-- ==========================================
+     JAVASCRIPT
+========================================== -->
 
-        <h2>
-            Wedding Day
-        </h2>
+<script>
 
 
-        <h3>
-            Nikitha & Tom
-        </h3>
+/* ==========================================
+   COUNTDOWN
+========================================== */
 
+/*
+   Wedding date:
+   September 10, 2026
 
-        <p class="date">
-            SEPTEMBER 10, 2026
-        </p>
+   For now the countdown runs to midnight
+   at the beginning of September 10.
 
+   Once the exact wedding ceremony time
+   is confirmed, this can be changed.
+*/
 
-        <p class="location">
-            Kannur, Kerala
-        </p>
+const weddingDate =
+    new Date("September 10, 2026 00:00:00").getTime();
 
 
-    </section>
+function updateCountdown() {
 
+    const now =
+        new Date().getTime();
 
+    const distance =
+        weddingDate - now;
 
-    <!-- ==========================================
-         GALLERY
-    ========================================== -->
 
-    <section class="gallery">
+    if (distance <= 0) {
 
+        document.querySelector(".countdown").innerHTML =
+            "<h3>Today is our Wedding Day! ❤️</h3>";
 
-        <h2>
-            Our Memories
-        </h2>
+        return;
+    }
 
 
-        <p class="gallery-description">
-
-            📸
-
-            <br><br>
-
-            A few beautiful moments
-            from our journey together.
-
-        </p>
-
-
-
-        <div class="photos">
-
-
-            <img
-                src="images/Image 1.jpg"
-                alt="Nikitha and Tom"
-                loading="lazy"
-            >
-
-
-            <img
-                src="images/Image 2.jpg"
-                alt="Nikitha and Tom"
-                loading="lazy"
-            >
-
-
-            <img
-                src="images/Image 3.jpg"
-                alt="Nikitha and Tom"
-                loading="lazy"
-            >
-
-
-            <img
-                src="images/Image 4.jpg"
-                alt="Nikitha and Tom"
-                loading="lazy"
-            >
-
-
-            <img
-                src="images/Image 5.jpg"
-                alt="Nikitha and Tom"
-                loading="lazy"
-            >
-
-
-            <img
-                src="images/Image 6.jpg"
-                alt="Nikitha and Tom"
-                loading="lazy"
-            >
-
-
-            <img
-                src="images/Image 7.jpg"
-                alt="Nikitha and Tom"
-                loading="lazy"
-            >
-
-
-            <img
-                src="images/Image 8.jpg"
-                alt="Nikitha and Tom"
-                loading="lazy"
-            >
-
-
-        </div>
-
-
-    </section>
-
-
-
-    <!-- ==========================================
-         FINAL MESSAGE
-    ========================================== -->
-
-    <section class="final">
-
-
-        <h2>
-            Our Forever Begins ♥
-        </h2>
-
-
-        <p>
-
-            We cannot wait to celebrate
-            this beautiful moment with you.
-
-            <br><br>
-
-            With love,
-
-            <br><br>
-
-            <strong>
-                Nikitha & Tom
-            </strong>
-
-        </p>
-
-
-    </section>
-
-
-
-    <!-- ==========================================
-         MUSIC JAVASCRIPT
-    ========================================== -->
-
-    <script>
-
-
-        const music =
-            document.getElementById("weddingMusic");
-
-
-        const musicButton =
-            document.getElementById("musicButton");
-
-
-        music.volume = 0.55;
-
-
-
-        function updateMusicButton() {
-
-            if (music.paused) {
-
-                musicButton.innerHTML =
-                    "🎵 Play Music";
-
-            }
-
-            else {
-
-                musicButton.innerHTML =
-                    "Ⅱ Pause Music";
-
-            }
-
-        }
-
-
-
-        /*
-           Attempt autoplay.
-
-           Some browsers block autoplay with sound.
-        */
-
-        window.addEventListener(
-            "load",
-            function() {
-
-                const attempt =
-                    music.play();
-
-
-                if (attempt !== undefined) {
-
-                    attempt
-                        .then(function() {
-
-                            updateMusicButton();
-
-                        })
-
-                        .catch(function() {
-
-                            updateMusicButton();
-
-                        });
-
-                }
-
-            }
+    const days =
+        Math.floor(
+            distance / (1000 * 60 * 60 * 24)
         );
 
 
-
-        /*
-           Play / Pause button
-        */
-
-        musicButton.addEventListener(
-            "click",
-            function(event) {
-
-                event.stopPropagation();
+    const hours =
+        Math.floor(
+            (distance % (1000 * 60 * 60 * 24))
+            /
+            (1000 * 60 * 60)
+        );
 
 
-                if (music.paused) {
+    const minutes =
+        Math.floor(
+            (distance % (1000 * 60 * 60))
+            /
+            (1000 * 60)
+        );
 
-                    music.play();
 
-                }
+    const seconds =
+        Math.floor(
+            (distance % (1000 * 60))
+            /
+            1000
+        );
 
-                else {
 
-                    music.pause();
+    document.getElementById("days").innerText =
+        days;
 
-                }
 
+    document.getElementById("hours").innerText =
+        String(hours).padStart(2,"0");
+
+
+    document.getElementById("minutes").innerText =
+        String(minutes).padStart(2,"0");
+
+
+    document.getElementById("seconds").innerText =
+        String(seconds).padStart(2,"0");
+
+}
+
+
+updateCountdown();
+
+
+setInterval(
+    updateCountdown,
+    1000
+);
+
+
+
+/* ==========================================
+   MUSIC
+========================================== */
+
+const music =
+    document.getElementById("weddingMusic");
+
+
+const musicButton =
+    document.getElementById("musicButton");
+
+
+music.volume = 0.55;
+
+
+
+function updateMusicButton() {
+
+    if (music.paused) {
+
+        musicButton.innerHTML =
+            "🎵 Play Music";
+
+    }
+
+    else {
+
+        musicButton.innerHTML =
+            "Ⅱ Pause Music";
+
+    }
+
+}
+
+
+
+/*
+   Attempt autoplay when website opens.
+*/
+
+window.addEventListener(
+    "load",
+    function() {
+
+        const attempt =
+            music.play();
+
+
+        if (attempt !== undefined) {
+
+            attempt
+
+            .then(function() {
 
                 updateMusicButton();
 
-            }
-        );
+            })
+
+            .catch(function() {
+
+                updateMusicButton();
+
+            });
+
+        }
+
+    }
+);
 
 
 
-        /*
-           If autoplay was blocked,
-           the visitor's first click/touch
-           starts the wedding music.
-        */
+/*
+   Music Play / Pause button
+*/
 
-        function startMusic() {
+musicButton.addEventListener(
+    "click",
+    function(event) {
 
-            if (music.paused) {
+        event.stopPropagation();
 
-                music.play()
 
-                    .then(function() {
+        if (music.paused) {
 
-                        updateMusicButton();
+            music.play();
 
-                    })
+        }
 
-                    .catch(function() {
+        else {
 
-                    });
-
-            }
+            music.pause();
 
         }
 
 
+        updateMusicButton();
 
-        document.addEventListener(
-            "click",
-            startMusic,
-            { once: true }
-        );
+    }
+);
 
 
-        document.addEventListener(
-            "touchstart",
-            startMusic,
-            { once: true }
-        );
+
+/*
+   If browser blocks autoplay,
+   first click/touch on the page starts music.
+*/
+
+function startMusic() {
+
+    if (music.paused) {
+
+        music.play()
+
+        .then(function() {
+
+            updateMusicButton();
+
+        })
+
+        .catch(function() {
+
+        });
+
+    }
+
+}
 
 
-    </script>
+document.addEventListener(
+    "click",
+    startMusic,
+    { once: true }
+);
+
+
+document.addEventListener(
+    "touchstart",
+    startMusic,
+    { once: true }
+);
+
+
+</script>
 
 
 </body>
