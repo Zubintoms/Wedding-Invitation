@@ -4,15 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#172313">
 
 <title>Nikitha & Tom | Wedding Invitation</title>
 
 <style>
-
-/* =========================================
-   BASIC
-========================================= */
 
 * {
     margin: 0;
@@ -25,254 +20,210 @@ html {
 }
 
 body {
-    margin: 0;
     font-family: Georgia, "Times New Roman", serif;
     background: #fffaf6;
-    color: #473d38;
+    color: #493e39;
     overflow-x: hidden;
 }
 
-body.invitation-closed {
+body.no-scroll {
     overflow: hidden;
 }
 
 
-/* =========================================
+/* ==================================================
    OPEN INVITATION SCREEN
-========================================= */
+================================================== */
 
-#openingScreen {
+#invitationOverlay {
     position: fixed;
     inset: 0;
+    z-index: 99999;
 
     width: 100%;
     height: 100vh;
     height: 100svh;
 
-    z-index: 100000;
-
     display: flex;
-    justify-content: center;
     align-items: center;
-
-    padding: 25px;
+    justify-content: center;
 
     background:
         linear-gradient(
-            rgba(17, 35, 18, 0.90),
-            rgba(17, 35, 18, 0.96)
+            rgba(14, 27, 12, 0.45),
+            rgba(14, 27, 12, 0.70)
         ),
-        url("images/CoverNew2.jpg");
+        url("images/Cover-1.jpg");
 
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
 
     transition:
-        opacity 0.9s ease,
-        visibility 0.9s ease;
+        opacity 0.8s ease,
+        visibility 0.8s ease;
 }
 
-#openingScreen.hide {
+#invitationOverlay.hide {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
 }
 
-.opening-card {
-    width: 100%;
-    max-width: 480px;
+.invitation-box {
+    width: calc(100% - 40px);
+    max-width: 470px;
+
+    padding: 42px 25px;
 
     text-align: center;
 
     color: white;
 
-    padding: 50px 25px;
+    background: rgba(16, 31, 14, 0.60);
 
-    border-top: 1px solid rgba(224, 192, 122, 0.8);
-    border-bottom: 1px solid rgba(224, 192, 122, 0.8);
+    border: 1px solid rgba(229, 199, 128, 0.85);
+    border-radius: 20px;
+
+    box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+
+    backdrop-filter: blur(3px);
 }
 
-.opening-small {
-    color: #e0c07a;
-
-    font-size: 13px;
-
+.invitation-small {
+    font-size: 12px;
+    letter-spacing: 3px;
     text-transform: uppercase;
-
-    letter-spacing: 4px;
-
-    margin-bottom: 25px;
+    color: #e6c878;
+    margin-bottom: 20px;
 }
 
-.opening-card h1 {
-    font-size: 49px;
+.invitation-box h1 {
+    font-size: 46px;
+    line-height: 1.1;
     font-weight: normal;
-    line-height: 1.15;
 }
 
-.opening-and {
-    color: #e0c07a;
-
-    font-size: 31px;
-
+.invitation-heart {
+    color: #e6c878;
+    font-size: 28px;
     margin: 12px 0;
 }
 
-.opening-date {
+.invitation-date {
     margin-top: 25px;
-
-    font-size: 17px;
-
+    font-size: 15px;
     letter-spacing: 3px;
-
     text-transform: uppercase;
 }
 
-.opening-message {
-    max-width: 360px;
-
-    margin: 28px auto 0;
+.invitation-message {
+    max-width: 340px;
+    margin: 25px auto 0;
 
     font-size: 16px;
-
     line-height: 1.7;
-
-    color: #f8f3eb;
 }
 
-.open-button {
-    margin-top: 35px;
+#openInvitation {
+    margin-top: 30px;
 
-    padding: 16px 30px;
+    padding: 15px 28px;
 
     border: 2px solid white;
-
     border-radius: 50px;
 
-    background: #bc747e;
-
+    background: #b96f7a;
     color: white;
 
     font-family: Georgia, serif;
-
-    font-size: 18px;
-
+    font-size: 17px;
     font-weight: bold;
 
     cursor: pointer;
 
-    box-shadow: 0 8px 30px rgba(0,0,0,0.35);
-
-    transition: transform 0.25s ease,
-                background 0.25s ease;
-}
-
-.open-button:hover {
-    transform: scale(1.04);
-    background: #a85f69;
+    box-shadow: 0 7px 25px rgba(0,0,0,0.30);
 }
 
 
-/* =========================================
-   HERO
-========================================= */
+/* ==================================================
+   COVER
+================================================== */
 
 .hero {
     position: relative;
 
     width: 100%;
-
     height: 100vh;
     height: 100svh;
 
     min-height: 600px;
 
-    background: #142111;
+    background: #142312;
 
     overflow: hidden;
 
     display: flex;
-
-    justify-content: center;
-
     align-items: center;
+    justify-content: center;
 }
-
-
-/*
-IMPORTANT:
-
-The image is an actual IMG instead of
-a CSS background.
-
-This makes the cover easier to control.
-*/
 
 .hero-image {
     width: 100%;
     height: 100%;
 
     object-fit: cover;
-
     object-position: center center;
 
     display: block;
 }
 
-
-/* slight dark gradient only at bottom */
-
-.hero-gradient {
+.hero-overlay {
     position: absolute;
-
     inset: 0;
 
     background:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,0) 55%,
-            rgba(0,0,0,0.45) 100%
+            rgba(0,0,0,0.03) 50%,
+            rgba(0,0,0,0.42) 100%
         );
 
     pointer-events: none;
 }
 
 
-/* =========================================
-   SCROLL DOWN BUTTON
-========================================= */
+/* ==================================================
+   SCROLL BUTTON
+================================================== */
 
-.scroll-down {
+.scroll-button {
     position: absolute;
+
+    z-index: 10;
 
     left: 50%;
     bottom: 28px;
 
     transform: translateX(-50%);
 
-    z-index: 20;
-
-    display: inline-block;
-
     padding: 14px 23px;
 
-    background: rgba(188,116,126,0.95);
+    background: rgba(185,111,122,0.96);
 
     color: white;
 
     border: 2px solid white;
-
-    border-radius: 40px;
+    border-radius: 50px;
 
     text-decoration: none;
 
     font-size: 15px;
-
     font-weight: bold;
 
     white-space: nowrap;
 
-    box-shadow: 0 6px 22px rgba(0,0,0,0.30);
+    box-shadow: 0 7px 25px rgba(0,0,0,0.30);
 
     animation: bounce 2.2s infinite;
 }
@@ -289,26 +240,25 @@ This makes the cover easier to control.
 }
 
 
-/* =========================================
+/* ==================================================
    GENERAL SECTIONS
-========================================= */
+================================================== */
 
 .section {
-    padding: 90px 20px;
-
+    padding: 85px 20px;
     text-align: center;
 }
 
-.section-light {
+.light {
     background: #fffaf6;
 }
 
-.section-pink {
+.pink {
     background: #f7eeee;
 }
 
-.small-heading {
-    color: #9b8069;
+.small-title {
+    color: #927762;
 
     text-transform: uppercase;
 
@@ -316,26 +266,29 @@ This makes the cover easier to control.
 
     font-size: 13px;
 
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 }
 
 .section h2 {
-    color: #b86f79;
+    color: #b76e79;
 
-    font-size: 46px;
+    font-size: 44px;
 
     font-weight: normal;
 
     margin-bottom: 25px;
 }
 
+.heart {
+    color: #b76e79;
 
-/* =========================================
-   WELCOME
-========================================= */
+    font-size: 28px;
 
-.welcome-text {
-    max-width: 760px;
+    margin: 20px 0;
+}
+
+.intro {
+    max-width: 750px;
 
     margin: auto;
 
@@ -344,29 +297,19 @@ This makes the cover easier to control.
     line-height: 1.9;
 }
 
-.heart {
-    color: #b86f79;
 
-    font-size: 28px;
-
-    margin: 25px 0;
-}
-
-
-/* =========================================
+/* ==================================================
    COUPLE / PARENTS
-========================================= */
+================================================== */
 
 .couple-grid {
-    width: 100%;
-
     max-width: 950px;
 
     margin: 45px auto 0;
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
 
     gap: 28px;
 }
@@ -374,7 +317,7 @@ This makes the cover easier to control.
 .couple-card {
     background: white;
 
-    padding: 48px 30px;
+    padding: 45px 30px;
 
     border-radius: 18px;
 
@@ -382,37 +325,37 @@ This makes the cover easier to control.
 }
 
 .couple-card h3 {
-    color: #b86f79;
+    color: #b76e79;
 
     font-size: 32px;
 
     font-weight: normal;
 
-    margin-bottom: 22px;
+    margin-bottom: 20px;
 }
 
 .relationship {
-    color: #9b8069;
-
-    text-transform: uppercase;
-
-    letter-spacing: 2px;
+    color: #967b66;
 
     font-size: 13px;
 
-    margin-bottom: 14px;
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 15px;
 }
 
-.parent-names {
+.parents {
     font-size: 19px;
 
     line-height: 1.8;
 }
 
 
-/* =========================================
+/* ==================================================
    COUNTDOWN
-========================================= */
+================================================== */
 
 .countdown-description {
     font-size: 18px;
@@ -421,37 +364,41 @@ This makes the cover easier to control.
 }
 
 .countdown {
+    max-width: 700px;
+
+    margin: auto;
+
     display: flex;
 
     justify-content: center;
 
     flex-wrap: wrap;
 
-    gap: 15px;
+    gap: 14px;
 }
 
 .count-box {
-    width: 140px;
+    width: 145px;
+
+    padding: 25px 10px;
 
     background: #f7eeee;
 
     border-radius: 15px;
 
-    padding: 25px 10px;
-
-    box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
 }
 
 .count-number {
     display: block;
 
-    color: #b86f79;
+    color: #b76e79;
 
     font-size: 40px;
 
     font-weight: bold;
 
-    margin-bottom: 8px;
+    margin-bottom: 7px;
 }
 
 .count-label {
@@ -463,18 +410,18 @@ This makes the cover easier to control.
 }
 
 
-/* =========================================
+/* ==================================================
    EVENTS
-========================================= */
+================================================== */
 
-.events-grid {
+.events {
     max-width: 1000px;
 
     margin: 45px auto 0;
 
     display: grid;
 
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
 
     gap: 28px;
 }
@@ -482,7 +429,7 @@ This makes the cover easier to control.
 .event-card {
     background: white;
 
-    padding: 48px 30px;
+    padding: 45px 28px;
 
     border-radius: 18px;
 
@@ -490,69 +437,69 @@ This makes the cover easier to control.
 }
 
 .event-icon {
-    font-size: 36px;
+    font-size: 35px;
 
-    margin-bottom: 20px;
+    margin-bottom: 18px;
 }
 
 .event-card h3 {
-    color: #b86f79;
+    color: #b76e79;
 
     font-size: 31px;
 
     font-weight: normal;
 
-    margin-bottom: 25px;
+    margin-bottom: 23px;
 }
 
 .event-date {
-    font-size: 20px;
+    font-size: 19px;
 
     font-weight: bold;
 
-    margin-bottom: 13px;
+    line-height: 1.6;
+
+    margin-bottom: 12px;
 }
 
 .event-time {
     font-size: 19px;
 
-    margin-bottom: 13px;
+    margin-bottom: 12px;
 }
 
 .event-location {
-    font-size: 19px;
+    font-size: 18px;
 
     line-height: 1.7;
 }
 
-.coming-soon {
-    margin-top: 20px;
+.more-info {
+    color: #86736c;
 
-    color: #8a7770;
-
-    font-size: 15px;
+    font-size: 14px;
 
     font-style: italic;
+
+    margin-top: 18px;
 }
 
 
-/* =========================================
-   MEMORIES / PHOTOS
-========================================= */
+/* ==================================================
+   GALLERY
+================================================== */
 
-.gallery-intro {
+.gallery-text {
     max-width: 650px;
 
-    margin: 0 auto 42px;
+    margin: 0 auto 40px;
 
     font-size: 18px;
 
     line-height: 1.8;
 }
 
-.photos {
-    width: 100%;
-
+.gallery {
     max-width: 1250px;
 
     margin: auto;
@@ -564,14 +511,14 @@ This makes the cover easier to control.
     gap: 22px;
 }
 
-.photos img {
+.gallery img {
     width: 100%;
 
     height: 420px;
 
-    display: block;
-
     object-fit: cover;
+
+    display: block;
 
     border-radius: 14px;
 
@@ -579,24 +526,32 @@ This makes the cover easier to control.
 }
 
 
-/* =========================================
+/* ==================================================
    ENDING
-========================================= */
+================================================== */
 
 .ending {
-    padding: 100px 20px;
-
-    background: #182514;
-
-    color: white;
+    padding: 95px 20px;
 
     text-align: center;
+
+    background: #142312;
+
+    color: white;
+}
+
+.ending-heart {
+    color: #e0c17c;
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
 }
 
 .ending h2 {
-    color: #e0c07a;
+    color: #e0c17c;
 
-    font-size: 45px;
+    font-size: 43px;
 
     font-weight: normal;
 
@@ -614,32 +569,30 @@ This makes the cover easier to control.
 }
 
 
-/* =========================================
+/* ==================================================
    MUSIC BUTTON
-========================================= */
+================================================== */
 
 #musicButton {
     position: fixed;
 
-    right: 16px;
-    bottom: 16px;
+    right: 14px;
+    bottom: 14px;
 
     z-index: 5000;
 
     display: none;
 
-    padding: 13px 18px;
+    padding: 12px 17px;
 
     border: 2px solid white;
-
     border-radius: 35px;
 
-    background: #bc747e;
+    background: #b96f7a;
 
     color: white;
 
     font-family: Georgia, serif;
-
     font-size: 14px;
 
     cursor: pointer;
@@ -648,58 +601,57 @@ This makes the cover easier to control.
 }
 
 
-/* =========================================
+/* ==================================================
    TABLET
-========================================= */
+================================================== */
 
 @media (max-width: 900px) {
 
     .couple-grid,
-    .events-grid {
+    .events {
         grid-template-columns: 1fr;
     }
 
-    .photos {
+    .gallery {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
+/* ==================================================
+   PHONE
+================================================== */
 
 @media (max-width: 600px) {
 
-    .opening-card {
-        padding: 38px 15px;
+    .invitation-box {
+        width: calc(100% - 32px);
+
+        padding: 35px 18px;
     }
 
-    .opening-card h1 {
+    .invitation-box h1 {
         font-size: 39px;
     }
 
-    .opening-date {
-        font-size: 14px;
+    #invitationOverlay {
+        background-position: center center;
     }
 
 
     /*
-    COVERNEW2 IS A PORTRAIT IMAGE.
+    COVER ON PHONE
 
-    On phones we let it fill the entire
-    vertical screen.
+    Using cover keeps the entire phone screen filled.
     */
 
     .hero {
         height: 100svh;
-
-        min-height: 580px;
+        min-height: 600px;
     }
 
     .hero-image {
         width: 100%;
-
         height: 100%;
 
         object-fit: cover;
@@ -708,12 +660,12 @@ This makes the cover easier to control.
     }
 
 
-    .scroll-down {
-        bottom: 22px;
-
-        font-size: 14px;
+    .scroll-button {
+        bottom: 25px;
 
         padding: 12px 18px;
+
+        font-size: 14px;
     }
 
 
@@ -723,30 +675,30 @@ This makes the cover easier to control.
 
 
     .section h2 {
-        font-size: 35px;
+        font-size: 34px;
     }
 
 
-    .welcome-text {
+    .intro {
         font-size: 17px;
     }
 
 
     .couple-card,
     .event-card {
-        padding: 38px 20px;
+        padding: 37px 20px;
     }
 
 
     .countdown {
-        gap: 10px;
+        gap: 9px;
     }
 
 
     .count-box {
-        width: calc(50% - 8px);
+        width: calc(50% - 7px);
 
-        padding: 20px 8px;
+        padding: 20px 7px;
     }
 
 
@@ -755,16 +707,12 @@ This makes the cover easier to control.
     }
 
 
-    .photos {
+    .gallery {
         grid-template-columns: 1fr;
-
-        gap: 20px;
     }
 
 
-    .photos img {
-        width: 100%;
-
+    .gallery img {
         height: auto;
 
         object-fit: contain;
@@ -772,70 +720,72 @@ This makes the cover easier to control.
 
 
     .ending h2 {
-        font-size: 35px;
+        font-size: 34px;
     }
 
 
     #musicButton {
         right: 10px;
-
         bottom: 10px;
 
-        font-size: 12px;
+        padding: 10px 14px;
 
-        padding: 11px 14px;
+        font-size: 12px;
     }
 }
 
 </style>
+
 </head>
 
 
-<body class="invitation-closed">
+<body class="no-scroll">
 
 
-<!-- =========================================
-     MUSIC
-========================================= -->
+<!-- ==================================================
+     MUSIC FILE
+================================================== -->
 
 <audio id="weddingMusic" loop preload="auto">
+
     <source src="wedding.mp3" type="audio/mpeg">
+
 </audio>
 
 
 
-<!-- =========================================
-     OPEN INVITATION SCREEN
-========================================= -->
+<!-- ==================================================
+     OPEN INVITATION
+================================================== -->
 
-<div id="openingScreen">
+<div id="invitationOverlay">
 
-    <div class="opening-card">
+    <div class="invitation-box">
 
-        <div class="opening-small">
+        <div class="invitation-small">
             Together With Our Families
         </div>
 
         <h1>Nikitha</h1>
 
-        <div class="opening-and">
+        <div class="invitation-heart">
             ♥
         </div>
 
         <h1>Tom</h1>
 
-        <div class="opening-date">
+        <div class="invitation-date">
             September 10, 2026
         </div>
 
-        <p class="opening-message">
+        <p class="invitation-message">
+
             We joyfully invite you and your family
             to celebrate our wedding with us.
+
         </p>
 
-        <button
-            class="open-button"
-            id="openInvitation">
+        <button id="openInvitation">
 
             💌 Open Invitation
 
@@ -847,35 +797,34 @@ This makes the cover easier to control.
 
 
 
-<!-- =========================================
+<!-- ==================================================
      MUSIC CONTROL
-========================================= -->
+================================================== -->
 
 <button id="musicButton">
+
     Ⅱ Pause Music
+
 </button>
 
 
 
-<!-- =========================================
+<!-- ==================================================
      COVER
-========================================= -->
+================================================== -->
 
 <section class="hero">
 
-    <!-- EXACT NEW FILE NAME -->
-
     <img
-        src="images/CoverNew2.jpg"
         class="hero-image"
+        src="images/Cover-1.jpg"
         alt="Nikitha and Tom Wedding">
 
-    <div class="hero-gradient"></div>
-
+    <div class="hero-overlay"></div>
 
     <a
         href="#details"
-        class="scroll-down">
+        class="scroll-button">
 
         Scroll Down for Details ↓
 
@@ -885,38 +834,42 @@ This makes the cover easier to control.
 
 
 
-<!-- =========================================
+<!-- ==================================================
      WELCOME
-========================================= -->
+================================================== -->
 
 <section
-    class="section section-light"
+    class="section light"
     id="details">
 
-    <div class="small-heading">
+    <div class="small-title">
+
         Together With Our Families
+
     </div>
 
     <h2>
+
         We're Getting Married
+
     </h2>
 
     <div class="heart">
+
         ♥
+
     </div>
 
-    <p class="welcome-text">
+    <p class="intro">
 
-        With great joy and the blessings
-        of our families, we invite you
-        to celebrate the beginning of
+        With great joy and the blessings of our families,
+        we invite you to celebrate the beginning of
         our new journey together.
 
         <br><br>
 
-        Your presence and blessings
-        will make our celebration
-        even more special.
+        Your presence and blessings will make
+        our celebration even more special.
 
     </p>
 
@@ -924,18 +877,22 @@ This makes the cover easier to control.
 
 
 
-<!-- =========================================
-     COUPLE
-========================================= -->
+<!-- ==================================================
+     BRIDE AND GROOM
+================================================== -->
 
-<section class="section section-pink">
+<section class="section pink">
 
-    <div class="small-heading">
+    <div class="small-title">
+
         Bride & Groom
+
     </div>
 
     <h2>
+
         Meet the Couple
+
     </h2>
 
 
@@ -947,18 +904,24 @@ This makes the cover easier to control.
         <div class="couple-card">
 
             <div class="heart">
+
                 ♡
+
             </div>
 
             <h3>
+
                 Nikitha Joemon
+
             </h3>
 
             <div class="relationship">
+
                 Daughter of
+
             </div>
 
-            <div class="parent-names">
+            <div class="parents">
 
                 Mr. Joemon V Jacob
 
@@ -981,18 +944,24 @@ This makes the cover easier to control.
         <div class="couple-card">
 
             <div class="heart">
+
                 ♡
+
             </div>
 
             <h3>
+
                 Tom Palakkadan
+
             </h3>
 
             <div class="relationship">
+
                 Son of
+
             </div>
 
-            <div class="parent-names">
+            <div class="parents">
 
                 Binu Palakkadan
 
@@ -1015,37 +984,50 @@ This makes the cover easier to control.
 
 
 
-<!-- =========================================
+<!-- ==================================================
      COUNTDOWN
-========================================= -->
+================================================== -->
 
-<section class="section section-light">
+<section class="section light">
 
-    <div class="small-heading">
+    <div class="small-title">
+
         Save The Date
+
     </div>
 
     <h2>
+
         Counting Down to Our Wedding ❤️
+
     </h2>
 
     <p class="countdown-description">
+
         Thursday, September 10, 2026
+
     </p>
 
 
-    <div class="countdown">
+    <div
+        class="countdown"
+        id="countdown">
+
 
         <div class="count-box">
 
             <span
                 class="count-number"
                 id="days">
+
                 00
+
             </span>
 
             <span class="count-label">
+
                 Days
+
             </span>
 
         </div>
@@ -1056,11 +1038,15 @@ This makes the cover easier to control.
             <span
                 class="count-number"
                 id="hours">
+
                 00
+
             </span>
 
             <span class="count-label">
+
                 Hours
+
             </span>
 
         </div>
@@ -1071,11 +1057,15 @@ This makes the cover easier to control.
             <span
                 class="count-number"
                 id="minutes">
+
                 00
+
             </span>
 
             <span class="count-label">
+
                 Minutes
+
             </span>
 
         </div>
@@ -1086,14 +1076,19 @@ This makes the cover easier to control.
             <span
                 class="count-number"
                 id="seconds">
+
                 00
+
             </span>
 
             <span class="count-label">
+
                 Seconds
+
             </span>
 
         </div>
+
 
     </div>
 
@@ -1101,22 +1096,26 @@ This makes the cover easier to control.
 
 
 
-<!-- =========================================
-     WEDDING DETAILS
-========================================= -->
+<!-- ==================================================
+     WEDDING AND RECEPTION
+================================================== -->
 
-<section class="section section-pink">
+<section class="section pink">
 
-    <div class="small-heading">
+    <div class="small-title">
+
         Celebrate With Us
+
     </div>
 
     <h2>
+
         Wedding Celebrations
+
     </h2>
 
 
-    <div class="events-grid">
+    <div class="events">
 
 
         <!-- WEDDING -->
@@ -1124,17 +1123,23 @@ This makes the cover easier to control.
         <div class="event-card">
 
             <div class="event-icon">
+
                 💍
+
             </div>
 
             <h3>
+
                 The Wedding
+
             </h3>
 
             <div class="event-date">
 
                 Thursday
+
                 <br>
+
                 September 10, 2026
 
             </div>
@@ -1142,12 +1147,14 @@ This makes the cover easier to control.
             <div class="event-location">
 
                 Muvattupuzha
+
                 <br>
+
                 Kerala
 
             </div>
 
-            <div class="coming-soon">
+            <div class="more-info">
 
                 Ceremony time, church and exact
                 location details will be added soon.
@@ -1163,17 +1170,23 @@ This makes the cover easier to control.
         <div class="event-card">
 
             <div class="event-icon">
+
                 ✨
+
             </div>
 
             <h3>
+
                 The Reception
+
             </h3>
 
             <div class="event-date">
 
                 Monday
+
                 <br>
+
                 September 14, 2026
 
             </div>
@@ -1192,6 +1205,10 @@ This makes the cover easier to control.
 
                 Thundiyil
 
+                <br>
+
+                Kannur, Kerala
+
             </div>
 
         </div>
@@ -1203,65 +1220,74 @@ This makes the cover easier to control.
 
 
 
-<!-- =========================================
+<!-- ==================================================
      OUR MEMORIES
-========================================= -->
+================================================== -->
 
-<section class="section section-light">
+<section class="section light">
 
-    <div class="small-heading">
+    <div class="small-title">
+
         Our Journey
+
     </div>
 
     <h2>
+
         Our Memories
+
     </h2>
 
-    <p class="gallery-intro">
+    <p class="gallery-text">
 
         📸
 
         <br><br>
 
-        A few beautiful moments
-        from our journey together.
+        A few beautiful moments from
+        our journey together.
 
     </p>
 
 
-    <!-- EXACTLY 6 PHOTOS -->
+    <div class="gallery">
 
-    <div class="photos">
 
         <img
             src="images/Image 1.jpg"
             alt="Nikitha and Tom"
             loading="lazy">
 
+
         <img
             src="images/Image 2.jpg"
             alt="Nikitha and Tom"
             loading="lazy">
+
 
         <img
             src="images/Image 3.jpg"
             alt="Nikitha and Tom"
             loading="lazy">
 
+
         <img
             src="images/Image 4.jpg"
             alt="Nikitha and Tom"
             loading="lazy">
+
 
         <img
             src="images/Image 5.jpg"
             alt="Nikitha and Tom"
             loading="lazy">
 
+
         <img
             src="images/Image 6.jpg"
             alt="Nikitha and Tom"
             loading="lazy">
+
 
     </div>
 
@@ -1269,18 +1295,22 @@ This makes the cover easier to control.
 
 
 
-<!-- =========================================
-     END
-========================================= -->
+<!-- ==================================================
+     ENDING
+================================================== -->
 
 <section class="ending">
 
-    <div class="heart">
+    <div class="ending-heart">
+
         ♥
+
     </div>
 
     <h2>
+
         Our Forever Begins
+
     </h2>
 
     <p>
@@ -1295,7 +1325,9 @@ This makes the cover easier to control.
         <br><br>
 
         <strong>
+
             Nikitha Joemon & Tom Palakkadan
+
         </strong>
 
     </p>
@@ -1304,130 +1336,160 @@ This makes the cover easier to control.
 
 
 
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
 <script>
 
-/* =========================================
-   MUSIC
-========================================= */
 
-const music =
+/* ==================================================
+   ELEMENTS
+================================================== */
+
+const invitationOverlay =
+    document.getElementById("invitationOverlay");
+
+const openInvitation =
+    document.getElementById("openInvitation");
+
+const weddingMusic =
     document.getElementById("weddingMusic");
 
 const musicButton =
     document.getElementById("musicButton");
 
-const openButton =
-    document.getElementById("openInvitation");
 
-const openingScreen =
-    document.getElementById("openingScreen");
-
-
-music.volume = 0.55;
+weddingMusic.volume = 0.55;
 
 
 
-/* =========================================
+/* ==================================================
    OPEN INVITATION
-========================================= */
+================================================== */
 
-openButton.addEventListener("click", function () {
+openInvitation.addEventListener(
+    "click",
+    function () {
 
-    /*
-    The guest's tap allows us to request
-    audio playback.
-    */
-
-    music.play()
-    .then(function () {
-
-        musicButton.textContent =
-            "Ⅱ Pause Music";
-
-    })
-    .catch(function () {
 
         /*
-        If a particular browser still
-        blocks playback, the guest can
-        use the music button.
+        Start music from the same tap used
+        to open the invitation.
+
+        This is important because Chrome,
+        Safari and other mobile browsers
+        normally block audio before the
+        visitor interacts with the page.
         */
 
-        musicButton.textContent =
-            "🎵 Play Music";
+        weddingMusic.play()
 
-    });
+        .then(function () {
 
+            musicButton.innerHTML =
+                "Ⅱ Pause Music";
 
-    /*
-    Fade away opening invitation.
-    */
+        })
 
-    openingScreen.classList.add("hide");
+        .catch(function () {
 
+            musicButton.innerHTML =
+                "🎵 Play Music";
 
-    /*
-    Allow scrolling.
-    */
-
-    document.body.classList.remove(
-        "invitation-closed"
-    );
-
-
-    /*
-    Show music control.
-    */
-
-    musicButton.style.display = "block";
-
-
-    /*
-    Start at top of cover.
-    */
-
-    window.scrollTo(0, 0);
-
-});
+        });
 
 
 
-/* =========================================
-   PLAY / PAUSE MUSIC
-========================================= */
+        /*
+        Hide opening screen
+        */
 
-musicButton.addEventListener("click", function () {
+        invitationOverlay.classList.add(
+            "hide"
+        );
 
-    if (music.paused) {
 
-        music.play();
 
-        musicButton.textContent =
-            "Ⅱ Pause Music";
+        /*
+        Enable scrolling
+        */
 
-    } else {
+        document.body.classList.remove(
+            "no-scroll"
+        );
 
-        music.pause();
 
-        musicButton.textContent =
-            "🎵 Play Music";
+
+        /*
+        Show music control
+        */
+
+        musicButton.style.display =
+            "block";
+
+
+
+        /*
+        Start at top of cover
+        */
+
+        window.scrollTo({
+            top: 0,
+            behavior: "instant"
+        });
 
     }
-
-});
-
+);
 
 
-/* =========================================
+
+/* ==================================================
+   MUSIC BUTTON
+================================================== */
+
+musicButton.addEventListener(
+    "click",
+    function () {
+
+
+        if (weddingMusic.paused) {
+
+
+            weddingMusic.play();
+
+
+            musicButton.innerHTML =
+                "Ⅱ Pause Music";
+
+
+        } else {
+
+
+            weddingMusic.pause();
+
+
+            musicButton.innerHTML =
+                "🎵 Play Music";
+
+        }
+
+    }
+);
+
+
+
+/* ==================================================
    COUNTDOWN
-========================================= */
+================================================== */
 
 /*
-The exact wedding ceremony time is
-not confirmed yet.
+The exact wedding ceremony time has
+not yet been added.
 
-For now countdown is to the start of
-September 10, 2026 in India.
+For now the countdown finishes at
+12:00 AM Kerala time on
+September 10, 2026.
 */
 
 const weddingDate =
@@ -1439,22 +1501,30 @@ const weddingDate =
 
 function updateCountdown() {
 
+
     const now =
         new Date().getTime();
+
 
     const distance =
         weddingDate - now;
 
 
+
     if (distance <= 0) {
 
-        document.querySelector(
-            ".countdown"
+
+        document.getElementById(
+            "countdown"
         ).innerHTML =
-            "<h3>Today is our Wedding Day! ❤️</h3>";
+
+            "<h3 style='color:#b76e79;font-size:30px;'>Today is our Wedding Day! ❤️</h3>";
+
 
         return;
+
     }
+
 
 
     const days =
@@ -1462,6 +1532,7 @@ function updateCountdown() {
             distance /
             (1000 * 60 * 60 * 24)
         );
+
 
 
     const hours =
@@ -1473,6 +1544,7 @@ function updateCountdown() {
         );
 
 
+
     const minutes =
         Math.floor(
             (distance %
@@ -1480,6 +1552,7 @@ function updateCountdown() {
             /
             (1000 * 60)
         );
+
 
 
     const seconds =
@@ -1491,9 +1564,12 @@ function updateCountdown() {
         );
 
 
+
     document.getElementById(
         "days"
-    ).textContent = days;
+    ).textContent =
+        days;
+
 
 
     document.getElementById(
@@ -1502,10 +1578,12 @@ function updateCountdown() {
         String(hours).padStart(2, "0");
 
 
+
     document.getElementById(
         "minutes"
     ).textContent =
         String(minutes).padStart(2, "0");
+
 
 
     document.getElementById(
@@ -1518,12 +1596,16 @@ function updateCountdown() {
 
 updateCountdown();
 
+
 setInterval(
     updateCountdown,
     1000
 );
 
+
 </script>
 
+
 </body>
+
 </html>
