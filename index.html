@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#172313">
 
-<title>Nikitha & Tom | Wedding Invitation</title>
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<meta name="theme-color"
+content="#172313">
+
+<title>
+Nikitha & Tom | Wedding Invitation
+</title>
+
 
 <style>
+
+/* ===============================
+   BASIC
+================================ */
+
 * {
     margin: 0;
     padding: 0;
@@ -19,211 +33,302 @@ html {
 }
 
 body {
+    margin: 0;
     font-family: Georgia, "Times New Roman", serif;
     background: #fffaf6;
     color: #493e39;
     overflow-x: hidden;
 }
 
-body.invite-locked {
-    overflow: hidden;
-}
 
-/* ==============================
-   OPEN INVITATION SCREEN
-============================== */
+/* ===============================
+   OPEN INVITATION
+================================ */
 
 #invitationOverlay {
+
     position: fixed;
-    inset: 0;
-    z-index: 999999;
+
+    top: 0;
+    left: 0;
+
     width: 100%;
     height: 100vh;
-    height: 100dvh;
+    height: 100svh;
+
+    z-index: 999999;
 
     display: flex;
+
     align-items: center;
     justify-content: center;
 
     background:
+
         linear-gradient(
-            rgba(10, 25, 10, 0.20),
-            rgba(10, 25, 10, 0.65)
+            rgba(10,25,10,0.30),
+            rgba(10,25,10,0.68)
         ),
+
         url("images/Cover-1.jpg");
 
     background-size: cover;
+
     background-position: center center;
+
     background-repeat: no-repeat;
 }
 
-#invitationOverlay.opened {
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transition: opacity 0.7s ease, visibility 0.7s ease;
-}
 
 .invitation-box {
+
     width: calc(100% - 36px);
+
     max-width: 460px;
 
-    padding: 42px 25px;
+    padding: 40px 22px;
 
     text-align: center;
 
-    background: rgba(20, 35, 18, 0.68);
-
-    border: 1px solid #dfc47c;
-    border-radius: 22px;
-
     color: white;
 
-    box-shadow: 0 15px 45px rgba(0,0,0,0.40);
+    background:
+        rgba(18,35,16,0.67);
+
+    border:
+        1px solid #dfc47c;
+
+    border-radius: 22px;
+
+    box-shadow:
+        0 15px 45px
+        rgba(0,0,0,0.40);
 }
 
+
 .invitation-small {
+
     color: #e8cc83;
+
     font-size: 12px;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
+
     margin-bottom: 20px;
 }
 
+
 .invitation-box h1 {
-    font-size: 46px;
+
+    font-size: 45px;
+
     font-weight: normal;
+
     line-height: 1.1;
 }
 
+
 .invitation-heart {
+
     color: #e6c878;
-    font-size: 27px;
-    margin: 13px 0;
+
+    font-size: 28px;
+
+    margin: 12px 0;
 }
 
+
 .invitation-date {
+
     margin-top: 23px;
+
     font-size: 15px;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
 }
 
+
 .invitation-message {
-    margin: 23px auto 0;
+
     max-width: 330px;
 
+    margin: 23px auto 0;
+
     font-size: 16px;
+
     line-height: 1.7;
 }
 
+
 #openInvitation {
+
     display: inline-block;
 
     margin-top: 28px;
+
     padding: 15px 30px;
 
-    border: 2px solid white;
-    border-radius: 50px;
-
     background: #b96f7a;
+
     color: white;
 
-    font-family: Georgia, serif;
+    border: 2px solid white;
+
+    border-radius: 50px;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
     font-size: 17px;
+
     font-weight: bold;
 
     cursor: pointer;
 
-    box-shadow: 0 7px 25px rgba(0,0,0,0.30);
+    touch-action: manipulation;
+
+    box-shadow:
+        0 7px 25px
+        rgba(0,0,0,0.30);
 }
 
-/* ==============================
-   HERO / COVER
-============================== */
+
+/* ===============================
+   HERO
+================================ */
 
 .hero {
+
     position: relative;
 
     width: 100%;
+
     height: 100vh;
-    height: 100dvh;
+    height: 100svh;
+
     min-height: 600px;
 
     background: #142312;
 
     overflow: hidden;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
 }
 
+
 .hero-image {
+
     width: 100%;
+
     height: 100%;
 
     object-fit: cover;
+
     object-position: center center;
 
     display: block;
 }
 
+
 .hero-overlay {
+
     position: absolute;
+
     inset: 0;
 
-    background: linear-gradient(
-        to bottom,
-        transparent 50%,
-        rgba(0,0,0,0.40) 100%
-    );
+    background:
+
+        linear-gradient(
+
+            to bottom,
+
+            rgba(0,0,0,0.00) 50%,
+
+            rgba(0,0,0,0.38) 100%
+
+        );
+
+    pointer-events: none;
 }
 
+
 .scroll-button {
+
     position: absolute;
-    z-index: 10;
+
+    z-index: 20;
 
     left: 50%;
+
     bottom: 28px;
 
-    transform: translateX(-50%);
+    transform:
+        translateX(-50%);
 
     padding: 14px 23px;
 
     background: #b96f7a;
+
     color: white;
 
     border: 2px solid white;
+
     border-radius: 50px;
 
     text-decoration: none;
 
     font-size: 15px;
+
     font-weight: bold;
 
     white-space: nowrap;
 
-    box-shadow: 0 7px 25px rgba(0,0,0,0.30);
+    box-shadow:
+        0 7px 25px
+        rgba(0,0,0,0.30);
 }
 
-/* ==============================
+
+/* ===============================
    GENERAL SECTIONS
-============================== */
+================================ */
 
 .section {
+
     padding: 85px 20px;
+
     text-align: center;
 }
 
+
 .light {
+
     background: #fffaf6;
 }
 
+
 .pink {
+
     background: #f7eeee;
 }
 
+
 .small-title {
+
     color: #927762;
 
     text-transform: uppercase;
+
     letter-spacing: 4px;
 
     font-size: 13px;
@@ -231,16 +336,21 @@ body.invite-locked {
     margin-bottom: 17px;
 }
 
+
 .section h2 {
+
     color: #b76e79;
 
     font-size: 44px;
+
     font-weight: normal;
 
     margin-bottom: 25px;
 }
 
+
 .heart {
+
     color: #b76e79;
 
     font-size: 28px;
@@ -248,51 +358,66 @@ body.invite-locked {
     margin: 20px 0;
 }
 
+
 .intro {
+
     max-width: 750px;
 
     margin: auto;
 
     font-size: 19px;
+
     line-height: 1.9;
 }
 
-/* ==============================
+
+/* ===============================
    COUPLE
-============================== */
+================================ */
 
 .couple-grid {
+
     max-width: 950px;
 
     margin: 45px auto 0;
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 28px;
 }
 
+
 .couple-card {
+
     background: white;
 
     padding: 45px 30px;
 
     border-radius: 18px;
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.07);
 }
 
+
 .couple-card h3 {
+
     color: #b76e79;
 
     font-size: 32px;
+
     font-weight: normal;
 
     margin-bottom: 20px;
 }
 
+
 .relationship {
+
     color: #967b66;
 
     font-size: 13px;
@@ -304,13 +429,17 @@ body.invite-locked {
     margin-bottom: 15px;
 }
 
+
 .parents {
+
     font-size: 19px;
 
     line-height: 1.8;
 }
 
+
 .family-address {
+
     margin-top: 15px;
 
     color: #7d7069;
@@ -320,11 +449,13 @@ body.invite-locked {
     line-height: 1.7;
 }
 
-/* ==============================
+
+/* ===============================
    COUNTDOWN
-============================== */
+================================ */
 
 .countdown-description {
+
     font-size: 18px;
 
     line-height: 1.7;
@@ -332,7 +463,9 @@ body.invite-locked {
     margin-bottom: 38px;
 }
 
+
 .countdown {
+
     max-width: 700px;
 
     margin: auto;
@@ -346,7 +479,9 @@ body.invite-locked {
     gap: 14px;
 }
 
+
 .count-box {
+
     width: 145px;
 
     padding: 25px 10px;
@@ -355,10 +490,14 @@ body.invite-locked {
 
     border-radius: 15px;
 
-    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,0.06);
 }
 
+
 .count-number {
+
     display: block;
 
     color: #b76e79;
@@ -370,7 +509,9 @@ body.invite-locked {
     margin-bottom: 7px;
 }
 
+
 .count-label {
+
     font-size: 12px;
 
     text-transform: uppercase;
@@ -378,39 +519,50 @@ body.invite-locked {
     letter-spacing: 2px;
 }
 
-/* ==============================
+
+/* ===============================
    EVENTS
-============================== */
+================================ */
 
 .events {
+
     max-width: 1000px;
 
     margin: 45px auto 0;
 
     display: grid;
 
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns:
+        1fr 1fr;
 
     gap: 28px;
 }
 
+
 .event-card {
+
     background: white;
 
     padding: 45px 28px;
 
     border-radius: 18px;
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    box-shadow:
+        0 8px 25px
+        rgba(0,0,0,0.07);
 }
 
+
 .event-icon {
+
     font-size: 35px;
 
     margin-bottom: 18px;
 }
 
+
 .event-card h3 {
+
     color: #b76e79;
 
     font-size: 31px;
@@ -420,7 +572,9 @@ body.invite-locked {
     margin-bottom: 23px;
 }
 
+
 .event-date {
+
     font-size: 19px;
 
     font-weight: bold;
@@ -430,7 +584,9 @@ body.invite-locked {
     margin-bottom: 12px;
 }
 
+
 .event-time {
+
     font-size: 21px;
 
     color: #b76e79;
@@ -440,13 +596,17 @@ body.invite-locked {
     margin-bottom: 16px;
 }
 
+
 .event-location {
+
     font-size: 18px;
 
     line-height: 1.7;
 }
 
+
 .map-button {
+
     display: inline-block;
 
     margin-top: 25px;
@@ -466,33 +626,41 @@ body.invite-locked {
     font-weight: bold;
 }
 
-/* ==============================
+
+/* ===============================
    GALLERY
-============================== */
+================================ */
 
 .gallery-text {
+
     max-width: 650px;
 
-    margin: 0 auto 40px;
+    margin:
+        0 auto 40px;
 
     font-size: 18px;
 
     line-height: 1.8;
 }
 
+
 .gallery {
+
     max-width: 1250px;
 
     margin: auto;
 
     display: grid;
 
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns:
+        repeat(3,1fr);
 
     gap: 22px;
 }
 
+
 .gallery img {
+
     width: 100%;
 
     height: 420px;
@@ -503,14 +671,18 @@ body.invite-locked {
 
     border-radius: 14px;
 
-    box-shadow: 0 7px 22px rgba(0,0,0,0.13);
+    box-shadow:
+        0 7px 22px
+        rgba(0,0,0,0.13);
 }
 
-/* ==============================
+
+/* ===============================
    ENDING
-============================== */
+================================ */
 
 .ending {
+
     padding: 95px 20px;
 
     text-align: center;
@@ -520,7 +692,9 @@ body.invite-locked {
     color: white;
 }
 
+
 .ending-heart {
+
     color: #e0c17c;
 
     font-size: 30px;
@@ -528,7 +702,9 @@ body.invite-locked {
     margin-bottom: 20px;
 }
 
+
 .ending h2 {
+
     color: #e0c17c;
 
     font-size: 43px;
@@ -538,7 +714,9 @@ body.invite-locked {
     margin-bottom: 25px;
 }
 
+
 .ending p {
+
     max-width: 650px;
 
     margin: auto;
@@ -548,14 +726,17 @@ body.invite-locked {
     line-height: 1.9;
 }
 
-/* ==============================
+
+/* ===============================
    MUSIC BUTTON
-============================== */
+================================ */
 
 #musicButton {
+
     position: fixed;
 
     right: 14px;
+
     bottom: 14px;
 
     z-index: 5000;
@@ -572,180 +753,283 @@ body.invite-locked {
 
     color: white;
 
-    font-family: Georgia, serif;
+    font-family:
+        Georgia,
+        serif;
 
     font-size: 14px;
 
     cursor: pointer;
 
-    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+    box-shadow:
+        0 5px 18px
+        rgba(0,0,0,0.25);
 }
 
-/* ==============================
+
+/* ===============================
    TABLET
-============================== */
+================================ */
 
 @media (max-width: 900px) {
 
     .couple-grid,
     .events {
+
         grid-template-columns: 1fr;
+
     }
+
 
     .gallery {
-        grid-template-columns: repeat(2, 1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
+
 }
 
-/* ==============================
+
+/* ===============================
    MOBILE
-============================== */
+================================ */
 
 @media (max-width: 600px) {
 
     #invitationOverlay {
-        background-position: center center;
+
+        background-position:
+            center center;
+
     }
+
 
     .invitation-box {
-        width: calc(100% - 28px);
 
-        padding: 34px 18px;
+        width:
+            calc(100% - 28px);
+
+        padding:
+            34px 18px;
+
     }
+
 
     .invitation-box h1 {
+
         font-size: 39px;
+
     }
+
 
     .hero {
-        height: 100dvh;
+
+        height: 100svh;
 
         min-height: 600px;
+
     }
 
+
     .hero-image {
+
         width: 100%;
 
         height: 100%;
 
         object-fit: cover;
 
-        object-position: center center;
+        object-position:
+            center center;
+
     }
+
 
     .scroll-button {
+
         bottom: 24px;
 
-        padding: 12px 18px;
+        padding:
+            12px 18px;
 
         font-size: 14px;
+
     }
+
 
     .section {
-        padding: 65px 17px;
+
+        padding:
+            65px 17px;
+
     }
+
 
     .section h2 {
+
         font-size: 34px;
+
     }
 
+
     .intro {
+
         font-size: 17px;
+
     }
+
 
     .couple-card,
     .event-card {
-        padding: 37px 20px;
+
+        padding:
+            37px 20px;
+
     }
+
 
     .countdown {
+
         gap: 9px;
+
     }
+
 
     .count-box {
-        width: calc(50% - 7px);
 
-        padding: 20px 7px;
+        width:
+            calc(50% - 7px);
+
+        padding:
+            20px 7px;
+
     }
+
 
     .count-number {
+
         font-size: 34px;
+
     }
+
 
     .gallery {
+
         grid-template-columns: 1fr;
+
     }
 
+
     .gallery img {
+
+        width: 100%;
+
         height: auto;
 
         object-fit: contain;
+
     }
+
 
     .ending h2 {
+
         font-size: 34px;
+
     }
 
+
     #musicButton {
+
         right: 10px;
 
         bottom: 10px;
 
-        padding: 10px 14px;
+        padding:
+            10px 14px;
 
         font-size: 12px;
+
     }
+
 }
 
 </style>
+
 </head>
 
 
-<body class="invite-locked">
+<body>
 
 
-<!-- ==============================
+<!-- =================================
      MUSIC
-============================== -->
+================================= -->
 
-<audio id="weddingMusic" loop preload="auto">
-    <source src="wedding.mp3" type="audio/mpeg">
+<audio
+    id="weddingMusic"
+    loop
+    preload="auto">
+
+    <source
+        src="wedding.mp3"
+        type="audio/mpeg">
+
 </audio>
 
 
-<!-- ==============================
+<!-- =================================
      OPEN INVITATION
-============================== -->
+================================= -->
 
 <div id="invitationOverlay">
 
     <div class="invitation-box">
 
         <div class="invitation-small">
+
             Together With Our Families
+
         </div>
 
-        <h1>Nikitha</h1>
+
+        <h1>
+            Nikitha
+        </h1>
+
 
         <div class="invitation-heart">
             ♥
         </div>
 
-        <h1>Tom</h1>
+
+        <h1>
+            Tom
+        </h1>
+
 
         <div class="invitation-date">
+
             September 10, 2026
+
         </div>
 
+
         <p class="invitation-message">
+
             We joyfully invite you and your family
             to celebrate our wedding with us.
+
         </p>
+
 
         <button
             id="openInvitation"
-            type="button">
+            type="button"
+            onclick="openWedding()">
+
             💌 Open Invitation
+
         </button>
 
     </div>
@@ -753,87 +1037,112 @@ body.invite-locked {
 </div>
 
 
-<!-- ==============================
-     MUSIC BUTTON
-============================== -->
+<!-- =================================
+     MUSIC CONTROL
+================================= -->
 
 <button
     id="musicButton"
-    type="button">
+    type="button"
+    onclick="toggleMusic()">
+
     Ⅱ Pause Music
+
 </button>
 
 
-<!-- ==============================
+<!-- =================================
      COVER
-============================== -->
+================================= -->
 
 <section class="hero">
 
     <img
         class="hero-image"
         src="images/Cover-1.jpg"
-        alt="Nikitha and Tom">
+        alt="Nikitha and Tom Wedding">
+
 
     <div class="hero-overlay"></div>
+
 
     <a
         href="#details"
         class="scroll-button">
+
         Scroll Down for Details ↓
+
     </a>
 
 </section>
 
 
-<!-- ==============================
-     INTRO
-============================== -->
+<!-- =================================
+     INTRODUCTION
+================================= -->
 
 <section
     class="section light"
     id="details">
 
+
     <div class="small-title">
+
         Together With Our Families
+
     </div>
+
 
     <h2>
+
         We're Getting Married
+
     </h2>
 
+
     <div class="heart">
+
         ♥
+
     </div>
+
 
     <p class="intro">
 
-        With great joy and the blessings of our families,
-        we invite you to celebrate the beginning of
+        With great joy and the blessings
+        of our families, we invite you
+        to celebrate the beginning of
         our new journey together.
 
         <br><br>
 
-        Your presence and blessings will make
-        our celebration even more special.
+        Your presence and blessings
+        will make our celebration
+        even more special.
 
     </p>
 
 </section>
 
 
-<!-- ==============================
+<!-- =================================
      BRIDE & GROOM
-============================== -->
+================================= -->
 
 <section class="section pink">
 
+
     <div class="small-title">
+
         Bride & Groom
+
     </div>
 
+
     <h2>
+
         Meet the Couple
+
     </h2>
 
 
@@ -844,17 +1153,27 @@ body.invite-locked {
 
         <div class="couple-card">
 
+
             <div class="heart">
+
                 ♡
+
             </div>
+
 
             <h3>
+
                 Nikitha Joemon
+
             </h3>
 
+
             <div class="relationship">
+
                 Daughter of
+
             </div>
+
 
             <div class="parents">
 
@@ -870,6 +1189,7 @@ body.invite-locked {
 
             </div>
 
+
         </div>
 
 
@@ -877,17 +1197,27 @@ body.invite-locked {
 
         <div class="couple-card">
 
+
             <div class="heart">
+
                 ♡
+
             </div>
+
 
             <h3>
+
                 Tom Palakkadan
+
             </h3>
 
+
             <div class="relationship">
+
                 Son of
+
             </div>
+
 
             <div class="parents">
 
@@ -903,6 +1233,7 @@ body.invite-locked {
 
             </div>
 
+
             <div class="family-address">
 
                 Palakkadan House
@@ -913,6 +1244,7 @@ body.invite-locked {
 
             </div>
 
+
         </div>
 
 
@@ -921,19 +1253,26 @@ body.invite-locked {
 </section>
 
 
-<!-- ==============================
+<!-- =================================
      COUNTDOWN
-============================== -->
+================================= -->
 
 <section class="section light">
 
+
     <div class="small-title">
+
         Save The Date
+
     </div>
 
+
     <h2>
+
         Counting Down to Our Wedding ❤️
+
     </h2>
+
 
     <p class="countdown-description">
 
@@ -956,11 +1295,15 @@ body.invite-locked {
             <span
                 class="count-number"
                 id="days">
+
                 00
+
             </span>
 
             <span class="count-label">
+
                 Days
+
             </span>
 
         </div>
@@ -971,11 +1314,15 @@ body.invite-locked {
             <span
                 class="count-number"
                 id="hours">
+
                 00
+
             </span>
 
             <span class="count-label">
+
                 Hours
+
             </span>
 
         </div>
@@ -986,11 +1333,15 @@ body.invite-locked {
             <span
                 class="count-number"
                 id="minutes">
+
                 00
+
             </span>
 
             <span class="count-label">
+
                 Minutes
+
             </span>
 
         </div>
@@ -1001,11 +1352,15 @@ body.invite-locked {
             <span
                 class="count-number"
                 id="seconds">
+
                 00
+
             </span>
 
             <span class="count-label">
+
                 Seconds
+
             </span>
 
         </div>
@@ -1016,18 +1371,24 @@ body.invite-locked {
 </section>
 
 
-<!-- ==============================
+<!-- =================================
      EVENTS
-============================== -->
+================================= -->
 
 <section class="section pink">
 
+
     <div class="small-title">
+
         Celebrate With Us
+
     </div>
 
+
     <h2>
+
         Wedding Celebrations
+
     </h2>
 
 
@@ -1038,13 +1399,20 @@ body.invite-locked {
 
         <div class="event-card">
 
+
             <div class="event-icon">
+
                 💍
+
             </div>
 
+
             <h3>
+
                 The Wedding
+
             </h3>
+
 
             <div class="event-date">
 
@@ -1056,14 +1424,20 @@ body.invite-locked {
 
             </div>
 
+
             <div class="event-time">
+
                 10:00 AM
+
             </div>
+
 
             <div class="event-location">
 
                 <strong>
+
                     Mar Thoma Cheriapally
+
                 </strong>
 
                 <br>
@@ -1076,6 +1450,7 @@ body.invite-locked {
 
             </div>
 
+
             <a
                 class="map-button"
                 href="https://www.google.com/maps/search/?api=1&query=Mar+Thoma+Cheriapally+Kothamangalam+Kerala"
@@ -1086,6 +1461,7 @@ body.invite-locked {
 
             </a>
 
+
         </div>
 
 
@@ -1093,13 +1469,20 @@ body.invite-locked {
 
         <div class="event-card">
 
+
             <div class="event-icon">
+
                 ✨
+
             </div>
 
+
             <h3>
+
                 The Reception
+
             </h3>
+
 
             <div class="event-date">
 
@@ -1111,14 +1494,20 @@ body.invite-locked {
 
             </div>
 
+
             <div class="event-time">
+
                 12:00 PM
+
             </div>
+
 
             <div class="event-location">
 
                 <strong>
+
                     Casa Sanjo's Parish Hall
+
                 </strong>
 
                 <br>
@@ -1131,6 +1520,7 @@ body.invite-locked {
 
             </div>
 
+
             <a
                 class="map-button"
                 href="https://www.google.com/maps/search/?api=1&query=Casa+Sanjos+Parish+Hall+Thundiyil+Kannur+Kerala"
@@ -1141,6 +1531,7 @@ body.invite-locked {
 
             </a>
 
+
         </div>
 
 
@@ -1149,19 +1540,26 @@ body.invite-locked {
 </section>
 
 
-<!-- ==============================
+<!-- =================================
      OUR MEMORIES
-============================== -->
+================================= -->
 
 <section class="section light">
 
+
     <div class="small-title">
+
         Our Journey
+
     </div>
 
+
     <h2>
+
         Our Memories
+
     </h2>
+
 
     <p class="gallery-text">
 
@@ -1177,54 +1575,68 @@ body.invite-locked {
 
     <div class="gallery">
 
+
         <img
             src="images/Image 1.jpg"
             alt="Memory 1"
             loading="lazy">
+
 
         <img
             src="images/Image 2.jpg"
             alt="Memory 2"
             loading="lazy">
 
+
         <img
             src="images/Image 3.jpg"
             alt="Memory 3"
             loading="lazy">
+
 
         <img
             src="images/Image 4.jpg"
             alt="Memory 4"
             loading="lazy">
 
+
         <img
             src="images/Image 5.jpg"
             alt="Memory 5"
             loading="lazy">
+
 
         <img
             src="images/Image 6.jpg"
             alt="Memory 6"
             loading="lazy">
 
+
     </div>
 
 </section>
 
 
-<!-- ==============================
+<!-- =================================
      ENDING
-============================== -->
+================================= -->
 
 <section class="ending">
 
+
     <div class="ending-heart">
+
         ♥
+
     </div>
 
+
     <h2>
+
         Our Forever Begins
+
     </h2>
+
 
     <p>
 
@@ -1238,108 +1650,44 @@ body.invite-locked {
         <br><br>
 
         <strong>
+
             Nikitha Joemon & Tom Palakkadan
+
         </strong>
 
     </p>
+
 
 </section>
 
 
 <script>
 
-/* ==============================
-   ELEMENTS
-============================== */
+/* =================================
+   OPEN INVITATION
+================================= */
 
-const invitationOverlay =
-    document.getElementById("invitationOverlay");
-
-const openInvitationButton =
-    document.getElementById("openInvitation");
-
-const weddingMusic =
+var weddingMusic =
     document.getElementById("weddingMusic");
 
-const musicButton =
+var invitationOverlay =
+    document.getElementById("invitationOverlay");
+
+var musicButton =
     document.getElementById("musicButton");
 
 
 weddingMusic.volume = 0.55;
 
 
-/* ==============================
-   OPEN INVITATION
+function openWedding() {
 
-   IMPORTANT:
-   The music starts from the SAME
-   tap as "Open Invitation".
-   This gives mobile browsers the
-   best chance of allowing playback.
-============================== */
+    /*
+    FIRST:
+    remove invitation completely.
 
-function openWeddingInvitation() {
+    Nothing related to music can
+    prevent the website from opening.
+    */
 
-    weddingMusic.play()
-        .then(function () {
-
-            musicButton.textContent =
-                "Ⅱ Pause Music";
-
-        })
-        .catch(function () {
-
-            musicButton.textContent =
-                "🎵 Play Music";
-
-        });
-
-
-    invitationOverlay.classList.add(
-        "opened"
-    );
-
-
-    document.body.classList.remove(
-        "invite-locked"
-    );
-
-
-    musicButton.style.display =
-        "block";
-
-
-    setTimeout(function () {
-
-        invitationOverlay.style.display =
-            "none";
-
-    }, 800);
-
-
-    window.scrollTo(0, 0);
-}
-
-
-openInvitationButton.addEventListener(
-    "click",
-    openWeddingInvitation
-);
-
-
-/* Touch support for phones */
-
-openInvitationButton.addEventListener(
-    "touchend",
-    function(event) {
-
-        event.preventDefault();
-
-        openWeddingInvitation();
-
-    },
-    { passive: false }
-);
-
-
-/* ====
+    invitationOverlay.styl
