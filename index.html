@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#172313">
 
-<title>Nikitha & Tom | Wedding Invitation</title>
+<title>Tom & Nikitha Wedding</title>
 
 <style>
 
@@ -56,7 +56,7 @@ body.no-scroll {
         url("images/Cover.jpg");
 
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
 
     transition: opacity 0.8s ease, visibility 0.8s ease;
@@ -140,7 +140,7 @@ body.no-scroll {
 }
 
 /* ==================================================
-   COVER
+   MAIN COVER
 ================================================== */
 
 .hero {
@@ -153,6 +153,7 @@ body.no-scroll {
     min-height: 600px;
 
     background: #142312;
+
     overflow: hidden;
 
     display: flex;
@@ -177,8 +178,8 @@ body.no-scroll {
     background:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,0.02) 45%,
-            rgba(0,0,0,0.45) 100%
+            rgba(0,0,0,0.01) 50%,
+            rgba(0,0,0,0.48) 100%
         );
 
     pointer-events: none;
@@ -230,7 +231,7 @@ body.no-scroll {
 }
 
 /* ==================================================
-   GENERAL
+   GENERAL SECTIONS
 ================================================== */
 
 .section {
@@ -287,7 +288,7 @@ body.no-scroll {
 }
 
 /* ==================================================
-   COUPLE
+   COUPLE / PARENTS
 ================================================== */
 
 .couple-grid {
@@ -585,7 +586,7 @@ body.no-scroll {
 }
 
 /* ==================================================
-   MUSIC
+   MUSIC BUTTON
 ================================================== */
 
 #musicButton {
@@ -639,6 +640,10 @@ body.no-scroll {
 
 @media (max-width: 600px) {
 
+    #invitationOverlay {
+        background-position: center center;
+    }
+
     .invitation-box {
         width: calc(100% - 32px);
 
@@ -647,10 +652,6 @@ body.no-scroll {
 
     .invitation-box h1 {
         font-size: 39px;
-    }
-
-    #invitationOverlay {
-        background-position: center center;
     }
 
     .hero {
@@ -744,7 +745,11 @@ body.no-scroll {
 ================================================== -->
 
 <audio id="weddingMusic" loop preload="auto">
-    <source src="wedding.mp3" type="audio/mpeg">
+
+    <source
+        src="wedding.mp3"
+        type="audio/mpeg">
+
 </audio>
 
 
@@ -762,7 +767,9 @@ body.no-scroll {
 
         <h1>Nikitha</h1>
 
-        <div class="invitation-heart">♥</div>
+        <div class="invitation-heart">
+            ♥
+        </div>
 
         <h1>Tom</h1>
 
@@ -771,12 +778,18 @@ body.no-scroll {
         </div>
 
         <p class="invitation-message">
+
             We joyfully invite you and your family
             to celebrate our wedding with us.
+
         </p>
 
-        <button id="openInvitation" type="button">
+        <button
+            id="openInvitation"
+            type="button">
+
             💌 Open Invitation
+
         </button>
 
     </div>
@@ -784,28 +797,38 @@ body.no-scroll {
 </div>
 
 
-<!-- MUSIC BUTTON -->
+<!-- ==================================================
+     MUSIC CONTROL
+================================================== -->
 
-<button id="musicButton" type="button">
+<button
+    id="musicButton"
+    type="button">
+
     Ⅱ Pause Music
+
 </button>
 
 
 <!-- ==================================================
-     COVER
+     MAIN COVER
 ================================================== -->
 
 <section class="hero">
 
     <img
         class="hero-image"
-        src="images/Cover-1.jpg"
-        alt="Nikitha and Tom Wedding">
+        src="images/Cover.jpg"
+        alt="Tom and Nikitha Wedding">
 
     <div class="hero-overlay"></div>
 
-    <a href="#details" class="scroll-button">
+    <a
+        href="#details"
+        class="scroll-button">
+
         Scroll Down for Details ↓
+
     </a>
 
 </section>
@@ -815,15 +838,21 @@ body.no-scroll {
      INTRODUCTION
 ================================================== -->
 
-<section class="section light" id="details">
+<section
+    class="section light"
+    id="details">
 
     <div class="small-title">
         Together With Our Families
     </div>
 
-    <h2>We're Getting Married</h2>
+    <h2>
+        We're Getting Married
+    </h2>
 
-    <div class="heart">♥</div>
+    <div class="heart">
+        ♥
+    </div>
 
     <p class="intro">
 
@@ -851,7 +880,10 @@ body.no-scroll {
         Bride & Groom
     </div>
 
-    <h2>Meet the Couple</h2>
+    <h2>
+        Meet the Couple
+    </h2>
+
 
     <div class="couple-grid">
 
@@ -860,18 +892,30 @@ body.no-scroll {
 
         <div class="couple-card">
 
-            <div class="heart">♡</div>
+            <div class="heart">
+                ♡
+            </div>
 
-            <h3>Nikitha Joemon</h3>
+            <h3>
+                Nikitha Joemon
+            </h3>
 
             <div class="relationship">
                 Daughter of
             </div>
 
             <div class="parents">
+
                 Mr. Joemon V Jacob
-                <br>&<br>
+
+                <br>
+
+                &
+
+                <br>
+
                 Mrs. Rinta Joemon
+
             </div>
 
         </div>
@@ -881,18 +925,30 @@ body.no-scroll {
 
         <div class="couple-card">
 
-            <div class="heart">♡</div>
+            <div class="heart">
+                ♡
+            </div>
 
-            <h3>Tom Palakkadan</h3>
+            <h3>
+                Tom Palakkadan
+            </h3>
 
             <div class="relationship">
                 Son of
             </div>
 
             <div class="parents">
+
                 Mr. Binu Palakkadan
-                <br>&<br>
+
+                <br>
+
+                &
+
+                <br>
+
                 Mrs. Mini Palakkadan
+
             </div>
 
         </div>
@@ -918,17 +974,29 @@ body.no-scroll {
     </h2>
 
     <p class="countdown-description">
+
         Thursday, September 10, 2026
+
         <br>
+
         10:00 AM
+
     </p>
 
-    <div class="countdown" id="countdown">
+
+    <div
+        class="countdown"
+        id="countdown">
+
 
         <div class="count-box">
 
-            <span class="count-number" id="days">
+            <span
+                class="count-number"
+                id="days">
+
                 00
+
             </span>
 
             <span class="count-label">
@@ -940,8 +1008,12 @@ body.no-scroll {
 
         <div class="count-box">
 
-            <span class="count-number" id="hours">
+            <span
+                class="count-number"
+                id="hours">
+
                 00
+
             </span>
 
             <span class="count-label">
@@ -953,8 +1025,12 @@ body.no-scroll {
 
         <div class="count-box">
 
-            <span class="count-number" id="minutes">
+            <span
+                class="count-number"
+                id="minutes">
+
                 00
+
             </span>
 
             <span class="count-label">
@@ -966,8 +1042,12 @@ body.no-scroll {
 
         <div class="count-box">
 
-            <span class="count-number" id="seconds">
+            <span
+                class="count-number"
+                id="seconds">
+
                 00
+
             </span>
 
             <span class="count-label">
@@ -975,6 +1055,7 @@ body.no-scroll {
             </span>
 
         </div>
+
 
     </div>
 
@@ -991,7 +1072,10 @@ body.no-scroll {
         Celebrate With Us
     </div>
 
-    <h2>Wedding Celebrations</h2>
+    <h2>
+        Wedding Celebrations
+    </h2>
+
 
     <div class="events">
 
@@ -1004,17 +1088,25 @@ body.no-scroll {
                 💍
             </div>
 
-            <h3>The Wedding</h3>
+            <h3>
+                The Wedding
+            </h3>
 
             <div class="event-date">
+
                 Thursday
+
                 <br>
+
                 September 10, 2026
+
             </div>
+
 
             <div class="event-time">
                 10:00 AM
             </div>
+
 
             <div class="event-location">
 
@@ -1031,6 +1123,7 @@ body.no-scroll {
                 Kerala 686691
 
             </div>
+
 
             <a
                 class="map-button"
@@ -1053,17 +1146,26 @@ body.no-scroll {
                 ✨
             </div>
 
-            <h3>The Reception</h3>
+            <h3>
+                The Reception
+            </h3>
+
 
             <div class="event-date">
+
                 Monday
+
                 <br>
+
                 September 14, 2026
+
             </div>
+
 
             <div class="event-time">
                 12:00 PM
             </div>
+
 
             <div class="event-location">
 
@@ -1080,6 +1182,7 @@ body.no-scroll {
                 Kannur, Kerala
 
             </div>
+
 
             <a
                 class="map-button"
@@ -1109,7 +1212,10 @@ body.no-scroll {
         Our Journey
     </div>
 
-    <h2>Our Memories</h2>
+    <h2>
+        Our Memories
+    </h2>
+
 
     <p class="gallery-text">
 
@@ -1117,42 +1223,50 @@ body.no-scroll {
 
         <br><br>
 
-        A few beautiful moments from
-        our journey together.
+        A few beautiful moments
+        from our journey together.
 
     </p>
 
+
     <div class="gallery">
+
 
         <img
             src="images/Image 1.jpg"
-            alt="Nikitha and Tom"
+            alt="Tom and Nikitha"
             loading="lazy">
+
 
         <img
             src="images/Image 2.jpg"
-            alt="Nikitha and Tom"
+            alt="Tom and Nikitha"
             loading="lazy">
+
 
         <img
             src="images/Image 3.jpg"
-            alt="Nikitha and Tom"
+            alt="Tom and Nikitha"
             loading="lazy">
+
 
         <img
             src="images/Image 4.jpg"
-            alt="Nikitha and Tom"
+            alt="Tom and Nikitha"
             loading="lazy">
+
 
         <img
             src="images/Image 5.jpg"
-            alt="Nikitha and Tom"
+            alt="Tom and Nikitha"
             loading="lazy">
+
 
         <img
             src="images/Image 6.jpg"
-            alt="Nikitha and Tom"
+            alt="Tom and Nikitha"
             loading="lazy">
+
 
     </div>
 
@@ -1172,6 +1286,7 @@ body.no-scroll {
     <h2>
         Our Forever Begins
     </h2>
+
 
     <p>
 
@@ -1199,6 +1314,7 @@ body.no-scroll {
 
 <script>
 
+
 /* ==================================================
    OPEN INVITATION + MUSIC
 ================================================== */
@@ -1215,6 +1331,7 @@ const weddingMusic =
 const musicButton =
     document.getElementById("musicButton");
 
+
 weddingMusic.volume = 0.55;
 
 
@@ -1222,13 +1339,15 @@ openInvitation.addEventListener(
     "click",
     function () {
 
+
         /*
-        The music starts from the actual user click.
-        This gives mobile browsers the best chance
-        of allowing audio playback.
+        Start music directly from the user's click.
+        This is important for mobile browsers.
         */
 
-        const playPromise = weddingMusic.play();
+        const playPromise =
+            weddingMusic.play();
+
 
         if (playPromise !== undefined) {
 
@@ -1250,53 +1369,62 @@ openInvitation.addEventListener(
 
 
         /*
-        Close invitation
+        Close the invitation screen
         */
 
         invitationOverlay.classList.add("hide");
 
 
         /*
-        Allow webpage scrolling
+        Unlock page scrolling
         */
 
         document.body.classList.remove("no-scroll");
 
 
         /*
-        Show music control
+        Display music control
         */
 
-        musicButton.style.display = "block";
+        musicButton.style.display =
+            "block";
 
 
         /*
-        Return page to the top
+        Start at top of main invitation
         */
 
-        window.scrollTo(0, 0);
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: "instant"
+        });
 
     }
 );
 
 
 /* ==================================================
-   MUSIC BUTTON
+   MUSIC CONTROL
 ================================================== */
 
 musicButton.addEventListener(
     "click",
     function () {
 
+
         if (weddingMusic.paused) {
 
+
             weddingMusic.play()
+
             .then(function () {
 
                 musicButton.innerHTML =
                     "Ⅱ Pause Music";
 
             })
+
             .catch(function () {
 
                 musicButton.innerHTML =
@@ -1304,14 +1432,16 @@ musicButton.addEventListener(
 
             });
 
-        }
 
-        else {
+        } else {
+
 
             weddingMusic.pause();
 
+
             musicButton.innerHTML =
                 "🎵 Play Music";
+
 
         }
 
@@ -1324,10 +1454,10 @@ musicButton.addEventListener(
 ================================================== */
 
 /*
-Wedding:
-September 10, 2026
+Wedding date:
+Thursday September 10, 2026
 10:00 AM
-Kerala / India time
+India Standard Time
 */
 
 const weddingDate =
@@ -1338,8 +1468,10 @@ const weddingDate =
 
 function updateCountdown() {
 
+
     const now =
         new Date().getTime();
+
 
     const distance =
         weddingDate - now;
@@ -1347,10 +1479,13 @@ function updateCountdown() {
 
     if (distance <= 0) {
 
+
         document.getElementById(
             "countdown"
         ).innerHTML =
-            "<h3 style='color:#b76e79;font-size:30px;'>Today is our Wedding Day! ❤️</h3>";
+
+        "<h3 style='color:#b76e79;font-size:30px;'>Today is our Wedding Day! ❤️</h3>";
+
 
         return;
 
@@ -1400,31 +1535,36 @@ function updateCountdown() {
     document.getElementById(
         "hours"
     ).textContent =
-        String(hours).padStart(2,"0");
+        String(hours).padStart(2, "0");
 
 
     document.getElementById(
         "minutes"
     ).textContent =
-        String(minutes).padStart(2,"0");
+        String(minutes).padStart(2, "0");
 
 
     document.getElementById(
         "seconds"
     ).textContent =
-        String(seconds).padStart(2,"0");
+        String(seconds).padStart(2, "0");
+
 
 }
 
 
 updateCountdown();
 
+
 setInterval(
     updateCountdown,
     1000
 );
 
+
 </script>
 
+
 </body>
+
 </html>
