@@ -1,24 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
 <meta charset="UTF-8">
-
-<meta name="viewport"
-content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
-<meta name="theme-color" content="#183018">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#17301d">
 
 <title>Nikitha & Tom | Wedding Invitation</title>
 
-
 <style>
-
-/* =====================================
+/* =========================
    RESET
-===================================== */
-
+========================= */
 * {
     margin: 0;
     padding: 0;
@@ -29,1743 +21,909 @@ html {
     scroll-behavior: smooth;
 }
 
-html.invitation-locked,
-body.invitation-locked {
-    overflow: hidden !important;
-    height: 100% !important;
-    touch-action: none;
-}
-
 body {
+    margin: 0;
     font-family: Georgia, "Times New Roman", serif;
     background: #fffaf6;
-    color: #473d38;
+    color: #493e38;
     overflow-x: hidden;
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
 
-/* =====================================
-   OPEN INVITATION SCREEN
-===================================== */
+/* =========================
+   OPEN INVITATION
+========================= */
 
-#openingScreen {
-
+#inviteOverlay {
     position: fixed;
-
     inset: 0;
+    z-index: 999999;
 
-    width: 100vw;
-
+    width: 100%;
     height: 100vh;
     height: 100dvh;
 
-    z-index: 999999;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     padding: 22px;
 
-    overflow: hidden;
-
-    background-color: #182b18;
-
-}
-
-
-/* COVER IMAGE BEHIND OPEN BUTTON */
-
-#openingScreen::before {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background-image:
+    background:
+        linear-gradient(
+            rgba(10, 28, 13, 0.25),
+            rgba(10, 28, 13, 0.48)
+        ),
         url("images/Cover-1.jpg");
 
     background-size: cover;
-
-    background-position: center center;
-
+    background-position: center;
     background-repeat: no-repeat;
 
-    z-index: 0;
-
+    overflow: hidden;
 }
 
-
-/* DARK OVERLAY */
-
-#openingScreen::after {
-
-    content: "";
-
-    position: absolute;
-
-    inset: 0;
-
-    background:
-        linear-gradient(
-            rgba(7,25,10,0.10),
-            rgba(7,25,10,0.45)
-        );
-
-    z-index: 1;
-
+#inviteOverlay.opened {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity .6s ease, visibility .6s ease;
 }
 
+.invite-card {
+    width: min(600px, 94vw);
 
-/* INVITATION BOX */
-
-.opening-card {
-
-    position: relative;
-
-    z-index: 5;
-
-    width: 100%;
-
-    max-width: 610px;
-
-    padding: 42px 24px;
+    padding: 40px 25px;
 
     text-align: center;
 
+    background: rgba(20, 54, 29, .80);
+
+    border: 1px solid #d8bc63;
+    border-radius: 25px;
+
     color: white;
 
-    background:
-        rgba(18,45,22,0.77);
-
-    border:
-        1.5px solid #ddc373;
-
-    border-radius: 28px;
-
-    box-shadow:
-        0 15px 45px
-        rgba(0,0,0,0.35);
-
+    box-shadow: 0 15px 45px rgba(0,0,0,.35);
 }
 
-
-.opening-small {
-
-    color: #ead18a;
-
+.invite-small {
+    color: #f1d578;
     font-size: 13px;
-
     letter-spacing: 4px;
-
     text-transform: uppercase;
 
-    margin-bottom: 25px;
-
+    margin-bottom: 22px;
 }
 
-
-.opening-card h1 {
-
-    font-size: 55px;
-
+.invite-name {
+    font-size: clamp(42px, 6vw, 64px);
     font-weight: normal;
-
-    line-height: 1.05;
-
+    line-height: 1;
 }
 
+.invite-heart {
+    margin: 18px 0;
 
-.opening-heart {
-
-    color: #efd27a;
-
-    font-size: 34px;
-
-    margin: 17px 0;
-
+    color: #f1d578;
+    font-size: 30px;
 }
 
+.invite-date {
+    margin-top: 28px;
 
-.opening-date {
-
-    margin-top: 27px;
-
-    font-size: 17px;
-
+    font-size: 16px;
     letter-spacing: 4px;
-
     text-transform: uppercase;
-
 }
 
-
-.opening-message {
-
+.invite-message {
     max-width: 470px;
 
-    margin: 27px auto 0;
+    margin: 28px auto 0;
 
     font-size: 18px;
-
     line-height: 1.7;
-
 }
 
+/* IMPORTANT OPEN BUTTON */
 
-/* OPEN BUTTON */
-
-#openInvitationButton {
-
-    position: relative;
-
-    z-index: 20;
-
+#openInvitation {
     display: inline-block;
 
     margin-top: 30px;
 
-    padding: 17px 35px;
+    padding: 17px 34px;
 
     border: 2px solid white;
-
-    border-radius: 60px;
+    border-radius: 50px;
 
     background: #bd7380;
-
     color: white;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+    font-family: Georgia, "Times New Roman", serif;
     font-size: 20px;
-
     font-weight: bold;
 
     cursor: pointer;
 
-    pointer-events: auto;
+    -webkit-tap-highlight-color: transparent;
 
-    touch-action: manipulation;
-
-    -webkit-tap-highlight-color:
-        transparent;
-
-    box-shadow:
-        0 8px 25px
-        rgba(0,0,0,0.30);
-
+    box-shadow: 0 7px 20px rgba(0,0,0,.25);
 }
 
+#openInvitation:active {
+    transform: scale(.97);
+}
 
-/* =====================================
-   MAIN COVER
-===================================== */
+/* =========================
+   HERO
+========================= */
 
 .hero {
-
     position: relative;
 
     width: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
 
-    height: 100vh;
-    height: 100dvh;
-
-    min-height: 600px;
+    background: #17301d;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     overflow: hidden;
-
-    background: #172b17;
-
 }
 
-
-.hero-image {
-
+.hero img {
     width: 100%;
-
-    height: 100%;
-
-    object-fit: cover;
-
-    object-position:
-        center center;
+    height: 100vh;
+    height: 100dvh;
 
     display: block;
 
+    object-fit: contain;
+    object-position: center;
+
+    background: #17301d;
 }
 
-
-.hero-shade {
-
+.hero-bottom {
     position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
-    inset: 0;
+    height: 30%;
 
-    background:
-
-        linear-gradient(
-
-            to bottom,
-
-            transparent 55%,
-
-            rgba(0,0,0,0.38)
-
-        );
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,.55)
+    );
 
     pointer-events: none;
-
 }
 
-
-.scroll-details {
-
+.scroll-button {
     position: absolute;
 
-    z-index: 10;
+    z-index: 5;
 
     left: 50%;
+    bottom: 28px;
 
-    bottom: 27px;
+    transform: translateX(-50%);
 
-    transform:
-        translateX(-50%);
+    padding: 14px 25px;
 
-    padding:
-        14px 24px;
-
-    background:
-        #bd7380;
-
+    background: #bd7380;
     color: white;
 
-    border:
-        2px solid white;
+    border: 2px solid white;
+    border-radius: 50px;
 
-    border-radius:
-        50px;
+    text-decoration: none;
 
-    text-decoration:
-        none;
+    font-size: 15px;
+    font-weight: bold;
 
-    font-size:
-        15px;
+    white-space: nowrap;
 
-    font-weight:
-        bold;
-
-    white-space:
-        nowrap;
-
-    box-shadow:
-        0 7px 22px
-        rgba(0,0,0,0.30);
-
+    box-shadow: 0 7px 20px rgba(0,0,0,.3);
 }
 
-
-/* =====================================
-   SECTIONS
-===================================== */
+/* =========================
+   GENERAL SECTIONS
+========================= */
 
 .section {
-
-    padding:
-        85px 20px;
-
-    text-align:
-        center;
-
+    padding: 85px 20px;
+    text-align: center;
 }
-
 
 .light {
-
-    background:
-        #fffaf6;
-
+    background: #fffaf6;
 }
-
 
 .soft {
-
-    background:
-        #f8eeee;
-
+    background: #f8eeee;
 }
 
+.eyebrow {
+    margin-bottom: 15px;
 
-.small-heading {
+    color: #927866;
 
-    color:
-        #927865;
-
-    font-size:
-        13px;
-
-    letter-spacing:
-        4px;
-
-    text-transform:
-        uppercase;
-
-    margin-bottom:
-        17px;
-
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
 }
-
 
 .section h2 {
+    margin-bottom: 20px;
 
-    color:
-        #b76e79;
+    color: #b76e79;
 
-    font-size:
-        44px;
-
-    font-weight:
-        normal;
-
-    margin-bottom:
-        23px;
-
+    font-size: clamp(34px, 5vw, 46px);
+    font-weight: normal;
 }
-
 
 .heart {
+    margin: 18px 0;
 
-    color:
-        #b76e79;
-
-    font-size:
-        29px;
-
-    margin:
-        20px 0;
-
+    color: #b76e79;
+    font-size: 28px;
 }
 
+.intro {
+    max-width: 720px;
 
-.introduction {
+    margin: auto;
 
-    max-width:
-        760px;
-
-    margin:
-        auto;
-
-    font-size:
-        19px;
-
-    line-height:
-        1.9;
-
+    font-size: 18px;
+    line-height: 1.9;
 }
 
-
-/* =====================================
+/* =========================
    COUPLE
-===================================== */
+========================= */
 
 .couple-grid {
+    max-width: 950px;
 
-    max-width:
-        950px;
+    margin: 45px auto 0;
 
-    margin:
-        45px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:
-        28px;
-
+    gap: 28px;
 }
-
 
 .couple-card {
+    padding: 42px 25px;
 
-    padding:
-        45px 30px;
+    background: white;
 
-    background:
-        white;
+    border-radius: 20px;
 
-    border-radius:
-        20px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(0,0,0,0.07);
-
+    box-shadow: 0 7px 24px rgba(0,0,0,.07);
 }
-
 
 .couple-card h3 {
+    margin-bottom: 20px;
 
-    color:
-        #b76e79;
+    color: #b76e79;
 
-    font-size:
-        32px;
-
-    font-weight:
-        normal;
-
-    margin-bottom:
-        20px;
-
+    font-size: 31px;
+    font-weight: normal;
 }
 
+.family-title {
+    margin-bottom: 15px;
 
-.family-label {
+    color: #907663;
 
-    color:
-        #987b67;
+    font-size: 13px;
+    letter-spacing: 3px;
 
-    text-transform:
-        uppercase;
-
-    letter-spacing:
-        2px;
-
-    font-size:
-        13px;
-
-    margin-bottom:
-        15px;
-
+    text-transform: uppercase;
 }
-
 
 .parents {
-
-    font-size:
-        19px;
-
-    line-height:
-        1.8;
-
+    font-size: 19px;
+    line-height: 1.8;
 }
 
+.address {
+    margin-top: 16px;
 
-.family-location {
+    color: #766961;
 
-    margin-top:
-        16px;
-
-    color:
-        #786b64;
-
-    font-size:
-        15px;
-
-    line-height:
-        1.7;
-
+    font-size: 15px;
+    line-height: 1.7;
 }
 
-
-/* =====================================
+/* =========================
    COUNTDOWN
-===================================== */
+========================= */
 
 .countdown-date {
+    margin-bottom: 32px;
 
-    margin-bottom:
-        35px;
-
-    font-size:
-        18px;
-
-    line-height:
-        1.7;
-
+    font-size: 18px;
+    line-height: 1.7;
 }
-
 
 .countdown {
+    max-width: 760px;
 
-    max-width:
-        720px;
+    margin: auto;
 
-    margin:
-        auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 
-    display:
-        flex;
-
-    justify-content:
-        center;
-
-    flex-wrap:
-        wrap;
-
-    gap:
-        13px;
-
+    gap: 12px;
 }
-
 
 .count-box {
+    width: 160px;
 
-    width:
-        150px;
+    padding: 24px 10px;
 
-    padding:
-        25px 10px;
+    background: #f8eeee;
 
-    background:
-        #f8eeee;
+    border-radius: 16px;
 
-    border-radius:
-        16px;
-
-    box-shadow:
-        0 5px 18px
-        rgba(0,0,0,0.06);
-
+    box-shadow: 0 5px 17px rgba(0,0,0,.06);
 }
 
+.number {
+    display: block;
 
-.count-number {
+    margin-bottom: 7px;
 
-    display:
-        block;
+    color: #b76e79;
 
-    color:
-        #b76e79;
-
-    font-size:
-        40px;
-
-    font-weight:
-        bold;
-
-    margin-bottom:
-        7px;
-
+    font-size: 40px;
+    font-weight: bold;
 }
 
-
-.count-label {
-
-    font-size:
-        12px;
-
-    letter-spacing:
-        2px;
-
-    text-transform:
-        uppercase;
-
+.label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
 }
 
-
-/* =====================================
+/* =========================
    EVENTS
-===================================== */
+========================= */
 
 .events {
+    max-width: 1000px;
 
-    max-width:
-        1000px;
+    margin: 45px auto 0;
 
-    margin:
-        45px auto 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-    display:
-        grid;
-
-    grid-template-columns:
-        1fr 1fr;
-
-    gap:
-        28px;
-
+    gap: 28px;
 }
-
 
 .event-card {
+    padding: 42px 25px;
 
-    padding:
-        45px 28px;
+    background: white;
 
-    background:
-        white;
+    border-radius: 20px;
 
-    border-radius:
-        20px;
-
-    box-shadow:
-        0 8px 25px
-        rgba(0,0,0,0.07);
-
+    box-shadow: 0 7px 24px rgba(0,0,0,.07);
 }
-
 
 .event-icon {
-
-    font-size:
-        36px;
-
-    margin-bottom:
-        17px;
-
+    margin-bottom: 15px;
+    font-size: 37px;
 }
-
 
 .event-card h3 {
+    margin-bottom: 20px;
 
-    color:
-        #b76e79;
+    color: #b76e79;
 
-    font-size:
-        31px;
-
-    font-weight:
-        normal;
-
-    margin-bottom:
-        22px;
-
+    font-size: 30px;
+    font-weight: normal;
 }
-
 
 .event-date {
+    margin-bottom: 10px;
 
-    font-size:
-        19px;
-
-    font-weight:
-        bold;
-
-    line-height:
-        1.6;
-
-    margin-bottom:
-        12px;
-
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 1.6;
 }
-
 
 .event-time {
+    margin-bottom: 18px;
 
-    color:
-        #b76e79;
+    color: #b76e79;
 
-    font-size:
-        21px;
-
-    font-weight:
-        bold;
-
-    margin-bottom:
-        17px;
-
+    font-size: 21px;
+    font-weight: bold;
 }
-
 
 .event-location {
-
-    font-size:
-        18px;
-
-    line-height:
-        1.7;
-
+    font-size: 18px;
+    line-height: 1.7;
 }
-
 
 .map-button {
+    display: inline-block;
 
-    display:
-        inline-block;
+    margin-top: 24px;
 
-    margin-top:
-        25px;
+    padding: 14px 23px;
 
-    padding:
-        13px 23px;
+    background: #b76e79;
+    color: white;
 
-    background:
-        #b76e79;
+    border-radius: 50px;
 
-    color:
-        white;
-
-    text-decoration:
-        none;
-
-    border-radius:
-        50px;
-
-    font-size:
-        15px;
-
-    font-weight:
-        bold;
-
+    text-decoration: none;
+    font-weight: bold;
 }
 
-
-/* =====================================
+/* =========================
    GALLERY
-===================================== */
+========================= */
 
-.gallery-intro {
+.gallery-text {
+    max-width: 650px;
 
-    max-width:
-        650px;
+    margin: 0 auto 38px;
 
-    margin:
-        0 auto 40px;
-
-    font-size:
-        18px;
-
-    line-height:
-        1.8;
-
+    font-size: 18px;
+    line-height: 1.8;
 }
-
 
 .gallery {
+    max-width: 1200px;
 
-    max-width:
-        1250px;
+    margin: auto;
 
-    margin:
-        auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
-    display:
-        grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:
-        20px;
-
+    gap: 18px;
 }
-
 
 .gallery img {
+    width: 100%;
+    height: 400px;
 
-    width:
-        100%;
+    object-fit: cover;
 
-    height:
-        420px;
+    border-radius: 15px;
 
-    object-fit:
-        cover;
-
-    display:
-        block;
-
-    border-radius:
-        15px;
-
-    box-shadow:
-        0 7px 22px
-        rgba(0,0,0,0.13);
-
+    box-shadow: 0 7px 20px rgba(0,0,0,.13);
 }
 
+/* =========================
+   LOCATION
+========================= */
 
-/* =====================================
-   ENDING
-===================================== */
-
-.ending {
-
-    padding:
-        95px 20px;
-
-    text-align:
-        center;
-
-    background:
-        #172b17;
-
-    color:
-        white;
-
+.location-section {
+    background: #f8eeee;
 }
 
+.location-grid {
+    max-width: 900px;
 
-.ending-heart {
+    margin: 40px auto 0;
 
-    color:
-        #e3c77c;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
 
-    font-size:
-        32px;
-
-    margin-bottom:
-        20px;
-
+    gap: 25px;
 }
 
+.location-card {
+    padding: 40px 25px;
 
-.ending h2 {
+    background: white;
 
-    color:
-        #e3c77c;
+    border-radius: 20px;
 
-    font-size:
-        43px;
-
-    font-weight:
-        normal;
-
-    margin-bottom:
-        25px;
-
+    box-shadow: 0 7px 22px rgba(0,0,0,.07);
 }
 
+.location-card h3 {
+    margin: 15px 0;
 
-.ending p {
+    color: #b76e79;
 
-    max-width:
-        650px;
-
-    margin:
-        auto;
-
-    font-size:
-        19px;
-
-    line-height:
-        1.9;
-
+    font-size: 27px;
 }
 
+/* =========================
+   END
+========================= */
 
-/* =====================================
-   MUSIC BUTTON
-===================================== */
+.end {
+    padding: 90px 20px;
 
-#musicButton {
+    background: #17301d;
+    color: white;
 
-    position:
-        fixed;
-
-    z-index:
-        9000;
-
-    right:
-        13px;
-
-    bottom:
-        15px;
-
-    display:
-        none;
-
-    padding:
-        12px 18px;
-
-    border:
-        2px solid white;
-
-    border-radius:
-        40px;
-
-    background:
-        #bd7380;
-
-    color:
-        white;
-
-    font-family:
-        Georgia,
-        serif;
-
-    font-size:
-        14px;
-
-    cursor:
-        pointer;
-
-    box-shadow:
-        0 5px 18px
-        rgba(0,0,0,0.25);
-
+    text-align: center;
 }
 
+.end h2 {
+    margin-bottom: 22px;
 
-/* =====================================
-   TABLET
-===================================== */
+    color: #e4c777;
 
-@media
-(max-width: 900px) {
+    font-size: 42px;
+    font-weight: normal;
+}
+
+.end p {
+    max-width: 650px;
+
+    margin: auto;
+
+    font-size: 18px;
+    line-height: 1.9;
+}
+
+/* =========================
+   MUSIC CONTROL
+========================= */
+
+#musicControl {
+    position: fixed;
+
+    z-index: 9999;
+
+    right: 12px;
+    bottom: 12px;
+
+    display: none;
+
+    padding: 11px 17px;
+
+    border: 2px solid white;
+    border-radius: 40px;
+
+    background: #bd7380;
+    color: white;
+
+    font-family: Georgia, serif;
+    font-size: 13px;
+
+    cursor: pointer;
+
+    box-shadow: 0 5px 17px rgba(0,0,0,.25);
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
 
     .couple-grid,
-    .events {
-
-        grid-template-columns:
-            1fr;
-
+    .events,
+    .location-grid {
+        grid-template-columns: 1fr;
     }
-
 
     .gallery {
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+        grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
+@media (max-width: 600px) {
 
-/* =====================================
-   MOBILE
-===================================== */
+    #inviteOverlay {
+        padding: 16px;
 
-@media
-(max-width: 600px) {
-
-
-    #openingScreen {
-
-        padding:
-            18px;
-
+        background-position: center;
     }
 
-
-    #openingScreen::before {
-
-        /*
-        Vertical invitation image.
-        Cover fills phone screen.
-        */
-
-        background-size:
-            cover;
-
-        background-position:
-            center center;
-
+    .invite-card {
+        padding: 32px 17px;
     }
 
-
-    .opening-card {
-
-        padding:
-            34px 18px;
-
-        border-radius:
-            24px;
-
+    .invite-small {
+        font-size: 10px;
+        letter-spacing: 3px;
     }
 
-
-    .opening-small {
-
-        font-size:
-            11px;
-
-        letter-spacing:
-            3px;
-
-        margin-bottom:
-            19px;
-
+    .invite-message {
+        font-size: 16px;
     }
 
-
-    .opening-card h1 {
-
-        font-size:
-            43px;
-
+    #openInvitation {
+        padding: 15px 27px;
+        font-size: 18px;
     }
 
-
-    .opening-heart {
-
-        font-size:
-            28px;
-
-        margin:
-            12px 0;
-
+    .hero img {
+        object-fit: contain;
     }
-
-
-    .opening-date {
-
-        margin-top:
-            21px;
-
-        font-size:
-            14px;
-
-        letter-spacing:
-            3px;
-
-    }
-
-
-    .opening-message {
-
-        margin-top:
-            23px;
-
-        font-size:
-            16px;
-
-        line-height:
-            1.6;
-
-    }
-
-
-    #openInvitationButton {
-
-        margin-top:
-            25px;
-
-        padding:
-            15px 28px;
-
-        font-size:
-            18px;
-
-    }
-
-
-    /*
-    MAIN COVER:
-
-    contain = show entire picture
-    instead of zooming/cropping.
-    */
-
-    .hero-image {
-
-        object-fit:
-            contain;
-
-        object-position:
-            center center;
-
-    }
-
-
-    .hero {
-
-        background:
-            #172b17;
-
-    }
-
-
-    .scroll-details {
-
-        bottom:
-            24px;
-
-        padding:
-            12px 18px;
-
-        font-size:
-            14px;
-
-    }
-
 
     .section {
-
-        padding:
-            65px 17px;
-
+        padding: 65px 16px;
     }
-
-
-    .section h2 {
-
-        font-size:
-            34px;
-
-    }
-
-
-    .introduction {
-
-        font-size:
-            17px;
-
-    }
-
-
-    .couple-card,
-    .event-card {
-
-        padding:
-            37px 20px;
-
-    }
-
-
-    .countdown {
-
-        gap:
-            9px;
-
-    }
-
 
     .count-box {
-
-        width:
-            calc(50% - 7px);
-
-        padding:
-            20px 7px;
-
+        width: calc(50% - 8px);
     }
-
-
-    .count-number {
-
-        font-size:
-            34px;
-
-    }
-
 
     .gallery {
-
-        grid-template-columns:
-            1fr;
-
+        grid-template-columns: 1fr;
     }
-
 
     .gallery img {
-
-        width:
-            100%;
-
-        height:
-            auto;
-
-        object-fit:
-            contain;
-
+        height: auto;
+        object-fit: contain;
     }
-
-
-    .ending h2 {
-
-        font-size:
-            34px;
-
-    }
-
-
-    #musicButton {
-
-        right:
-            10px;
-
-        bottom:
-            10px;
-
-        padding:
-            10px 14px;
-
-        font-size:
-            12px;
-
-    }
-
 }
-
 </style>
-
 </head>
 
 
-<!-- LOCKED FROM THE MOMENT PAGE LOADS -->
-
-<body class="invitation-locked">
+<body class="no-scroll">
 
 
-<!-- =====================================
+<!-- ===============================
      MUSIC
-===================================== -->
+=============================== -->
 
-<audio
-    id="weddingMusic"
-    preload="auto"
-    loop>
-
-    <source
-        src="wedding.mp3"
-        type="audio/mpeg">
-
+<audio id="weddingMusic" loop preload="auto">
+    <source src="wedding.mp3" type="audio/mpeg">
 </audio>
 
 
-<!-- =====================================
+<!-- ===============================
      OPEN INVITATION
-===================================== -->
+=============================== -->
 
-<div
-    id="openingScreen"
-    role="dialog"
-    aria-modal="true">
+<div id="inviteOverlay">
 
+    <div class="invite-card">
 
-    <div class="opening-card">
-
-
-        <div class="opening-small">
-
+        <div class="invite-small">
             Together With Our Families
-
         </div>
 
-
-        <h1>
-
+        <div class="invite-name">
             Nikitha
+        </div>
 
-        </h1>
-
-
-        <div class="opening-heart">
-
+        <div class="invite-heart">
             ♥
-
         </div>
 
-
-        <h1>
-
+        <div class="invite-name">
             Tom
-
-        </h1>
-
-
-        <div class="opening-date">
-
-            September 10, 2026
-
         </div>
 
+        <div class="invite-date">
+            September 10, 2026
+        </div>
 
-        <p class="opening-message">
-
+        <p class="invite-message">
             We joyfully invite you and your family
             to celebrate our wedding with us.
-
         </p>
 
-
-        <!--
-        DIRECT BUTTON CALL.
-
-        This does not depend on
-        DOMContentLoaded or another listener.
-        -->
-
-        <button
-            id="openInvitationButton"
-            type="button"
-            onclick="openInvitation();">
-
+        <button id="openInvitation" type="button">
             💌 Open Invitation
-
         </button>
-
 
     </div>
 
 </div>
 
 
-<!-- =====================================
+<!-- ===============================
      MUSIC BUTTON
-===================================== -->
+=============================== -->
 
-<button
-    id="musicButton"
-    type="button"
-    onclick="toggleMusic();">
-
+<button id="musicControl" type="button">
     Ⅱ Pause Music
-
 </button>
 
 
-<!-- =====================================
+<!-- ===============================
      MAIN COVER
-===================================== -->
+=============================== -->
 
 <section class="hero">
 
-
     <img
-        class="hero-image"
         src="images/Cover-1.jpg"
-        alt="Nikitha and Tom Wedding Invitation">
+        alt="Nikitha and Tom">
 
+    <div class="hero-bottom"></div>
 
-    <div class="hero-shade"></div>
-
-
-    <a
-        href="#details"
-        class="scroll-details">
-
+    <a href="#details" class="scroll-button">
         Scroll Down for Details ↓
-
     </a>
 
-
 </section>
 
 
-<!-- =====================================
+<!-- ===============================
      INTRODUCTION
-===================================== -->
+=============================== -->
 
-<section
-    class="section light"
-    id="details">
+<section class="section light" id="details">
 
-
-    <div class="small-heading">
-
+    <div class="eyebrow">
         Together With Our Families
-
     </div>
-
 
     <h2>
-
         We're Getting Married
-
     </h2>
 
+    <div class="heart">♥</div>
 
-    <div class="heart">
-
-        ♥
-
-    </div>
-
-
-    <p class="introduction">
-
-        With great joy and the blessings
-        of our families, we invite you
-        to celebrate the beginning of
-        our new journey together.
-
+    <p class="intro">
+        With great joy and the blessings of our families,
+        we invite you to celebrate the beginning of our
+        new journey together.
         <br><br>
-
-        Your presence and blessings
-        will make our celebration
-        even more special.
-
+        Your presence and blessings will make our
+        celebration even more special.
     </p>
-
 
 </section>
 
 
-<!-- =====================================
+<!-- ===============================
      COUPLE
-===================================== -->
+=============================== -->
 
 <section class="section soft">
 
-
-    <div class="small-heading">
-
+    <div class="eyebrow">
         Bride & Groom
-
     </div>
 
-
     <h2>
-
         Two Hearts, One Journey
-
     </h2>
 
 
     <div class="couple-grid">
 
-
-        <!-- BRIDE -->
+        <!-- NIKITHA -->
 
         <div class="couple-card">
 
-
-            <div class="heart">
-
-                ♡
-
-            </div>
-
+            <div class="heart">♡</div>
 
             <h3>
-
                 Nikitha Joemon
-
             </h3>
 
-
-            <div class="family-label">
-
+            <div class="family-title">
                 Daughter of
-
             </div>
-
 
             <div class="parents">
-
                 Mr. Joemon V Jacob
-
                 <br>
-
                 &
-
                 <br>
-
                 Mrs. Rinta Joemon
-
             </div>
-
 
         </div>
 
 
-        <!-- GROOM -->
+        <!-- TOM -->
 
         <div class="couple-card">
 
-
-            <div class="heart">
-
-                ♡
-
-            </div>
-
+            <div class="heart">♡</div>
 
             <h3>
-
                 Tom Palakkadan
-
             </h3>
 
-
-            <div class="family-label">
-
+            <div class="family-title">
                 Son of
-
             </div>
-
 
             <div class="parents">
-
                 Mr. Binu Palakkadan
-
                 <br>
-
                 &
-
                 <br>
-
                 Mrs. Mini Palakkadan
-
             </div>
 
-
-            <div class="family-location">
-
+            <div class="address">
                 Palakkadan House
-
                 <br>
-
                 Kothamangalam P.O.
-
             </div>
-
 
         </div>
-
 
     </div>
-
 
 </section>
 
 
-<!-- =====================================
+<!-- ===============================
      COUNTDOWN
-===================================== -->
+=============================== -->
 
 <section class="section light">
 
-
-    <div class="small-heading">
-
+    <div class="eyebrow">
         Save The Date
-
     </div>
 
-
     <h2>
-
         Counting Down to Our Wedding ❤️
-
     </h2>
 
-
     <p class="countdown-date">
-
         Thursday, September 10, 2026
-
         <br>
-
         10:00 AM
-
     </p>
 
 
-    <div
-        class="countdown"
-        id="countdown">
-
+    <div class="countdown" id="countdown">
 
         <div class="count-box">
-
-            <span
-                class="count-number"
-                id="days">
-
-                00
-
-            </span>
-
-            <span class="count-label">
-
-                Days
-
-            </span>
-
+            <span class="number" id="days">00</span>
+            <span class="label">Days</span>
         </div>
-
 
         <div class="count-box">
-
-            <span
-                class="count-number"
-                id="hours">
-
-                00
-
-            </span>
-
-            <span class="count-label">
-
-                Hours
-
-            </span>
-
+            <span class="number" id="hours">00</span>
+            <span class="label">Hours</span>
         </div>
-
 
         <div class="count-box">
-
-            <span
-                class="count-number"
-                id="minutes">
-
-                00
-
-            </span>
-
-            <span class="count-label">
-
-                Minutes
-
-            </span>
-
+            <span class="number" id="minutes">00</span>
+            <span class="label">Minutes</span>
         </div>
-
 
         <div class="count-box">
-
-            <span
-                class="count-number"
-                id="seconds">
-
-                00
-
-            </span>
-
-            <span class="count-label">
-
-                Seconds
-
-            </span>
-
+            <span class="number" id="seconds">00</span>
+            <span class="label">Seconds</span>
         </div>
-
 
     </div>
-
 
 </section>
 
 
-<!-- =====================================
-     CELEBRATIONS
-===================================== -->
+<!-- ===============================
+     EVENTS
+=============================== -->
 
 <section class="section soft">
 
-
-    <div class="small-heading">
-
+    <div class="eyebrow">
         Wedding Day
-
     </div>
 
-
     <h2>
-
         Our Celebrations
-
     </h2>
 
 
@@ -1776,49 +934,515 @@ body {
 
         <div class="event-card">
 
-
             <div class="event-icon">
-
                 ⛪
-
             </div>
-
 
             <h3>
-
                 Wedding Ceremony
-
             </h3>
 
-
             <div class="event-date">
-
                 Thursday
-
                 <br>
-
                 September 10, 2026
-
             </div>
-
 
             <div class="event-time">
-
                 10:00 AM
-
             </div>
-
 
             <div class="event-location">
 
                 <strong>
-
                     Mar Thoma Cheriapally
-
                 </strong>
 
                 <br>
 
-                Kothamangalam
+                Kothamangalam, Kerala
 
-   
+            </div>
+
+            <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=Mar+Thoma+Cheriapally+Kothamangalam+Kerala+686691"
+                target="_blank"
+                rel="noopener">
+
+                📍 View Wedding Location
+
+            </a>
+
+        </div>
+
+
+        <!-- RECEPTION -->
+
+        <div class="event-card">
+
+            <div class="event-icon">
+                🎊
+            </div>
+
+            <h3>
+                Wedding Reception
+            </h3>
+
+            <div class="event-date">
+                Monday
+                <br>
+                September 14, 2026
+            </div>
+
+            <div class="event-time">
+                12:00 PM
+            </div>
+
+            <div class="event-location">
+
+                <strong>
+                    Casa Sanjo's Parish Hall
+                </strong>
+
+                <br>
+
+                Thundiyil, Kannur, Kerala
+
+            </div>
+
+            <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=Casa+Sanjos+Parish+Hall+Thundiyil+Kannur+Kerala"
+                target="_blank"
+                rel="noopener">
+
+                📍 View Reception Location
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     GALLERY
+=============================== -->
+
+<section class="section light">
+
+    <div class="eyebrow">
+        Moments Captured
+    </div>
+
+    <h2>
+        Our Memories
+    </h2>
+
+    <p class="gallery-text">
+        📷
+        <br><br>
+        A few beautiful moments from our journey together.
+    </p>
+
+
+    <div class="gallery">
+
+        <img src="images/Image 1.jpg" alt="Memory 1" loading="lazy">
+
+        <img src="images/Image 2.jpg" alt="Memory 2" loading="lazy">
+
+        <img src="images/Image 3.jpg" alt="Memory 3" loading="lazy">
+
+        <img src="images/Image 4.jpg" alt="Memory 4" loading="lazy">
+
+        <img src="images/Image 5.jpg" alt="Memory 5" loading="lazy">
+
+        <img src="images/Image 6.jpg" alt="Memory 6" loading="lazy">
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     LOCATIONS
+=============================== -->
+
+<section class="section location-section">
+
+    <div class="eyebrow">
+        Find Us
+    </div>
+
+    <h2>
+        Wedding Venues
+    </h2>
+
+
+    <div class="location-grid">
+
+
+        <div class="location-card">
+
+            <div style="font-size:38px">
+                ⛪
+            </div>
+
+            <h3>
+                Wedding Ceremony
+            </h3>
+
+            <strong>
+                Mar Thoma Cheriapally
+            </strong>
+
+            <p style="margin-top:10px; line-height:1.7;">
+                Kothamangalam, Kerala
+                <br>
+                Thursday · September 10, 2026
+                <br>
+                10:00 AM
+            </p>
+
+            <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=Mar+Thoma+Cheriapally+Kothamangalam+Kerala+686691"
+                target="_blank"
+                rel="noopener">
+
+                🗺️ Navigate
+
+            </a>
+
+        </div>
+
+
+        <div class="location-card">
+
+            <div style="font-size:38px">
+                🎊
+            </div>
+
+            <h3>
+                Wedding Reception
+            </h3>
+
+            <strong>
+                Casa Sanjo's Parish Hall
+            </strong>
+
+            <p style="margin-top:10px; line-height:1.7;">
+                Thundiyil, Kannur, Kerala
+                <br>
+                Monday · September 14, 2026
+                <br>
+                12:00 PM
+            </p>
+
+            <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=Casa+Sanjos+Parish+Hall+Thundiyil+Kannur+Kerala"
+                target="_blank"
+                rel="noopener">
+
+                🗺️ Navigate
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ===============================
+     ENDING
+=============================== -->
+
+<section class="end">
+
+    <div style="font-size:30px;color:#e4c777;margin-bottom:18px;">
+        ♥
+    </div>
+
+    <h2>
+        Our Forever Begins
+    </h2>
+
+    <p>
+        We request the honour of your gracious presence
+        and blessings as we begin our new journey together.
+
+        <br><br>
+
+        With Love,
+
+        <br><br>
+
+        <strong>
+            Nikitha Joemon & Tom Palakkadan
+        </strong>
+    </p>
+
+</section>
+
+
+<!-- ===============================
+     JAVASCRIPT
+=============================== -->
+
+<script>
+
+(function () {
+
+    const overlay =
+        document.getElementById("inviteOverlay");
+
+    const openButton =
+        document.getElementById("openInvitation");
+
+    const music =
+        document.getElementById("weddingMusic");
+
+    const musicControl =
+        document.getElementById("musicControl");
+
+
+    /* =========================
+       OPEN INVITATION
+    ========================= */
+
+    function openWeddingInvitation() {
+
+        /*
+        IMPORTANT:
+        The music play() call happens
+        directly inside the guest's click.
+        */
+
+        if (music) {
+
+            music.volume = 0.55;
+
+            const playPromise = music.play();
+
+            if (playPromise !== undefined) {
+
+                playPromise
+                    .then(function () {
+
+                        musicControl.textContent =
+                            "Ⅱ Pause Music";
+
+                    })
+                    .catch(function () {
+
+                        /*
+                        Browser blocked music.
+                        Invitation STILL opens.
+                        */
+
+                        musicControl.textContent =
+                            "🎵 Play Music";
+
+                    });
+
+            }
+
+        }
+
+
+        /*
+        Unlock scrolling
+        */
+
+        document.body.classList.remove("no-scroll");
+
+
+        /*
+        Hide opening screen
+        */
+
+        overlay.classList.add("opened");
+
+
+        /*
+        Show music button
+        */
+
+        musicControl.style.display = "block";
+
+
+        /*
+        Remove overlay completely
+        after animation
+        */
+
+        setTimeout(function () {
+
+            overlay.style.display = "none";
+
+        }, 650);
+
+
+        /*
+        Put main invitation at top
+        */
+
+        window.scrollTo({
+            top: 0,
+            behavior: "auto"
+        });
+
+    }
+
+
+    /*
+    CLICK + MOBILE TOUCH SAFE
+
+    We use CLICK only.
+    Modern phones convert the user's
+    tap into this click event.
+
+    This avoids duplicate touch/click
+    events.
+    */
+
+    openButton.addEventListener(
+        "click",
+        openWeddingInvitation,
+        false
+    );
+
+
+    /* =========================
+       MUSIC CONTROL
+    ========================= */
+
+    musicControl.addEventListener(
+        "click",
+        function () {
+
+            if (music.paused) {
+
+                music.play()
+                    .then(function () {
+
+                        musicControl.textContent =
+                            "Ⅱ Pause Music";
+
+                    })
+                    .catch(function () {
+
+                        musicControl.textContent =
+                            "🎵 Play Music";
+
+                    });
+
+            }
+
+            else {
+
+                music.pause();
+
+                musicControl.textContent =
+                    "🎵 Play Music";
+
+            }
+
+        }
+    );
+
+
+    /* =========================
+       COUNTDOWN
+    ========================= */
+
+    const weddingDate =
+        new Date(
+            "2026-09-10T10:00:00+05:30"
+        ).getTime();
+
+
+    function updateCountdown() {
+
+        const now =
+            new Date().getTime();
+
+        const distance =
+            weddingDate - now;
+
+
+        if (distance <= 0) {
+
+            document.getElementById("countdown").innerHTML =
+                "<h3 style='color:#b76e79;font-size:30px;'>Our Wedding Day Has Arrived ❤️</h3>";
+
+            return;
+        }
+
+
+        const days =
+            Math.floor(
+                distance /
+                (1000 * 60 * 60 * 24)
+            );
+
+
+        const hours =
+            Math.floor(
+                (distance %
+                (1000 * 60 * 60 * 24)) /
+                (1000 * 60 * 60)
+            );
+
+
+        const minutes =
+            Math.floor(
+                (distance %
+                (1000 * 60 * 60)) /
+                (1000 * 60)
+            );
+
+
+        const seconds =
+            Math.floor(
+                (distance %
+                (1000 * 60)) /
+                1000
+            );
+
+
+        document.getElementById("days").textContent =
+            days;
+
+        document.getElementById("hours").textContent =
+            String(hours).padStart(2, "0");
+
+        document.getElementById("minutes").textContent =
+            String(minutes).padStart(2, "0");
+
+        document.getElementById("seconds").textContent =
+            String(seconds).padStart(2, "0");
+
+    }
+
+
+    updateCountdown();
+
+    setInterval(
+        updateCountdown,
+        1000
+    );
+
+})();
+
+</script>
+
+</body>
+</html>
