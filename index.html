@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,11 +8,6 @@
 <title>Nikitha & Tom | Wedding Invitation</title>
 
 <style>
-
-/* ==============================
-   BASIC SETTINGS
-============================== */
-
 * {
     margin: 0;
     padding: 0;
@@ -31,10 +25,9 @@ body {
     overflow-x: hidden;
 }
 
-body.no-scroll {
+body.invite-locked {
     overflow: hidden;
 }
-
 
 /* ==============================
    OPEN INVITATION SCREEN
@@ -43,11 +36,10 @@ body.no-scroll {
 #invitationOverlay {
     position: fixed;
     inset: 0;
-    z-index: 99999;
-
+    z-index: 999999;
     width: 100%;
     height: 100vh;
-    height: 100svh;
+    height: 100dvh;
 
     display: flex;
     align-items: center;
@@ -55,82 +47,81 @@ body.no-scroll {
 
     background:
         linear-gradient(
-            rgba(14,27,12,0.35),
-            rgba(14,27,12,0.68)
+            rgba(10, 25, 10, 0.20),
+            rgba(10, 25, 10, 0.65)
         ),
         url("images/Cover-1.jpg");
 
     background-size: cover;
-    background-position: center;
+    background-position: center center;
     background-repeat: no-repeat;
-
-    transition:
-        opacity 0.8s ease,
-        visibility 0.8s ease;
 }
 
-#invitationOverlay.hide {
+#invitationOverlay.opened {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+    transition: opacity 0.7s ease, visibility 0.7s ease;
 }
 
 .invitation-box {
-    width: calc(100% - 38px);
-    max-width: 470px;
+    width: calc(100% - 36px);
+    max-width: 460px;
 
-    padding: 42px 24px;
+    padding: 42px 25px;
 
     text-align: center;
+
+    background: rgba(20, 35, 18, 0.68);
+
+    border: 1px solid #dfc47c;
+    border-radius: 22px;
+
     color: white;
 
-    background: rgba(16,31,14,0.60);
-
-    border: 1px solid rgba(229,199,128,0.90);
-    border-radius: 20px;
-
-    box-shadow: 0 15px 50px rgba(0,0,0,0.40);
-
-    backdrop-filter: blur(3px);
+    box-shadow: 0 15px 45px rgba(0,0,0,0.40);
 }
 
 .invitation-small {
+    color: #e8cc83;
     font-size: 12px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    color: #e6c878;
     margin-bottom: 20px;
 }
 
 .invitation-box h1 {
-    font-size: 47px;
-    line-height: 1.1;
+    font-size: 46px;
     font-weight: normal;
+    line-height: 1.1;
 }
 
 .invitation-heart {
     color: #e6c878;
-    font-size: 28px;
-    margin: 12px 0;
+    font-size: 27px;
+    margin: 13px 0;
 }
 
 .invitation-date {
-    margin-top: 24px;
+    margin-top: 23px;
     font-size: 15px;
     letter-spacing: 3px;
     text-transform: uppercase;
 }
 
 .invitation-message {
-    max-width: 340px;
-    margin: 24px auto 0;
+    margin: 23px auto 0;
+    max-width: 330px;
+
     font-size: 16px;
     line-height: 1.7;
 }
 
 #openInvitation {
-    margin-top: 30px;
-    padding: 15px 29px;
+    display: inline-block;
+
+    margin-top: 28px;
+    padding: 15px 30px;
 
     border: 2px solid white;
     border-radius: 50px;
@@ -147,9 +138,8 @@ body.no-scroll {
     box-shadow: 0 7px 25px rgba(0,0,0,0.30);
 }
 
-
 /* ==============================
-   MAIN COVER
+   HERO / COVER
 ============================== */
 
 .hero {
@@ -157,24 +147,13 @@ body.no-scroll {
 
     width: 100%;
     height: 100vh;
-    height: 100svh;
-
+    height: 100dvh;
     min-height: 600px;
 
     background: #142312;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
     overflow: hidden;
 }
-
-/*
-IMPORTANT:
-This uses Cover-1.jpg exactly as shown
-in your GitHub screenshot.
-*/
 
 .hero-image {
     width: 100%;
@@ -190,24 +169,15 @@ in your GitHub screenshot.
     position: absolute;
     inset: 0;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.01) 45%,
-            rgba(0,0,0,0.42) 100%
-        );
-
-    pointer-events: none;
+    background: linear-gradient(
+        to bottom,
+        transparent 50%,
+        rgba(0,0,0,0.40) 100%
+    );
 }
-
-
-/* ==============================
-   SCROLL DOWN BUTTON
-============================== */
 
 .scroll-button {
     position: absolute;
-
     z-index: 10;
 
     left: 50%;
@@ -215,9 +185,9 @@ in your GitHub screenshot.
 
     transform: translateX(-50%);
 
-    padding: 14px 24px;
+    padding: 14px 23px;
 
-    background: rgba(185,111,122,0.97);
+    background: #b96f7a;
     color: white;
 
     border: 2px solid white;
@@ -231,21 +201,7 @@ in your GitHub screenshot.
     white-space: nowrap;
 
     box-shadow: 0 7px 25px rgba(0,0,0,0.30);
-
-    animation: bounce 2.2s infinite;
 }
-
-@keyframes bounce {
-
-    0%, 75%, 100% {
-        transform: translate(-50%, 0);
-    }
-
-    87% {
-        transform: translate(-50%, -8px);
-    }
-}
-
 
 /* ==============================
    GENERAL SECTIONS
@@ -268,7 +224,6 @@ in your GitHub screenshot.
     color: #927762;
 
     text-transform: uppercase;
-
     letter-spacing: 4px;
 
     font-size: 13px;
@@ -280,7 +235,6 @@ in your GitHub screenshot.
     color: #b76e79;
 
     font-size: 44px;
-
     font-weight: normal;
 
     margin-bottom: 25px;
@@ -300,13 +254,11 @@ in your GitHub screenshot.
     margin: auto;
 
     font-size: 19px;
-
     line-height: 1.9;
 }
 
-
 /* ==============================
-   BRIDE & GROOM
+   COUPLE
 ============================== */
 
 .couple-grid {
@@ -335,7 +287,6 @@ in your GitHub screenshot.
     color: #b76e79;
 
     font-size: 32px;
-
     font-weight: normal;
 
     margin-bottom: 20px;
@@ -359,6 +310,15 @@ in your GitHub screenshot.
     line-height: 1.8;
 }
 
+.family-address {
+    margin-top: 15px;
+
+    color: #7d7069;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
 
 /* ==============================
    COUNTDOWN
@@ -418,9 +378,8 @@ in your GitHub screenshot.
     letter-spacing: 2px;
 }
 
-
 /* ==============================
-   WEDDING + RECEPTION
+   EVENTS
 ============================== */
 
 .events {
@@ -487,11 +446,6 @@ in your GitHub screenshot.
     line-height: 1.7;
 }
 
-
-/* ==============================
-   MAP BUTTON
-============================== */
-
 .map-button {
     display: inline-block;
 
@@ -503,27 +457,17 @@ in your GitHub screenshot.
 
     color: white;
 
-    border: 2px solid #b76e79;
     border-radius: 50px;
 
     text-decoration: none;
 
-    font-family: Georgia, serif;
-
     font-size: 15px;
+
     font-weight: bold;
-
-    transition: 0.25s ease;
 }
-
-.map-button:hover {
-    background: white;
-    color: #b76e79;
-}
-
 
 /* ==============================
-   PHOTO GALLERY
+   GALLERY
 ============================== */
 
 .gallery-text {
@@ -561,7 +505,6 @@ in your GitHub screenshot.
 
     box-shadow: 0 7px 22px rgba(0,0,0,0.13);
 }
-
 
 /* ==============================
    ENDING
@@ -605,7 +548,6 @@ in your GitHub screenshot.
     line-height: 1.9;
 }
 
-
 /* ==============================
    MUSIC BUTTON
 ============================== */
@@ -623,6 +565,7 @@ in your GitHub screenshot.
     padding: 12px 17px;
 
     border: 2px solid white;
+
     border-radius: 35px;
 
     background: #b96f7a;
@@ -630,13 +573,13 @@ in your GitHub screenshot.
     color: white;
 
     font-family: Georgia, serif;
+
     font-size: 14px;
 
     cursor: pointer;
 
     box-shadow: 0 5px 18px rgba(0,0,0,0.25);
 }
-
 
 /* ==============================
    TABLET
@@ -654,15 +597,18 @@ in your GitHub screenshot.
     }
 }
 
-
 /* ==============================
    MOBILE
 ============================== */
 
 @media (max-width: 600px) {
 
+    #invitationOverlay {
+        background-position: center center;
+    }
+
     .invitation-box {
-        width: calc(100% - 30px);
+        width: calc(100% - 28px);
 
         padding: 34px 18px;
     }
@@ -671,26 +617,15 @@ in your GitHub screenshot.
         font-size: 39px;
     }
 
-
-    /*
-    Keeps Cover-1.jpg filling the
-    phone screen.
-    */
-
-    #invitationOverlay {
-        background-position: center center;
-    }
-
-
     .hero {
-        height: 100svh;
+        height: 100dvh;
 
         min-height: 600px;
     }
 
-
     .hero-image {
         width: 100%;
+
         height: 100%;
 
         object-fit: cover;
@@ -698,41 +633,34 @@ in your GitHub screenshot.
         object-position: center center;
     }
 
-
     .scroll-button {
-        bottom: 25px;
+        bottom: 24px;
 
         padding: 12px 18px;
 
         font-size: 14px;
     }
 
-
     .section {
         padding: 65px 17px;
     }
-
 
     .section h2 {
         font-size: 34px;
     }
 
-
     .intro {
         font-size: 17px;
     }
-
 
     .couple-card,
     .event-card {
         padding: 37px 20px;
     }
 
-
     .countdown {
         gap: 9px;
     }
-
 
     .count-box {
         width: calc(50% - 7px);
@@ -740,30 +668,23 @@ in your GitHub screenshot.
         padding: 20px 7px;
     }
 
-
     .count-number {
         font-size: 34px;
     }
-
 
     .gallery {
         grid-template-columns: 1fr;
     }
 
-
     .gallery img {
-        width: 100%;
-
         height: auto;
 
         object-fit: contain;
     }
 
-
     .ending h2 {
         font-size: 34px;
     }
-
 
     #musicButton {
         right: 10px;
@@ -780,21 +701,16 @@ in your GitHub screenshot.
 </head>
 
 
-<body class="no-scroll">
+<body class="invite-locked">
 
 
 <!-- ==============================
-     MUSIC FILE
+     MUSIC
 ============================== -->
 
 <audio id="weddingMusic" loop preload="auto">
-
-    <source
-        src="wedding.mp3"
-        type="audio/mpeg">
-
+    <source src="wedding.mp3" type="audio/mpeg">
 </audio>
-
 
 
 <!-- ==============================
@@ -822,16 +738,14 @@ in your GitHub screenshot.
         </div>
 
         <p class="invitation-message">
-
             We joyfully invite you and your family
             to celebrate our wedding with us.
-
         </p>
 
-        <button id="openInvitation">
-
+        <button
+            id="openInvitation"
+            type="button">
             💌 Open Invitation
-
         </button>
 
     </div>
@@ -839,17 +753,15 @@ in your GitHub screenshot.
 </div>
 
 
-
 <!-- ==============================
-     MUSIC CONTROL
+     MUSIC BUTTON
 ============================== -->
 
-<button id="musicButton">
-
+<button
+    id="musicButton"
+    type="button">
     Ⅱ Pause Music
-
 </button>
-
 
 
 <!-- ==============================
@@ -861,24 +773,21 @@ in your GitHub screenshot.
     <img
         class="hero-image"
         src="images/Cover-1.jpg"
-        alt="Nikitha and Tom Wedding">
+        alt="Nikitha and Tom">
 
     <div class="hero-overlay"></div>
 
     <a
         href="#details"
         class="scroll-button">
-
         Scroll Down for Details ↓
-
     </a>
 
 </section>
 
 
-
 <!-- ==============================
-     INTRODUCTION
+     INTRO
 ============================== -->
 
 <section
@@ -886,83 +795,65 @@ in your GitHub screenshot.
     id="details">
 
     <div class="small-title">
-
         Together With Our Families
-
     </div>
 
     <h2>
-
         We're Getting Married
-
     </h2>
 
     <div class="heart">
-
         ♥
-
     </div>
 
     <p class="intro">
 
-        With great joy and the blessings
-        of our families, we invite you to
-        celebrate the beginning of our
-        new journey together.
+        With great joy and the blessings of our families,
+        we invite you to celebrate the beginning of
+        our new journey together.
 
         <br><br>
 
-        Your presence and blessings will
-        make our celebration even more special.
+        Your presence and blessings will make
+        our celebration even more special.
 
     </p>
 
 </section>
 
 
-
 <!-- ==============================
-     BRIDE AND GROOM
+     BRIDE & GROOM
 ============================== -->
 
 <section class="section pink">
 
     <div class="small-title">
-
         Bride & Groom
-
     </div>
 
     <h2>
-
         Meet the Couple
-
     </h2>
 
 
     <div class="couple-grid">
 
 
-        <!-- BRIDE -->
+        <!-- NIKITHA -->
 
         <div class="couple-card">
 
             <div class="heart">
-
                 ♡
-
             </div>
 
             <h3>
-
                 Nikitha Joemon
-
             </h3>
 
             <div class="relationship">
-
                 Daughter of
-
             </div>
 
             <div class="parents">
@@ -982,32 +873,25 @@ in your GitHub screenshot.
         </div>
 
 
-
-        <!-- GROOM -->
+        <!-- TOM -->
 
         <div class="couple-card">
 
             <div class="heart">
-
                 ♡
-
             </div>
 
             <h3>
-
                 Tom Palakkadan
-
             </h3>
 
             <div class="relationship">
-
                 Son of
-
             </div>
 
             <div class="parents">
 
-                Binu Palakkadan
+                Mr. Binu Palakkadan
 
                 <br>
 
@@ -1015,7 +899,17 @@ in your GitHub screenshot.
 
                 <br>
 
-                Mini
+                Mrs. Mini Palakkadan
+
+            </div>
+
+            <div class="family-address">
+
+                Palakkadan House
+
+                <br>
+
+                Kothamangalam P.O.
 
             </div>
 
@@ -1027,7 +921,6 @@ in your GitHub screenshot.
 </section>
 
 
-
 <!-- ==============================
      COUNTDOWN
 ============================== -->
@@ -1035,15 +928,11 @@ in your GitHub screenshot.
 <section class="section light">
 
     <div class="small-title">
-
         Save The Date
-
     </div>
 
     <h2>
-
         Counting Down to Our Wedding ❤️
-
     </h2>
 
     <p class="countdown-description">
@@ -1067,15 +956,11 @@ in your GitHub screenshot.
             <span
                 class="count-number"
                 id="days">
-
                 00
-
             </span>
 
             <span class="count-label">
-
                 Days
-
             </span>
 
         </div>
@@ -1086,15 +971,11 @@ in your GitHub screenshot.
             <span
                 class="count-number"
                 id="hours">
-
                 00
-
             </span>
 
             <span class="count-label">
-
                 Hours
-
             </span>
 
         </div>
@@ -1105,15 +986,11 @@ in your GitHub screenshot.
             <span
                 class="count-number"
                 id="minutes">
-
                 00
-
             </span>
 
             <span class="count-label">
-
                 Minutes
-
             </span>
 
         </div>
@@ -1124,15 +1001,11 @@ in your GitHub screenshot.
             <span
                 class="count-number"
                 id="seconds">
-
                 00
-
             </span>
 
             <span class="count-label">
-
                 Seconds
-
             </span>
 
         </div>
@@ -1143,23 +1016,18 @@ in your GitHub screenshot.
 </section>
 
 
-
 <!-- ==============================
-     WEDDING & RECEPTION
+     EVENTS
 ============================== -->
 
 <section class="section pink">
 
     <div class="small-title">
-
         Celebrate With Us
-
     </div>
 
     <h2>
-
         Wedding Celebrations
-
     </h2>
 
 
@@ -1171,15 +1039,11 @@ in your GitHub screenshot.
         <div class="event-card">
 
             <div class="event-icon">
-
                 💍
-
             </div>
 
             <h3>
-
                 The Wedding
-
             </h3>
 
             <div class="event-date">
@@ -1193,17 +1057,13 @@ in your GitHub screenshot.
             </div>
 
             <div class="event-time">
-
                 10:00 AM
-
             </div>
 
             <div class="event-location">
 
                 <strong>
-
                     Mar Thoma Cheriapally
-
                 </strong>
 
                 <br>
@@ -1212,14 +1072,13 @@ in your GitHub screenshot.
 
                 <br>
 
-                Kerala 686691
+                Kerala
 
             </div>
 
-
             <a
                 class="map-button"
-                href="https://www.google.com/maps/search/?api=1&query=Mar+Thoma+Cheriapally+Kothamangalam+Kerala+686691"
+                href="https://www.google.com/maps/search/?api=1&query=Mar+Thoma+Cheriapally+Kothamangalam+Kerala"
                 target="_blank"
                 rel="noopener noreferrer">
 
@@ -1230,21 +1089,16 @@ in your GitHub screenshot.
         </div>
 
 
-
         <!-- RECEPTION -->
 
         <div class="event-card">
 
             <div class="event-icon">
-
                 ✨
-
             </div>
 
             <h3>
-
                 The Reception
-
             </h3>
 
             <div class="event-date">
@@ -1258,17 +1112,13 @@ in your GitHub screenshot.
             </div>
 
             <div class="event-time">
-
                 12:00 PM
-
             </div>
 
             <div class="event-location">
 
                 <strong>
-
                     Casa Sanjo's Parish Hall
-
                 </strong>
 
                 <br>
@@ -1280,7 +1130,6 @@ in your GitHub screenshot.
                 Kannur, Kerala
 
             </div>
-
 
             <a
                 class="map-button"
@@ -1300,31 +1149,18 @@ in your GitHub screenshot.
 </section>
 
 
-
 <!-- ==============================
      OUR MEMORIES
-
-     EXACT FILENAMES:
-     Image 1.jpg
-     Image 2.jpg
-     Image 3.jpg
-     Image 4.jpg
-     Image 5.jpg
-     Image 6.jpg
 ============================== -->
 
 <section class="section light">
 
     <div class="small-title">
-
         Our Journey
-
     </div>
 
     <h2>
-
         Our Memories
-
     </h2>
 
     <p class="gallery-text">
@@ -1341,47 +1177,39 @@ in your GitHub screenshot.
 
     <div class="gallery">
 
-
         <img
             src="images/Image 1.jpg"
-            alt="Nikitha and Tom - Memory 1"
+            alt="Memory 1"
             loading="lazy">
-
 
         <img
             src="images/Image 2.jpg"
-            alt="Nikitha and Tom - Memory 2"
+            alt="Memory 2"
             loading="lazy">
-
 
         <img
             src="images/Image 3.jpg"
-            alt="Nikitha and Tom - Memory 3"
+            alt="Memory 3"
             loading="lazy">
-
 
         <img
             src="images/Image 4.jpg"
-            alt="Nikitha and Tom - Memory 4"
+            alt="Memory 4"
             loading="lazy">
-
 
         <img
             src="images/Image 5.jpg"
-            alt="Nikitha and Tom - Memory 5"
+            alt="Memory 5"
             loading="lazy">
-
 
         <img
             src="images/Image 6.jpg"
-            alt="Nikitha and Tom - Memory 6"
+            alt="Memory 6"
             loading="lazy">
-
 
     </div>
 
 </section>
-
 
 
 <!-- ==============================
@@ -1391,15 +1219,11 @@ in your GitHub screenshot.
 <section class="ending">
 
     <div class="ending-heart">
-
         ♥
-
     </div>
 
     <h2>
-
         Our Forever Begins
-
     </h2>
 
     <p>
@@ -1414,9 +1238,7 @@ in your GitHub screenshot.
         <br><br>
 
         <strong>
-
             Nikitha Joemon & Tom Palakkadan
-
         </strong>
 
     </p>
@@ -1424,17 +1246,16 @@ in your GitHub screenshot.
 </section>
 
 
-
 <script>
 
 /* ==============================
-   OPEN INVITATION + MUSIC
+   ELEMENTS
 ============================== */
 
 const invitationOverlay =
     document.getElementById("invitationOverlay");
 
-const openInvitation =
+const openInvitationButton =
     document.getElementById("openInvitation");
 
 const weddingMusic =
@@ -1447,10 +1268,78 @@ const musicButton =
 weddingMusic.volume = 0.55;
 
 
-openInvitation.addEventListener(
+/* ==============================
+   OPEN INVITATION
+
+   IMPORTANT:
+   The music starts from the SAME
+   tap as "Open Invitation".
+   This gives mobile browsers the
+   best chance of allowing playback.
+============================== */
+
+function openWeddingInvitation() {
+
+    weddingMusic.play()
+        .then(function () {
+
+            musicButton.textContent =
+                "Ⅱ Pause Music";
+
+        })
+        .catch(function () {
+
+            musicButton.textContent =
+                "🎵 Play Music";
+
+        });
+
+
+    invitationOverlay.classList.add(
+        "opened"
+    );
+
+
+    document.body.classList.remove(
+        "invite-locked"
+    );
+
+
+    musicButton.style.display =
+        "block";
+
+
+    setTimeout(function () {
+
+        invitationOverlay.style.display =
+            "none";
+
+    }, 800);
+
+
+    window.scrollTo(0, 0);
+}
+
+
+openInvitationButton.addEventListener(
     "click",
-    function () {
+    openWeddingInvitation
+);
 
 
-        /*
-      
+/* Touch support for phones */
+
+openInvitationButton.addEventListener(
+    "touchend",
+    function(event) {
+
+        event.preventDefault();
+
+        openWeddingInvitation();
+
+    },
+    { passive: false }
+);
+
+
+/* ====
