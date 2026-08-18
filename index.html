@@ -4,10 +4,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#172313">
 
 <title>Nikitha & Tom | Wedding Invitation</title>
 
 <style>
+
+/* ==============================
+   BASIC SETTINGS
+============================== */
 
 * {
     margin: 0;
@@ -31,9 +36,9 @@ body.no-scroll {
 }
 
 
-/* ==================================================
+/* ==============================
    OPEN INVITATION SCREEN
-================================================== */
+============================== */
 
 #invitationOverlay {
     position: fixed;
@@ -50,8 +55,8 @@ body.no-scroll {
 
     background:
         linear-gradient(
-            rgba(14, 27, 12, 0.45),
-            rgba(14, 27, 12, 0.70)
+            rgba(14,27,12,0.35),
+            rgba(14,27,12,0.68)
         ),
         url("images/Cover-1.jpg");
 
@@ -71,21 +76,20 @@ body.no-scroll {
 }
 
 .invitation-box {
-    width: calc(100% - 40px);
+    width: calc(100% - 38px);
     max-width: 470px;
 
-    padding: 42px 25px;
+    padding: 42px 24px;
 
     text-align: center;
-
     color: white;
 
-    background: rgba(16, 31, 14, 0.60);
+    background: rgba(16,31,14,0.60);
 
-    border: 1px solid rgba(229, 199, 128, 0.85);
+    border: 1px solid rgba(229,199,128,0.90);
     border-radius: 20px;
 
-    box-shadow: 0 15px 50px rgba(0,0,0,0.35);
+    box-shadow: 0 15px 50px rgba(0,0,0,0.40);
 
     backdrop-filter: blur(3px);
 }
@@ -99,7 +103,7 @@ body.no-scroll {
 }
 
 .invitation-box h1 {
-    font-size: 46px;
+    font-size: 47px;
     line-height: 1.1;
     font-weight: normal;
 }
@@ -111,7 +115,7 @@ body.no-scroll {
 }
 
 .invitation-date {
-    margin-top: 25px;
+    margin-top: 24px;
     font-size: 15px;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -119,16 +123,14 @@ body.no-scroll {
 
 .invitation-message {
     max-width: 340px;
-    margin: 25px auto 0;
-
+    margin: 24px auto 0;
     font-size: 16px;
     line-height: 1.7;
 }
 
 #openInvitation {
     margin-top: 30px;
-
-    padding: 15px 28px;
+    padding: 15px 29px;
 
     border: 2px solid white;
     border-radius: 50px;
@@ -146,9 +148,9 @@ body.no-scroll {
 }
 
 
-/* ==================================================
-   COVER
-================================================== */
+/* ==============================
+   MAIN COVER
+============================== */
 
 .hero {
     position: relative;
@@ -161,12 +163,18 @@ body.no-scroll {
 
     background: #142312;
 
-    overflow: hidden;
-
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
 }
+
+/*
+IMPORTANT:
+This uses Cover-1.jpg exactly as shown
+in your GitHub screenshot.
+*/
 
 .hero-image {
     width: 100%;
@@ -185,7 +193,7 @@ body.no-scroll {
     background:
         linear-gradient(
             to bottom,
-            rgba(0,0,0,0.03) 50%,
+            rgba(0,0,0,0.01) 45%,
             rgba(0,0,0,0.42) 100%
         );
 
@@ -193,9 +201,9 @@ body.no-scroll {
 }
 
 
-/* ==================================================
-   SCROLL BUTTON
-================================================== */
+/* ==============================
+   SCROLL DOWN BUTTON
+============================== */
 
 .scroll-button {
     position: absolute;
@@ -207,10 +215,9 @@ body.no-scroll {
 
     transform: translateX(-50%);
 
-    padding: 14px 23px;
+    padding: 14px 24px;
 
-    background: rgba(185,111,122,0.96);
-
+    background: rgba(185,111,122,0.97);
     color: white;
 
     border: 2px solid white;
@@ -240,9 +247,9 @@ body.no-scroll {
 }
 
 
-/* ==================================================
+/* ==============================
    GENERAL SECTIONS
-================================================== */
+============================== */
 
 .section {
     padding: 85px 20px;
@@ -298,9 +305,9 @@ body.no-scroll {
 }
 
 
-/* ==================================================
-   COUPLE / PARENTS
-================================================== */
+/* ==============================
+   BRIDE & GROOM
+============================== */
 
 .couple-grid {
     max-width: 950px;
@@ -353,12 +360,14 @@ body.no-scroll {
 }
 
 
-/* ==================================================
+/* ==============================
    COUNTDOWN
-================================================== */
+============================== */
 
 .countdown-description {
     font-size: 18px;
+
+    line-height: 1.7;
 
     margin-bottom: 38px;
 }
@@ -410,9 +419,9 @@ body.no-scroll {
 }
 
 
-/* ==================================================
-   EVENTS
-================================================== */
+/* ==============================
+   WEDDING + RECEPTION
+============================== */
 
 .events {
     max-width: 1000px;
@@ -463,9 +472,13 @@ body.no-scroll {
 }
 
 .event-time {
-    font-size: 19px;
+    font-size: 21px;
 
-    margin-bottom: 12px;
+    color: #b76e79;
+
+    font-weight: bold;
+
+    margin-bottom: 16px;
 }
 
 .event-location {
@@ -474,20 +487,44 @@ body.no-scroll {
     line-height: 1.7;
 }
 
-.more-info {
-    color: #86736c;
 
-    font-size: 14px;
+/* ==============================
+   MAP BUTTON
+============================== */
 
-    font-style: italic;
+.map-button {
+    display: inline-block;
 
-    margin-top: 18px;
+    margin-top: 25px;
+
+    padding: 13px 22px;
+
+    background: #b76e79;
+
+    color: white;
+
+    border: 2px solid #b76e79;
+    border-radius: 50px;
+
+    text-decoration: none;
+
+    font-family: Georgia, serif;
+
+    font-size: 15px;
+    font-weight: bold;
+
+    transition: 0.25s ease;
+}
+
+.map-button:hover {
+    background: white;
+    color: #b76e79;
 }
 
 
-/* ==================================================
-   GALLERY
-================================================== */
+/* ==============================
+   PHOTO GALLERY
+============================== */
 
 .gallery-text {
     max-width: 650px;
@@ -526,9 +563,9 @@ body.no-scroll {
 }
 
 
-/* ==================================================
+/* ==============================
    ENDING
-================================================== */
+============================== */
 
 .ending {
     padding: 95px 20px;
@@ -569,9 +606,9 @@ body.no-scroll {
 }
 
 
-/* ==================================================
+/* ==============================
    MUSIC BUTTON
-================================================== */
+============================== */
 
 #musicButton {
     position: fixed;
@@ -601,9 +638,9 @@ body.no-scroll {
 }
 
 
-/* ==================================================
+/* ==============================
    TABLET
-================================================== */
+============================== */
 
 @media (max-width: 900px) {
 
@@ -618,37 +655,39 @@ body.no-scroll {
 }
 
 
-/* ==================================================
-   PHONE
-================================================== */
+/* ==============================
+   MOBILE
+============================== */
 
 @media (max-width: 600px) {
 
     .invitation-box {
-        width: calc(100% - 32px);
+        width: calc(100% - 30px);
 
-        padding: 35px 18px;
+        padding: 34px 18px;
     }
 
     .invitation-box h1 {
         font-size: 39px;
     }
 
+
+    /*
+    Keeps Cover-1.jpg filling the
+    phone screen.
+    */
+
     #invitationOverlay {
         background-position: center center;
     }
 
 
-    /*
-    COVER ON PHONE
-
-    Using cover keeps the entire phone screen filled.
-    */
-
     .hero {
         height: 100svh;
+
         min-height: 600px;
     }
+
 
     .hero-image {
         width: 100%;
@@ -713,6 +752,8 @@ body.no-scroll {
 
 
     .gallery img {
+        width: 100%;
+
         height: auto;
 
         object-fit: contain;
@@ -726,6 +767,7 @@ body.no-scroll {
 
     #musicButton {
         right: 10px;
+
         bottom: 10px;
 
         padding: 10px 14px;
@@ -735,28 +777,29 @@ body.no-scroll {
 }
 
 </style>
-
 </head>
 
 
 <body class="no-scroll">
 
 
-<!-- ==================================================
+<!-- ==============================
      MUSIC FILE
-================================================== -->
+============================== -->
 
 <audio id="weddingMusic" loop preload="auto">
 
-    <source src="wedding.mp3" type="audio/mpeg">
+    <source
+        src="wedding.mp3"
+        type="audio/mpeg">
 
 </audio>
 
 
 
-<!-- ==================================================
+<!-- ==============================
      OPEN INVITATION
-================================================== -->
+============================== -->
 
 <div id="invitationOverlay">
 
@@ -797,9 +840,9 @@ body.no-scroll {
 
 
 
-<!-- ==================================================
+<!-- ==============================
      MUSIC CONTROL
-================================================== -->
+============================== -->
 
 <button id="musicButton">
 
@@ -809,9 +852,9 @@ body.no-scroll {
 
 
 
-<!-- ==================================================
+<!-- ==============================
      COVER
-================================================== -->
+============================== -->
 
 <section class="hero">
 
@@ -834,9 +877,9 @@ body.no-scroll {
 
 
 
-<!-- ==================================================
-     WELCOME
-================================================== -->
+<!-- ==============================
+     INTRODUCTION
+============================== -->
 
 <section
     class="section light"
@@ -862,14 +905,15 @@ body.no-scroll {
 
     <p class="intro">
 
-        With great joy and the blessings of our families,
-        we invite you to celebrate the beginning of
-        our new journey together.
+        With great joy and the blessings
+        of our families, we invite you to
+        celebrate the beginning of our
+        new journey together.
 
         <br><br>
 
-        Your presence and blessings will make
-        our celebration even more special.
+        Your presence and blessings will
+        make our celebration even more special.
 
     </p>
 
@@ -877,9 +921,9 @@ body.no-scroll {
 
 
 
-<!-- ==================================================
+<!-- ==============================
      BRIDE AND GROOM
-================================================== -->
+============================== -->
 
 <section class="section pink">
 
@@ -984,9 +1028,9 @@ body.no-scroll {
 
 
 
-<!-- ==================================================
+<!-- ==============================
      COUNTDOWN
-================================================== -->
+============================== -->
 
 <section class="section light">
 
@@ -1005,6 +1049,10 @@ body.no-scroll {
     <p class="countdown-description">
 
         Thursday, September 10, 2026
+
+        <br>
+
+        10:00 AM
 
     </p>
 
@@ -1096,9 +1144,9 @@ body.no-scroll {
 
 
 
-<!-- ==================================================
-     WEDDING AND RECEPTION
-================================================== -->
+<!-- ==============================
+     WEDDING & RECEPTION
+============================== -->
 
 <section class="section pink">
 
@@ -1144,22 +1192,40 @@ body.no-scroll {
 
             </div>
 
+            <div class="event-time">
+
+                10:00 AM
+
+            </div>
+
             <div class="event-location">
 
-                Muvattupuzha
+                <strong>
+
+                    Mar Thoma Cheriapally
+
+                </strong>
 
                 <br>
 
-                Kerala
+                Kothamangalam
+
+                <br>
+
+                Kerala 686691
 
             </div>
 
-            <div class="more-info">
 
-                Ceremony time, church and exact
-                location details will be added soon.
+            <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=Mar+Thoma+Cheriapally+Kothamangalam+Kerala+686691"
+                target="_blank"
+                rel="noopener noreferrer">
 
-            </div>
+                📍 View Wedding Location
+
+            </a>
 
         </div>
 
@@ -1199,7 +1265,11 @@ body.no-scroll {
 
             <div class="event-location">
 
-                Casa Sanjo's Parish Hall
+                <strong>
+
+                    Casa Sanjo's Parish Hall
+
+                </strong>
 
                 <br>
 
@@ -1211,6 +1281,17 @@ body.no-scroll {
 
             </div>
 
+
+            <a
+                class="map-button"
+                href="https://www.google.com/maps/search/?api=1&query=Casa+Sanjos+Parish+Hall+Thundiyil+Kannur+Kerala"
+                target="_blank"
+                rel="noopener noreferrer">
+
+                📍 View Reception Location
+
+            </a>
+
         </div>
 
 
@@ -1220,9 +1301,17 @@ body.no-scroll {
 
 
 
-<!-- ==================================================
+<!-- ==============================
      OUR MEMORIES
-================================================== -->
+
+     EXACT FILENAMES:
+     Image 1.jpg
+     Image 2.jpg
+     Image 3.jpg
+     Image 4.jpg
+     Image 5.jpg
+     Image 6.jpg
+============================== -->
 
 <section class="section light">
 
@@ -1244,8 +1333,8 @@ body.no-scroll {
 
         <br><br>
 
-        A few beautiful moments from
-        our journey together.
+        A few beautiful moments
+        from our journey together.
 
     </p>
 
@@ -1255,37 +1344,37 @@ body.no-scroll {
 
         <img
             src="images/Image 1.jpg"
-            alt="Nikitha and Tom"
+            alt="Nikitha and Tom - Memory 1"
             loading="lazy">
 
 
         <img
             src="images/Image 2.jpg"
-            alt="Nikitha and Tom"
+            alt="Nikitha and Tom - Memory 2"
             loading="lazy">
 
 
         <img
             src="images/Image 3.jpg"
-            alt="Nikitha and Tom"
+            alt="Nikitha and Tom - Memory 3"
             loading="lazy">
 
 
         <img
             src="images/Image 4.jpg"
-            alt="Nikitha and Tom"
+            alt="Nikitha and Tom - Memory 4"
             loading="lazy">
 
 
         <img
             src="images/Image 5.jpg"
-            alt="Nikitha and Tom"
+            alt="Nikitha and Tom - Memory 5"
             loading="lazy">
 
 
         <img
             src="images/Image 6.jpg"
-            alt="Nikitha and Tom"
+            alt="Nikitha and Tom - Memory 6"
             loading="lazy">
 
 
@@ -1295,9 +1384,9 @@ body.no-scroll {
 
 
 
-<!-- ==================================================
+<!-- ==============================
      ENDING
-================================================== -->
+============================== -->
 
 <section class="ending">
 
@@ -1336,16 +1425,11 @@ body.no-scroll {
 
 
 
-<!-- ==================================================
-     JAVASCRIPT
-================================================== -->
-
 <script>
 
-
-/* ==================================================
-   ELEMENTS
-================================================== */
+/* ==============================
+   OPEN INVITATION + MUSIC
+============================== */
 
 const invitationOverlay =
     document.getElementById("invitationOverlay");
@@ -1363,249 +1447,10 @@ const musicButton =
 weddingMusic.volume = 0.55;
 
 
-
-/* ==================================================
-   OPEN INVITATION
-================================================== */
-
 openInvitation.addEventListener(
     "click",
     function () {
 
 
         /*
-        Start music from the same tap used
-        to open the invitation.
-
-        This is important because Chrome,
-        Safari and other mobile browsers
-        normally block audio before the
-        visitor interacts with the page.
-        */
-
-        weddingMusic.play()
-
-        .then(function () {
-
-            musicButton.innerHTML =
-                "Ⅱ Pause Music";
-
-        })
-
-        .catch(function () {
-
-            musicButton.innerHTML =
-                "🎵 Play Music";
-
-        });
-
-
-
-        /*
-        Hide opening screen
-        */
-
-        invitationOverlay.classList.add(
-            "hide"
-        );
-
-
-
-        /*
-        Enable scrolling
-        */
-
-        document.body.classList.remove(
-            "no-scroll"
-        );
-
-
-
-        /*
-        Show music control
-        */
-
-        musicButton.style.display =
-            "block";
-
-
-
-        /*
-        Start at top of cover
-        */
-
-        window.scrollTo({
-            top: 0,
-            behavior: "instant"
-        });
-
-    }
-);
-
-
-
-/* ==================================================
-   MUSIC BUTTON
-================================================== */
-
-musicButton.addEventListener(
-    "click",
-    function () {
-
-
-        if (weddingMusic.paused) {
-
-
-            weddingMusic.play();
-
-
-            musicButton.innerHTML =
-                "Ⅱ Pause Music";
-
-
-        } else {
-
-
-            weddingMusic.pause();
-
-
-            musicButton.innerHTML =
-                "🎵 Play Music";
-
-        }
-
-    }
-);
-
-
-
-/* ==================================================
-   COUNTDOWN
-================================================== */
-
-/*
-The exact wedding ceremony time has
-not yet been added.
-
-For now the countdown finishes at
-12:00 AM Kerala time on
-September 10, 2026.
-*/
-
-const weddingDate =
-    new Date(
-        "2026-09-10T00:00:00+05:30"
-    ).getTime();
-
-
-
-function updateCountdown() {
-
-
-    const now =
-        new Date().getTime();
-
-
-    const distance =
-        weddingDate - now;
-
-
-
-    if (distance <= 0) {
-
-
-        document.getElementById(
-            "countdown"
-        ).innerHTML =
-
-            "<h3 style='color:#b76e79;font-size:30px;'>Today is our Wedding Day! ❤️</h3>";
-
-
-        return;
-
-    }
-
-
-
-    const days =
-        Math.floor(
-            distance /
-            (1000 * 60 * 60 * 24)
-        );
-
-
-
-    const hours =
-        Math.floor(
-            (distance %
-            (1000 * 60 * 60 * 24))
-            /
-            (1000 * 60 * 60)
-        );
-
-
-
-    const minutes =
-        Math.floor(
-            (distance %
-            (1000 * 60 * 60))
-            /
-            (1000 * 60)
-        );
-
-
-
-    const seconds =
-        Math.floor(
-            (distance %
-            (1000 * 60))
-            /
-            1000
-        );
-
-
-
-    document.getElementById(
-        "days"
-    ).textContent =
-        days;
-
-
-
-    document.getElementById(
-        "hours"
-    ).textContent =
-        String(hours).padStart(2, "0");
-
-
-
-    document.getElementById(
-        "minutes"
-    ).textContent =
-        String(minutes).padStart(2, "0");
-
-
-
-    document.getElementById(
-        "seconds"
-    ).textContent =
-        String(seconds).padStart(2, "0");
-
-}
-
-
-updateCountdown();
-
-
-setInterval(
-    updateCountdown,
-    1000
-);
-
-
-</script>
-
-
-</body>
-
-</html>
+      
