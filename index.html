@@ -2,25 +2,20 @@
 <html lang="en">
 
 <head>
-
 <meta charset="UTF-8">
 
 <meta name="viewport"
-content="width=device-width, initial-scale=1.0">
+content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
-<meta name="theme-color"
-content="#172313">
+<meta name="theme-color" content="#183018">
 
-<title>
-Nikitha & Tom | Wedding Invitation
-</title>
-
+<title>Nikitha & Tom | Wedding Invitation</title>
 
 <style>
 
-/* ===============================
-   BASIC
-================================ */
+/* =========================
+   RESET
+========================= */
 
 * {
     margin: 0;
@@ -33,203 +28,177 @@ html {
 }
 
 body {
-    margin: 0;
     font-family: Georgia, "Times New Roman", serif;
     background: #fffaf6;
-    color: #493e39;
+    color: #463c37;
     overflow-x: hidden;
 }
 
 
-/* ===============================
-   OPEN INVITATION
-================================ */
+/* =========================
+   OPEN INVITATION SCREEN
+========================= */
 
 #invitationOverlay {
-
     position: fixed;
-
-    top: 0;
-    left: 0;
-
+    inset: 0;
     width: 100%;
     height: 100vh;
-    height: 100svh;
+    height: 100dvh;
 
     z-index: 999999;
 
     display: flex;
-
     align-items: center;
     justify-content: center;
 
+    padding: 24px;
+
     background:
-
         linear-gradient(
-            rgba(10,25,10,0.30),
-            rgba(10,25,10,0.68)
+            rgba(8, 30, 13, 0.12),
+            rgba(8, 30, 13, 0.38)
         ),
-
         url("images/Cover-1.jpg");
 
     background-size: cover;
-
-    background-position: center center;
-
+    background-position: center;
     background-repeat: no-repeat;
 }
 
 
-.invitation-box {
-
-    width: calc(100% - 36px);
-
-    max-width: 460px;
-
-    padding: 40px 22px;
+.open-card {
+    width: 100%;
+    max-width: 620px;
 
     text-align: center;
 
+    padding: 42px 24px;
+
     color: white;
 
-    background:
-        rgba(18,35,16,0.67);
+    background: rgba(20, 45, 24, 0.78);
 
-    border:
-        1px solid #dfc47c;
+    border: 1.5px solid #d7bd73;
 
-    border-radius: 22px;
+    border-radius: 30px;
 
     box-shadow:
-        0 15px 45px
-        rgba(0,0,0,0.40);
+        0 15px 45px rgba(0,0,0,0.35);
 }
 
 
-.invitation-small {
-
-    color: #e8cc83;
-
-    font-size: 12px;
-
-    letter-spacing: 3px;
+.open-small {
+    color: #ead28b;
 
     text-transform: uppercase;
 
-    margin-bottom: 20px;
+    letter-spacing: 4px;
+
+    font-size: 13px;
+
+    margin-bottom: 28px;
 }
 
 
-.invitation-box h1 {
-
-    font-size: 45px;
-
+.open-card h1 {
+    font-size: 55px;
     font-weight: normal;
-
-    line-height: 1.1;
+    line-height: 1.05;
 }
 
 
-.invitation-heart {
+.open-heart {
+    margin: 18px 0;
 
-    color: #e6c878;
+    color: #efd37c;
 
-    font-size: 28px;
-
-    margin: 12px 0;
+    font-size: 34px;
 }
 
 
-.invitation-date {
+.open-date {
+    margin-top: 28px;
 
-    margin-top: 23px;
+    font-size: 17px;
 
-    font-size: 15px;
-
-    letter-spacing: 3px;
+    letter-spacing: 4px;
 
     text-transform: uppercase;
 }
 
 
-.invitation-message {
+.open-message {
+    max-width: 480px;
 
-    max-width: 330px;
+    margin: 30px auto 0;
 
-    margin: 23px auto 0;
-
-    font-size: 16px;
+    font-size: 19px;
 
     line-height: 1.7;
 }
 
 
 #openInvitation {
-
     display: inline-block;
 
-    margin-top: 28px;
+    margin-top: 32px;
 
-    padding: 15px 30px;
-
-    background: #b96f7a;
-
-    color: white;
+    padding: 17px 34px;
 
     border: 2px solid white;
 
-    border-radius: 50px;
+    border-radius: 60px;
 
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
+    background: #bd7380;
 
-    font-size: 17px;
+    color: white;
+
+    font-family: Georgia, serif;
+
+    font-size: 20px;
 
     font-weight: bold;
 
     cursor: pointer;
 
+    -webkit-tap-highlight-color: transparent;
+
     touch-action: manipulation;
 
     box-shadow:
-        0 7px 25px
-        rgba(0,0,0,0.30);
+        0 8px 25px rgba(0,0,0,0.28);
 }
 
 
-/* ===============================
-   HERO
-================================ */
+/* =========================
+   COVER
+========================= */
 
 .hero {
-
     position: relative;
 
     width: 100%;
 
-    height: 100vh;
-    height: 100svh;
+    min-height: 100vh;
+    min-height: 100dvh;
 
-    min-height: 600px;
-
-    background: #142312;
-
-    overflow: hidden;
+    background: #172b17;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
+
+    overflow: hidden;
 }
 
 
-.hero-image {
+.hero img {
+    position: absolute;
+
+    inset: 0;
 
     width: 100%;
-
     height: 100%;
 
     object-fit: cover;
@@ -240,50 +209,38 @@ body {
 }
 
 
-.hero-overlay {
-
+.hero-shade {
     position: absolute;
-
     inset: 0;
 
     background:
-
         linear-gradient(
-
             to bottom,
-
-            rgba(0,0,0,0.00) 50%,
-
-            rgba(0,0,0,0.38) 100%
-
+            transparent 55%,
+            rgba(0,0,0,0.40)
         );
-
-    pointer-events: none;
 }
 
 
-.scroll-button {
-
+.scroll-details {
     position: absolute;
 
-    z-index: 20;
+    z-index: 10;
 
     left: 50%;
-
     bottom: 28px;
 
-    transform:
-        translateX(-50%);
+    transform: translateX(-50%);
 
-    padding: 14px 23px;
-
-    background: #b96f7a;
-
-    color: white;
+    padding: 14px 25px;
 
     border: 2px solid white;
 
     border-radius: 50px;
+
+    background: #bd7380;
+
+    color: white;
 
     text-decoration: none;
 
@@ -294,17 +251,15 @@ body {
     white-space: nowrap;
 
     box-shadow:
-        0 7px 25px
-        rgba(0,0,0,0.30);
+        0 6px 20px rgba(0,0,0,0.30);
 }
 
 
-/* ===============================
+/* =========================
    GENERAL SECTIONS
-================================ */
+========================= */
 
 .section {
-
     padding: 85px 20px;
 
     text-align: center;
@@ -312,56 +267,50 @@ body {
 
 
 .light {
-
     background: #fffaf6;
 }
 
 
-.pink {
-
-    background: #f7eeee;
+.soft {
+    background: #f8eeee;
 }
 
 
-.small-title {
+.small-heading {
+    color: #927865;
 
-    color: #927762;
-
-    text-transform: uppercase;
+    font-size: 13px;
 
     letter-spacing: 4px;
 
-    font-size: 13px;
+    text-transform: uppercase;
 
     margin-bottom: 17px;
 }
 
 
 .section h2 {
-
     color: #b76e79;
 
     font-size: 44px;
 
     font-weight: normal;
 
-    margin-bottom: 25px;
+    margin-bottom: 22px;
 }
 
 
-.heart {
-
+.decorative-heart {
     color: #b76e79;
 
-    font-size: 28px;
+    font-size: 30px;
 
     margin: 20px 0;
 }
 
 
-.intro {
-
-    max-width: 750px;
+.introduction {
+    max-width: 760px;
 
     margin: auto;
 
@@ -371,41 +320,36 @@ body {
 }
 
 
-/* ===============================
+/* =========================
    COUPLE
-================================ */
+========================= */
 
 .couple-grid {
-
     max-width: 950px;
 
     margin: 45px auto 0;
 
     display: grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 28px;
 }
 
 
 .couple-card {
+    padding: 45px 30px;
 
     background: white;
 
-    padding: 45px 30px;
-
-    border-radius: 18px;
+    border-radius: 20px;
 
     box-shadow:
-        0 8px 25px
-        rgba(0,0,0,0.07);
+        0 8px 25px rgba(0,0,0,0.07);
 }
 
 
 .couple-card h3 {
-
     color: #b76e79;
 
     font-size: 32px;
@@ -416,33 +360,30 @@ body {
 }
 
 
-.relationship {
+.family-label {
+    color: #987b67;
 
-    color: #967b66;
-
-    font-size: 13px;
+    text-transform: uppercase;
 
     letter-spacing: 2px;
 
-    text-transform: uppercase;
+    font-size: 13px;
 
     margin-bottom: 15px;
 }
 
 
 .parents {
-
     font-size: 19px;
 
     line-height: 1.8;
 }
 
 
-.family-address {
+.family-location {
+    margin-top: 16px;
 
-    margin-top: 15px;
-
-    color: #7d7069;
+    color: #786b64;
 
     font-size: 15px;
 
@@ -450,23 +391,21 @@ body {
 }
 
 
-/* ===============================
+/* =========================
    COUNTDOWN
-================================ */
+========================= */
 
-.countdown-description {
+.countdown-date {
+    margin-bottom: 35px;
 
     font-size: 18px;
 
     line-height: 1.7;
-
-    margin-bottom: 38px;
 }
 
 
 .countdown {
-
-    max-width: 700px;
+    max-width: 720px;
 
     margin: auto;
 
@@ -476,28 +415,25 @@ body {
 
     flex-wrap: wrap;
 
-    gap: 14px;
+    gap: 13px;
 }
 
 
 .count-box {
-
-    width: 145px;
+    width: 150px;
 
     padding: 25px 10px;
 
-    background: #f7eeee;
+    background: #f8eeee;
 
-    border-radius: 15px;
+    border-radius: 16px;
 
     box-shadow:
-        0 5px 18px
-        rgba(0,0,0,0.06);
+        0 5px 18px rgba(0,0,0,0.06);
 }
 
 
 .count-number {
-
     display: block;
 
     color: #b76e79;
@@ -511,70 +447,62 @@ body {
 
 
 .count-label {
-
     font-size: 12px;
 
-    text-transform: uppercase;
-
     letter-spacing: 2px;
+
+    text-transform: uppercase;
 }
 
 
-/* ===============================
+/* =========================
    EVENTS
-================================ */
+========================= */
 
 .events {
-
     max-width: 1000px;
 
     margin: 45px auto 0;
 
     display: grid;
 
-    grid-template-columns:
-        1fr 1fr;
+    grid-template-columns: 1fr 1fr;
 
     gap: 28px;
 }
 
 
 .event-card {
+    padding: 45px 28px;
 
     background: white;
 
-    padding: 45px 28px;
-
-    border-radius: 18px;
+    border-radius: 20px;
 
     box-shadow:
-        0 8px 25px
-        rgba(0,0,0,0.07);
+        0 8px 25px rgba(0,0,0,0.07);
 }
 
 
 .event-icon {
+    font-size: 36px;
 
-    font-size: 35px;
-
-    margin-bottom: 18px;
+    margin-bottom: 17px;
 }
 
 
 .event-card h3 {
-
     color: #b76e79;
 
     font-size: 31px;
 
     font-weight: normal;
 
-    margin-bottom: 23px;
+    margin-bottom: 22px;
 }
 
 
 .event-date {
-
     font-size: 19px;
 
     font-weight: bold;
@@ -586,19 +514,17 @@ body {
 
 
 .event-time {
+    color: #b76e79;
 
     font-size: 21px;
 
-    color: #b76e79;
-
     font-weight: bold;
 
-    margin-bottom: 16px;
+    margin-bottom: 17px;
 }
 
 
 .event-location {
-
     font-size: 18px;
 
     line-height: 1.7;
@@ -606,20 +532,19 @@ body {
 
 
 .map-button {
-
     display: inline-block;
 
     margin-top: 25px;
 
-    padding: 13px 22px;
+    padding: 13px 23px;
 
     background: #b76e79;
 
     color: white;
 
-    border-radius: 50px;
-
     text-decoration: none;
+
+    border-radius: 50px;
 
     font-size: 15px;
 
@@ -627,16 +552,14 @@ body {
 }
 
 
-/* ===============================
+/* =========================
    GALLERY
-================================ */
+========================= */
 
-.gallery-text {
-
+.gallery-intro {
     max-width: 650px;
 
-    margin:
-        0 auto 40px;
+    margin: 0 auto 40px;
 
     font-size: 18px;
 
@@ -645,7 +568,6 @@ body {
 
 
 .gallery {
-
     max-width: 1250px;
 
     margin: auto;
@@ -653,59 +575,54 @@ body {
     display: grid;
 
     grid-template-columns:
-        repeat(3,1fr);
+        repeat(3, 1fr);
 
-    gap: 22px;
+    gap: 20px;
 }
 
 
 .gallery img {
-
     width: 100%;
 
     height: 420px;
 
     object-fit: cover;
 
+    border-radius: 15px;
+
     display: block;
 
-    border-radius: 14px;
-
     box-shadow:
-        0 7px 22px
-        rgba(0,0,0,0.13);
+        0 7px 22px rgba(0,0,0,0.13);
 }
 
 
-/* ===============================
+/* =========================
    ENDING
-================================ */
+========================= */
 
 .ending {
-
     padding: 95px 20px;
 
     text-align: center;
 
-    background: #142312;
+    background: #172b17;
 
     color: white;
 }
 
 
 .ending-heart {
+    color: #e3c77c;
 
-    color: #e0c17c;
-
-    font-size: 30px;
+    font-size: 32px;
 
     margin-bottom: 20px;
 }
 
 
 .ending h2 {
-
-    color: #e0c17c;
+    color: #e3c77c;
 
     font-size: 43px;
 
@@ -716,7 +633,6 @@ body {
 
 
 .ending p {
-
     max-width: 650px;
 
     margin: auto;
@@ -727,229 +643,223 @@ body {
 }
 
 
-/* ===============================
+/* =========================
    MUSIC BUTTON
-================================ */
+========================= */
 
 #musicButton {
-
     position: fixed;
 
-    right: 14px;
+    z-index: 9000;
 
-    bottom: 14px;
-
-    z-index: 5000;
+    right: 13px;
+    bottom: 15px;
 
     display: none;
 
-    padding: 12px 17px;
+    padding: 12px 18px;
 
     border: 2px solid white;
 
-    border-radius: 35px;
+    border-radius: 40px;
 
-    background: #b96f7a;
+    background: #bd7380;
 
     color: white;
 
-    font-family:
-        Georgia,
-        serif;
+    font-family: Georgia, serif;
 
     font-size: 14px;
 
     cursor: pointer;
 
     box-shadow:
-        0 5px 18px
-        rgba(0,0,0,0.25);
+        0 5px 18px rgba(0,0,0,0.25);
 }
 
 
-/* ===============================
+/* =========================
    TABLET
-================================ */
+========================= */
 
 @media (max-width: 900px) {
 
     .couple-grid,
     .events {
-
         grid-template-columns: 1fr;
-
     }
-
 
     .gallery {
-
-        grid-template-columns:
-            repeat(2,1fr);
-
+        grid-template-columns: repeat(2, 1fr);
     }
-
 }
 
 
-/* ===============================
+/* =========================
    MOBILE
-================================ */
+========================= */
 
 @media (max-width: 600px) {
 
     #invitationOverlay {
+        padding: 18px;
 
         background-position:
             center center;
-
     }
 
 
-    .invitation-box {
+    .open-card {
+        padding: 35px 18px;
 
-        width:
-            calc(100% - 28px);
-
-        padding:
-            34px 18px;
-
+        border-radius: 24px;
     }
 
 
-    .invitation-box h1 {
+    .open-small {
+        font-size: 11px;
 
-        font-size: 39px;
+        letter-spacing: 3px;
 
+        margin-bottom: 20px;
+    }
+
+
+    .open-card h1 {
+        font-size: 43px;
+    }
+
+
+    .open-heart {
+        margin: 12px 0;
+
+        font-size: 28px;
+    }
+
+
+    .open-date {
+        margin-top: 21px;
+
+        font-size: 14px;
+
+        letter-spacing: 3px;
+    }
+
+
+    .open-message {
+        margin-top: 23px;
+
+        font-size: 16px;
+
+        line-height: 1.6;
+    }
+
+
+    #openInvitation {
+        margin-top: 25px;
+
+        padding: 15px 28px;
+
+        font-size: 18px;
+    }
+
+
+    /*
+      IMPORTANT:
+      Mobile portrait cover.
+
+      "contain" prevents the picture
+      from becoming heavily zoomed.
+    */
+
+    .hero img {
+        object-fit: contain;
+
+        object-position:
+            center center;
     }
 
 
     .hero {
+        background: #172b17;
 
-        height: 100svh;
-
-        min-height: 600px;
-
+        min-height: 100dvh;
     }
 
 
-    .hero-image {
+    .scroll-details {
+        bottom: 25px;
 
-        width: 100%;
-
-        height: 100%;
-
-        object-fit: cover;
-
-        object-position:
-            center center;
-
-    }
-
-
-    .scroll-button {
-
-        bottom: 24px;
-
-        padding:
-            12px 18px;
+        padding: 12px 19px;
 
         font-size: 14px;
-
     }
 
 
     .section {
-
-        padding:
-            65px 17px;
-
+        padding: 65px 17px;
     }
 
 
     .section h2 {
-
         font-size: 34px;
-
     }
 
 
-    .intro {
-
+    .introduction {
         font-size: 17px;
-
     }
 
 
     .couple-card,
     .event-card {
-
-        padding:
-            37px 20px;
-
+        padding: 37px 20px;
     }
 
 
     .countdown {
-
         gap: 9px;
-
     }
 
 
     .count-box {
+        width: calc(50% - 7px);
 
-        width:
-            calc(50% - 7px);
-
-        padding:
-            20px 7px;
-
+        padding: 20px 7px;
     }
 
 
     .count-number {
-
         font-size: 34px;
-
     }
 
 
     .gallery {
-
         grid-template-columns: 1fr;
-
     }
 
 
     .gallery img {
-
         width: 100%;
 
         height: auto;
 
         object-fit: contain;
-
     }
 
 
     .ending h2 {
-
         font-size: 34px;
-
     }
 
 
     #musicButton {
-
         right: 10px;
-
         bottom: 10px;
 
-        padding:
-            10px 14px;
+        padding: 10px 14px;
 
         font-size: 12px;
-
     }
 
 }
@@ -962,9 +872,9 @@ body {
 <body>
 
 
-<!-- =================================
-     MUSIC
-================================= -->
+<!-- =========================
+     AUDIO
+========================= -->
 
 <audio
     id="weddingMusic"
@@ -978,44 +888,36 @@ body {
 </audio>
 
 
-<!-- =================================
+<!-- =========================
      OPEN INVITATION
-================================= -->
+========================= -->
 
 <div id="invitationOverlay">
 
-    <div class="invitation-box">
+    <div class="open-card">
 
-        <div class="invitation-small">
-
+        <div class="open-small">
             Together With Our Families
-
         </div>
 
 
-        <h1>
-            Nikitha
-        </h1>
+        <h1>Nikitha</h1>
 
 
-        <div class="invitation-heart">
+        <div class="open-heart">
             ♥
         </div>
 
 
-        <h1>
-            Tom
-        </h1>
+        <h1>Tom</h1>
 
 
-        <div class="invitation-date">
-
+        <div class="open-date">
             September 10, 2026
-
         </div>
 
 
-        <p class="invitation-message">
+        <p class="open-message">
 
             We joyfully invite you and your family
             to celebrate our wedding with us.
@@ -1025,8 +927,7 @@ body {
 
         <button
             id="openInvitation"
-            type="button"
-            onclick="openWedding()">
+            type="button">
 
             💌 Open Invitation
 
@@ -1037,38 +938,36 @@ body {
 </div>
 
 
-<!-- =================================
+<!-- =========================
      MUSIC CONTROL
-================================= -->
+========================= -->
 
 <button
     id="musicButton"
-    type="button"
-    onclick="toggleMusic()">
+    type="button">
 
     Ⅱ Pause Music
 
 </button>
 
 
-<!-- =================================
+<!-- =========================
      COVER
-================================= -->
+========================= -->
 
 <section class="hero">
 
     <img
-        class="hero-image"
         src="images/Cover-1.jpg"
-        alt="Nikitha and Tom Wedding">
+        alt="Nikitha and Tom Wedding Invitation">
 
 
-    <div class="hero-overlay"></div>
+    <div class="hero-shade"></div>
 
 
     <a
-        href="#details"
-        class="scroll-button">
+        class="scroll-details"
+        href="#details">
 
         Scroll Down for Details ↓
 
@@ -1077,72 +976,59 @@ body {
 </section>
 
 
-<!-- =================================
-     INTRODUCTION
-================================= -->
+<!-- =========================
+     INTRO
+========================= -->
 
 <section
     class="section light"
     id="details">
 
 
-    <div class="small-title">
-
+    <div class="small-heading">
         Together With Our Families
-
     </div>
 
 
     <h2>
-
         We're Getting Married
-
     </h2>
 
 
-    <div class="heart">
-
+    <div class="decorative-heart">
         ♥
-
     </div>
 
 
-    <p class="intro">
+    <p class="introduction">
 
-        With great joy and the blessings
-        of our families, we invite you
-        to celebrate the beginning of
+        With great joy and the blessings of our families,
+        we invite you to celebrate the beginning of
         our new journey together.
 
         <br><br>
 
-        Your presence and blessings
-        will make our celebration
-        even more special.
+        Your presence and blessings will make
+        our celebration even more special.
 
     </p>
 
 </section>
 
 
-<!-- =================================
-     BRIDE & GROOM
-================================= -->
+<!-- =========================
+     COUPLE
+========================= -->
 
-<section class="section pink">
+<section class="section soft">
 
-
-    <div class="small-title">
-
+    <div class="small-heading">
         Bride & Groom
-
     </div>
 
 
     <h2>
-
         Meet the Couple
-
     </h2>
 
 
@@ -1153,25 +1039,18 @@ body {
 
         <div class="couple-card">
 
-
-            <div class="heart">
-
+            <div class="decorative-heart">
                 ♡
-
             </div>
 
 
             <h3>
-
                 Nikitha Joemon
-
             </h3>
 
 
-            <div class="relationship">
-
+            <div class="family-label">
                 Daughter of
-
             </div>
 
 
@@ -1189,7 +1068,6 @@ body {
 
             </div>
 
-
         </div>
 
 
@@ -1197,25 +1075,18 @@ body {
 
         <div class="couple-card">
 
-
-            <div class="heart">
-
+            <div class="decorative-heart">
                 ♡
-
             </div>
 
 
             <h3>
-
                 Tom Palakkadan
-
             </h3>
 
 
-            <div class="relationship">
-
+            <div class="family-label">
                 Son of
-
             </div>
 
 
@@ -1234,7 +1105,7 @@ body {
             </div>
 
 
-            <div class="family-address">
+            <div class="family-location">
 
                 Palakkadan House
 
@@ -1244,37 +1115,30 @@ body {
 
             </div>
 
-
         </div>
-
 
     </div>
 
 </section>
 
 
-<!-- =================================
+<!-- =========================
      COUNTDOWN
-================================= -->
+========================= -->
 
 <section class="section light">
 
-
-    <div class="small-title">
-
+    <div class="small-heading">
         Save The Date
-
     </div>
 
 
     <h2>
-
         Counting Down to Our Wedding ❤️
-
     </h2>
 
 
-    <p class="countdown-description">
+    <p class="countdown-date">
 
         Thursday, September 10, 2026
 
@@ -1301,9 +1165,7 @@ body {
             </span>
 
             <span class="count-label">
-
                 Days
-
             </span>
 
         </div>
@@ -1320,9 +1182,7 @@ body {
             </span>
 
             <span class="count-label">
-
                 Hours
-
             </span>
 
         </div>
@@ -1339,9 +1199,7 @@ body {
             </span>
 
             <span class="count-label">
-
                 Minutes
-
             </span>
 
         </div>
@@ -1358,37 +1216,29 @@ body {
             </span>
 
             <span class="count-label">
-
                 Seconds
-
             </span>
 
         </div>
-
 
     </div>
 
 </section>
 
 
-<!-- =================================
+<!-- =========================
      EVENTS
-================================= -->
+========================= -->
 
-<section class="section pink">
+<section class="section soft">
 
-
-    <div class="small-title">
-
+    <div class="small-heading">
         Celebrate With Us
-
     </div>
 
 
     <h2>
-
         Wedding Celebrations
-
     </h2>
 
 
@@ -1399,18 +1249,13 @@ body {
 
         <div class="event-card">
 
-
             <div class="event-icon">
-
                 💍
-
             </div>
 
 
             <h3>
-
                 The Wedding
-
             </h3>
 
 
@@ -1426,18 +1271,14 @@ body {
 
 
             <div class="event-time">
-
                 10:00 AM
-
             </div>
 
 
             <div class="event-location">
 
                 <strong>
-
                     Mar Thoma Cheriapally
-
                 </strong>
 
                 <br>
@@ -1461,7 +1302,6 @@ body {
 
             </a>
 
-
         </div>
 
 
@@ -1469,18 +1309,13 @@ body {
 
         <div class="event-card">
 
-
             <div class="event-icon">
-
                 ✨
-
             </div>
 
 
             <h3>
-
                 The Reception
-
             </h3>
 
 
@@ -1496,18 +1331,14 @@ body {
 
 
             <div class="event-time">
-
                 12:00 PM
-
             </div>
 
 
             <div class="event-location">
 
                 <strong>
-
                     Casa Sanjo's Parish Hall
-
                 </strong>
 
                 <br>
@@ -1531,37 +1362,30 @@ body {
 
             </a>
 
-
         </div>
-
 
     </div>
 
 </section>
 
 
-<!-- =================================
-     OUR MEMORIES
-================================= -->
+<!-- =========================
+     GALLERY
+========================= -->
 
 <section class="section light">
 
-
-    <div class="small-title">
-
+    <div class="small-heading">
         Our Journey
-
     </div>
 
 
     <h2>
-
         Our Memories
-
     </h2>
 
 
-    <p class="gallery-text">
+    <p class="gallery-intro">
 
         📸
 
@@ -1575,66 +1399,59 @@ body {
 
     <div class="gallery">
 
-
         <img
             src="images/Image 1.jpg"
-            alt="Memory 1"
+            alt="Nikitha and Tom Memory 1"
             loading="lazy">
 
 
         <img
             src="images/Image 2.jpg"
-            alt="Memory 2"
+            alt="Nikitha and Tom Memory 2"
             loading="lazy">
 
 
         <img
             src="images/Image 3.jpg"
-            alt="Memory 3"
+            alt="Nikitha and Tom Memory 3"
             loading="lazy">
 
 
         <img
             src="images/Image 4.jpg"
-            alt="Memory 4"
+            alt="Nikitha and Tom Memory 4"
             loading="lazy">
 
 
         <img
             src="images/Image 5.jpg"
-            alt="Memory 5"
+            alt="Nikitha and Tom Memory 5"
             loading="lazy">
 
 
         <img
             src="images/Image 6.jpg"
-            alt="Memory 6"
+            alt="Nikitha and Tom Memory 6"
             loading="lazy">
-
 
     </div>
 
 </section>
 
 
-<!-- =================================
+<!-- =========================
      ENDING
-================================= -->
+========================= -->
 
 <section class="ending">
 
-
     <div class="ending-heart">
-
         ♥
-
     </div>
 
 
     <h2>
-
         Our Forever Begins
-
     </h2>
 
 
@@ -1650,44 +1467,47 @@ body {
         <br><br>
 
         <strong>
-
             Nikitha Joemon & Tom Palakkadan
-
         </strong>
 
     </p>
 
-
 </section>
 
 
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
 <script>
 
-/* =================================
-   OPEN INVITATION
-================================= */
-
-var weddingMusic =
-    document.getElementById("weddingMusic");
-
-var invitationOverlay =
-    document.getElementById("invitationOverlay");
-
-var musicButton =
-    document.getElementById("musicButton");
-
-
-weddingMusic.volume = 0.55;
-
-
-function openWedding() {
+document.addEventListener("DOMContentLoaded", function () {
 
     /*
-    FIRST:
-    remove invitation completely.
-
-    Nothing related to music can
-    prevent the website from opening.
+    =====================================
+    GET ELEMENTS
+    =====================================
     */
 
-    invitationOverlay.styl
+    const invitationOverlay =
+        document.getElementById("invitationOverlay");
+
+    const openInvitation =
+        document.getElementById("openInvitation");
+
+    const weddingMusic =
+        document.getElementById("weddingMusic");
+
+    const musicButton =
+        document.getElementById("musicButton");
+
+
+    weddingMusic.volume = 0.55;
+
+
+    /*
+    =====================================
+    OPEN INVITATION
+
+    IMPORTANT:
+    The opening 
