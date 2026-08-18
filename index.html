@@ -32,7 +32,7 @@ body.no-scroll {
 }
 
 /* ==================================================
-   OPEN INVITATION SCREEN
+   OPEN INVITATION
 ================================================== */
 
 #invitationOverlay {
@@ -83,7 +83,6 @@ body.no-scroll {
     border-radius: 20px;
 
     box-shadow: 0 15px 50px rgba(0,0,0,0.35);
-
     backdrop-filter: blur(3px);
 }
 
@@ -220,6 +219,7 @@ body.no-scroll {
 }
 
 @keyframes bounce {
+
     0%, 75%, 100% {
         transform: translate(-50%, 0);
     }
@@ -230,7 +230,7 @@ body.no-scroll {
 }
 
 /* ==================================================
-   GENERAL SECTIONS
+   GENERAL
 ================================================== */
 
 .section {
@@ -287,7 +287,7 @@ body.no-scroll {
 }
 
 /* ==================================================
-   COUPLE / PARENTS
+   COUPLE
 ================================================== */
 
 .couple-grid {
@@ -346,7 +346,9 @@ body.no-scroll {
 
 .countdown-description {
     font-size: 18px;
+
     line-height: 1.7;
+
     margin-bottom: 38px;
 }
 
@@ -480,6 +482,7 @@ body.no-scroll {
     color: white;
 
     border: 2px solid #b76e79;
+
     border-radius: 50px;
 
     text-decoration: none;
@@ -487,6 +490,7 @@ body.no-scroll {
     font-family: Georgia, serif;
 
     font-size: 15px;
+
     font-weight: bold;
 
     transition: 0.25s ease;
@@ -494,6 +498,7 @@ body.no-scroll {
 
 .map-button:hover {
     background: white;
+
     color: #b76e79;
 }
 
@@ -580,7 +585,7 @@ body.no-scroll {
 }
 
 /* ==================================================
-   MUSIC BUTTON
+   MUSIC
 ================================================== */
 
 #musicButton {
@@ -596,6 +601,7 @@ body.no-scroll {
     padding: 12px 17px;
 
     border: 2px solid white;
+
     border-radius: 35px;
 
     background: #b96f7a;
@@ -603,6 +609,7 @@ body.no-scroll {
     color: white;
 
     font-family: Georgia, serif;
+
     font-size: 14px;
 
     cursor: pointer;
@@ -634,6 +641,7 @@ body.no-scroll {
 
     .invitation-box {
         width: calc(100% - 32px);
+
         padding: 35px 18px;
     }
 
@@ -647,6 +655,7 @@ body.no-scroll {
 
     .hero {
         height: 100svh;
+
         min-height: 600px;
     }
 
@@ -655,6 +664,7 @@ body.no-scroll {
         height: 100%;
 
         object-fit: cover;
+
         object-position: center center;
     }
 
@@ -703,6 +713,7 @@ body.no-scroll {
 
     .gallery img {
         height: auto;
+
         object-fit: contain;
     }
 
@@ -712,6 +723,7 @@ body.no-scroll {
 
     #musicButton {
         right: 10px;
+
         bottom: 10px;
 
         padding: 10px 14px;
@@ -721,6 +733,7 @@ body.no-scroll {
 }
 
 </style>
+
 </head>
 
 <body class="no-scroll">
@@ -762,7 +775,7 @@ body.no-scroll {
             to celebrate our wedding with us.
         </p>
 
-        <button id="openInvitation">
+        <button id="openInvitation" type="button">
             💌 Open Invitation
         </button>
 
@@ -773,7 +786,7 @@ body.no-scroll {
 
 <!-- MUSIC BUTTON -->
 
-<button id="musicButton">
+<button id="musicButton" type="button">
     Ⅱ Pause Music
 </button>
 
@@ -842,6 +855,9 @@ body.no-scroll {
 
     <div class="couple-grid">
 
+
+        <!-- NIKITHA -->
+
         <div class="couple-card">
 
             <div class="heart">♡</div>
@@ -861,6 +877,8 @@ body.no-scroll {
         </div>
 
 
+        <!-- TOM -->
+
         <div class="couple-card">
 
             <div class="heart">♡</div>
@@ -872,12 +890,13 @@ body.no-scroll {
             </div>
 
             <div class="parents">
-                Binu Palakkadan
+                Mr. Binu Palakkadan
                 <br>&<br>
-                Mini
+                Mrs. Mini Palakkadan
             </div>
 
         </div>
+
 
     </div>
 
@@ -1174,6 +1193,10 @@ body.no-scroll {
 </section>
 
 
+<!-- ==================================================
+     JAVASCRIPT
+================================================== -->
+
 <script>
 
 /* ==================================================
@@ -1192,7 +1215,6 @@ const weddingMusic =
 const musicButton =
     document.getElementById("musicButton");
 
-
 weddingMusic.volume = 0.55;
 
 
@@ -1200,41 +1222,59 @@ openInvitation.addEventListener(
     "click",
     function () {
 
-        weddingMusic.play()
+        /*
+        The music starts from the actual user click.
+        This gives mobile browsers the best chance
+        of allowing audio playback.
+        */
 
-        .then(function () {
+        const playPromise = weddingMusic.play();
 
-            musicButton.innerHTML =
-                "Ⅱ Pause Music";
+        if (playPromise !== undefined) {
 
-        })
+            playPromise
+            .then(function () {
 
-        .catch(function () {
+                musicButton.innerHTML =
+                    "Ⅱ Pause Music";
 
-            musicButton.innerHTML =
-                "🎵 Play Music";
+            })
+            .catch(function () {
 
-        });
+                musicButton.innerHTML =
+                    "🎵 Play Music";
 
+            });
 
-        invitationOverlay.classList.add(
-            "hide"
-        );
-
-
-        document.body.classList.remove(
-            "no-scroll"
-        );
-
-
-        musicButton.style.display =
-            "block";
+        }
 
 
-        window.scrollTo({
-            top: 0,
-            behavior: "instant"
-        });
+        /*
+        Close invitation
+        */
+
+        invitationOverlay.classList.add("hide");
+
+
+        /*
+        Allow webpage scrolling
+        */
+
+        document.body.classList.remove("no-scroll");
+
+
+        /*
+        Show music control
+        */
+
+        musicButton.style.display = "block";
+
+
+        /*
+        Return page to the top
+        */
+
+        window.scrollTo(0, 0);
 
     }
 );
@@ -1250,10 +1290,19 @@ musicButton.addEventListener(
 
         if (weddingMusic.paused) {
 
-            weddingMusic.play();
+            weddingMusic.play()
+            .then(function () {
 
-            musicButton.innerHTML =
-                "Ⅱ Pause Music";
+                musicButton.innerHTML =
+                    "Ⅱ Pause Music";
+
+            })
+            .catch(function () {
+
+                musicButton.innerHTML =
+                    "🎵 Play Music";
+
+            });
 
         }
 
@@ -1304,6 +1353,7 @@ function updateCountdown() {
             "<h3 style='color:#b76e79;font-size:30px;'>Today is our Wedding Day! ❤️</h3>";
 
         return;
+
     }
 
 
