@@ -2,33 +2,61 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
 <meta name="theme-color" content="#172313">
 
-<title>Tom & Nikitha Wedding</title>
+<title>Tom & Nikitha | Wedding Invitation</title>
+
 
 <!-- =====================================================
-     WHATSAPP / SOCIAL PREVIEW
+     WHATSAPP / FACEBOOK / SOCIAL MEDIA PREVIEW
 ===================================================== -->
 
-<meta property="og:title" content="💍 Tom & Nikitha Wedding">
+<meta property="og:type" content="website">
+
+<meta property="og:site_name"
+content="Tom & Nikitha Wedding">
+
+<meta property="og:title"
+content="Tom ❤️ Nikitha | Wedding Invitation">
 
 <meta property="og:description"
-content="Together with our families, we joyfully invite you to celebrate our wedding with us ❤️ September 10, 2026">
-
-<meta property="og:type" content="website">
+content="We joyfully invite you and your family to celebrate our wedding on September 10, 2026.">
 
 <meta property="og:url"
 content="https://zubintoms.github.io/Wedding-Invitation/">
 
 <meta property="og:image"
-content="https://zubintoms.github.io/Wedding-Invitation/images/Cover%202.jpg">
+content="https://zubintoms.github.io/Wedding-Invitation/images/Cover2.jpg">
 
-<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:secure_url"
+content="https://zubintoms.github.io/Wedding-Invitation/images/Cover2.jpg">
+
+<meta property="og:image:type"
+content="image/jpeg">
 
 <meta property="og:image:alt"
-content="Tom & Nikitha Wedding Invitation">
+content="Tom and Nikitha Wedding Invitation">
+
+
+<!-- TWITTER / OTHER SOCIAL PREVIEW -->
+
+<meta name="twitter:card"
+content="summary_large_image">
+
+<meta name="twitter:title"
+content="Tom ❤️ Nikitha | Wedding Invitation">
+
+<meta name="twitter:description"
+content="We joyfully invite you and your family to celebrate our wedding on September 10, 2026.">
+
+<meta name="twitter:image"
+content="https://zubintoms.github.io/Wedding-Invitation/images/Cover2.jpg">
 
 
 <style>
@@ -60,7 +88,7 @@ body.no-scroll {
 
 
 /* =====================================================
-   OPEN INVITATION
+   OPEN INVITATION SCREEN
 ===================================================== */
 
 #invitationOverlay {
@@ -80,13 +108,13 @@ body.no-scroll {
 
     background:
         linear-gradient(
-            rgba(14,27,12,0.35),
+            rgba(14,27,12,0.30),
             rgba(14,27,12,0.72)
         ),
-        url("images/Cover%202.jpg");
+        url("images/Cover2.jpg");
 
     background-size: cover;
-    background-position: center center;
+    background-position: center;
     background-repeat: no-repeat;
 
     transition:
@@ -94,11 +122,15 @@ body.no-scroll {
         visibility 0.8s ease;
 }
 
+
 #invitationOverlay.hide {
+
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
+
 }
+
 
 .invitation-box {
 
@@ -114,31 +146,42 @@ body.no-scroll {
     background: rgba(16,31,14,0.62);
 
     border: 1px solid rgba(229,199,128,0.90);
+
     border-radius: 22px;
 
-    box-shadow: 0 15px 50px rgba(0,0,0,0.40);
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.40);
 
     backdrop-filter: blur(3px);
+
 }
+
 
 .invitation-small {
 
     font-size: 12px;
+
     letter-spacing: 3px;
+
     text-transform: uppercase;
 
     color: #ead184;
 
     margin-bottom: 20px;
+
 }
+
 
 .invitation-box h1 {
 
     font-size: 47px;
+
     line-height: 1.1;
 
     font-weight: normal;
+
 }
+
 
 .invitation-heart {
 
@@ -147,7 +190,9 @@ body.no-scroll {
     font-size: 29px;
 
     margin: 13px 0;
+
 }
+
 
 .invitation-date {
 
@@ -158,7 +203,9 @@ body.no-scroll {
     letter-spacing: 3px;
 
     text-transform: uppercase;
+
 }
+
 
 .invitation-message {
 
@@ -169,7 +216,9 @@ body.no-scroll {
     font-size: 17px;
 
     line-height: 1.7;
+
 }
+
 
 #openInvitation {
 
@@ -178,6 +227,7 @@ body.no-scroll {
     padding: 16px 30px;
 
     border: 2px solid white;
+
     border-radius: 50px;
 
     background: #bd7480;
@@ -187,11 +237,14 @@ body.no-scroll {
     font-family: Georgia, serif;
 
     font-size: 18px;
+
     font-weight: bold;
 
     cursor: pointer;
 
-    box-shadow: 0 7px 25px rgba(0,0,0,0.30);
+    box-shadow:
+        0 7px 25px rgba(0,0,0,0.30);
+
 }
 
 
@@ -215,9 +268,13 @@ body.no-scroll {
     overflow: hidden;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
 }
+
 
 .hero-image {
 
@@ -225,14 +282,18 @@ body.no-scroll {
     height: 100%;
 
     object-fit: cover;
-    object-position: center center;
+
+    object-position: center;
 
     display: block;
+
 }
+
 
 .hero-overlay {
 
     position: absolute;
+
     inset: 0;
 
     background:
@@ -243,11 +304,12 @@ body.no-scroll {
         );
 
     pointer-events: none;
+
 }
 
 
 /* =====================================================
-   SCROLL BUTTON
+   SCROLL DOWN BUTTON
 ===================================================== */
 
 .scroll-button {
@@ -257,6 +319,7 @@ body.no-scroll {
     z-index: 10;
 
     left: 50%;
+
     bottom: 28px;
 
     transform: translateX(-50%);
@@ -268,19 +331,24 @@ body.no-scroll {
     color: white;
 
     border: 2px solid white;
+
     border-radius: 50px;
 
     text-decoration: none;
 
     font-size: 15px;
+
     font-weight: bold;
 
     white-space: nowrap;
 
-    box-shadow: 0 7px 25px rgba(0,0,0,0.30);
+    box-shadow:
+        0 7px 25px rgba(0,0,0,0.30);
 
     animation: bounce 2.2s infinite;
+
 }
+
 
 @keyframes bounce {
 
@@ -291,6 +359,7 @@ body.no-scroll {
     87% {
         transform: translate(-50%,-8px);
     }
+
 }
 
 
@@ -303,15 +372,19 @@ body.no-scroll {
     padding: 85px 20px;
 
     text-align: center;
+
 }
+
 
 .light {
     background: #fffaf6;
 }
 
+
 .pink {
     background: #f7eeee;
 }
+
 
 .small-title {
 
@@ -324,7 +397,9 @@ body.no-scroll {
     font-size: 13px;
 
     margin-bottom: 17px;
+
 }
+
 
 .section h2 {
 
@@ -335,7 +410,9 @@ body.no-scroll {
     font-weight: normal;
 
     margin-bottom: 25px;
+
 }
+
 
 .heart {
 
@@ -344,7 +421,9 @@ body.no-scroll {
     font-size: 28px;
 
     margin: 20px 0;
+
 }
+
 
 .intro {
 
@@ -355,11 +434,12 @@ body.no-scroll {
     font-size: 19px;
 
     line-height: 1.9;
+
 }
 
 
 /* =====================================================
-   BRIDE & GROOM
+   COUPLE
 ===================================================== */
 
 .couple-grid {
@@ -373,7 +453,9 @@ body.no-scroll {
     grid-template-columns: 1fr 1fr;
 
     gap: 28px;
+
 }
+
 
 .couple-card {
 
@@ -383,8 +465,11 @@ body.no-scroll {
 
     border-radius: 18px;
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.07);
+
 }
+
 
 .couple-card h3 {
 
@@ -395,7 +480,9 @@ body.no-scroll {
     font-weight: normal;
 
     margin-bottom: 20px;
+
 }
+
 
 .relationship {
 
@@ -408,13 +495,16 @@ body.no-scroll {
     text-transform: uppercase;
 
     margin-bottom: 15px;
+
 }
+
 
 .parents {
 
     font-size: 19px;
 
     line-height: 1.8;
+
 }
 
 
@@ -429,7 +519,9 @@ body.no-scroll {
     line-height: 1.7;
 
     margin-bottom: 38px;
+
 }
+
 
 .countdown {
 
@@ -444,7 +536,9 @@ body.no-scroll {
     flex-wrap: wrap;
 
     gap: 14px;
+
 }
+
 
 .count-box {
 
@@ -456,8 +550,11 @@ body.no-scroll {
 
     border-radius: 15px;
 
-    box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.06);
+
 }
+
 
 .count-number {
 
@@ -470,7 +567,9 @@ body.no-scroll {
     font-weight: bold;
 
     margin-bottom: 7px;
+
 }
+
 
 .count-label {
 
@@ -479,6 +578,7 @@ body.no-scroll {
     text-transform: uppercase;
 
     letter-spacing: 2px;
+
 }
 
 
@@ -497,7 +597,9 @@ body.no-scroll {
     grid-template-columns: 1fr 1fr;
 
     gap: 28px;
+
 }
+
 
 .event-card {
 
@@ -507,15 +609,20 @@ body.no-scroll {
 
     border-radius: 18px;
 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.07);
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.07);
+
 }
+
 
 .event-icon {
 
     font-size: 35px;
 
     margin-bottom: 18px;
+
 }
+
 
 .event-card h3 {
 
@@ -526,7 +633,9 @@ body.no-scroll {
     font-weight: normal;
 
     margin-bottom: 23px;
+
 }
+
 
 .event-date {
 
@@ -537,7 +646,9 @@ body.no-scroll {
     line-height: 1.6;
 
     margin-bottom: 12px;
+
 }
+
 
 .event-time {
 
@@ -548,14 +659,18 @@ body.no-scroll {
     font-weight: bold;
 
     margin-bottom: 16px;
+
 }
+
 
 .event-location {
 
     font-size: 18px;
 
     line-height: 1.7;
+
 }
+
 
 .map-button {
 
@@ -576,6 +691,7 @@ body.no-scroll {
     font-size: 15px;
 
     font-weight: bold;
+
 }
 
 
@@ -592,7 +708,9 @@ body.no-scroll {
     font-size: 18px;
 
     line-height: 1.8;
+
 }
+
 
 .gallery {
 
@@ -602,10 +720,13 @@ body.no-scroll {
 
     display: grid;
 
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns:
+        repeat(3,1fr);
 
     gap: 22px;
+
 }
+
 
 .gallery img {
 
@@ -619,12 +740,14 @@ body.no-scroll {
 
     border-radius: 14px;
 
-    box-shadow: 0 7px 22px rgba(0,0,0,0.13);
+    box-shadow:
+        0 7px 22px rgba(0,0,0,0.13);
+
 }
 
 
 /* =====================================================
-   ENDING
+   END
 ===================================================== */
 
 .ending {
@@ -636,7 +759,9 @@ body.no-scroll {
     background: #142312;
 
     color: white;
+
 }
+
 
 .ending-heart {
 
@@ -645,7 +770,9 @@ body.no-scroll {
     font-size: 30px;
 
     margin-bottom: 20px;
+
 }
+
 
 .ending h2 {
 
@@ -656,7 +783,9 @@ body.no-scroll {
     font-weight: normal;
 
     margin-bottom: 25px;
+
 }
+
 
 .ending p {
 
@@ -667,6 +796,7 @@ body.no-scroll {
     font-size: 19px;
 
     line-height: 1.9;
+
 }
 
 
@@ -679,6 +809,7 @@ body.no-scroll {
     position: fixed;
 
     right: 14px;
+
     bottom: 14px;
 
     z-index: 5000;
@@ -688,6 +819,7 @@ body.no-scroll {
     padding: 12px 17px;
 
     border: 2px solid white;
+
     border-radius: 35px;
 
     background: #b96f7a;
@@ -700,7 +832,9 @@ body.no-scroll {
 
     cursor: pointer;
 
-    box-shadow: 0 5px 18px rgba(0,0,0,0.25);
+    box-shadow:
+        0 5px 18px rgba(0,0,0,0.25);
+
 }
 
 
@@ -712,12 +846,18 @@ body.no-scroll {
 
     .couple-grid,
     .events {
+
         grid-template-columns: 1fr;
+
     }
 
     .gallery {
-        grid-template-columns: repeat(2,1fr);
+
+        grid-template-columns:
+            repeat(2,1fr);
+
     }
+
 }
 
 
@@ -728,36 +868,49 @@ body.no-scroll {
 @media(max-width:600px) {
 
     #invitationOverlay {
+
         background-position: center center;
+
     }
+
 
     .invitation-box {
 
         width: calc(100% - 32px);
 
         padding: 35px 18px;
+
     }
 
+
     .invitation-box h1 {
+
         font-size: 39px;
+
     }
+
 
     .hero {
 
         height: 100svh;
 
         min-height: 600px;
+
     }
+
 
     .hero-image {
 
         width: 100%;
+
         height: 100%;
 
         object-fit: cover;
 
-        object-position: center center;
+        object-position: center;
+
     }
+
 
     .scroll-button {
 
@@ -766,46 +919,68 @@ body.no-scroll {
         padding: 12px 18px;
 
         font-size: 14px;
+
     }
+
 
     .section {
 
         padding: 65px 17px;
+
     }
+
 
     .section h2 {
+
         font-size: 34px;
+
     }
 
+
     .intro {
+
         font-size: 17px;
+
     }
+
 
     .couple-card,
     .event-card {
 
         padding: 37px 20px;
+
     }
+
 
     .count-box {
 
         width: calc(50% - 7px);
+
     }
 
+
     .gallery {
+
         grid-template-columns: 1fr;
+
     }
+
 
     .gallery img {
 
         height: auto;
 
         object-fit: contain;
+
     }
 
+
     .ending h2 {
+
         font-size: 34px;
+
     }
+
 }
 
 </style>
@@ -820,11 +995,17 @@ body.no-scroll {
      MUSIC
 ===================================================== -->
 
-<audio id="weddingMusic" loop preload="auto">
+<audio
+id="weddingMusic"
+loop
+preload="auto">
 
-    <source src="wedding.mp3" type="audio/mpeg">
+<source
+src="wedding.mp3"
+type="audio/mpeg">
 
 </audio>
+
 
 
 <!-- =====================================================
@@ -833,51 +1014,73 @@ body.no-scroll {
 
 <div id="invitationOverlay">
 
-    <div class="invitation-box">
 
-        <div class="invitation-small">
-            Together With Our Families
-        </div>
+<div class="invitation-box">
 
-        <h1>Nikitha</h1>
 
-        <div class="invitation-heart">
-            ♥
-        </div>
+<div class="invitation-small">
 
-        <h1>Tom</h1>
-
-        <div class="invitation-date">
-            September 10, 2026
-        </div>
-
-        <p class="invitation-message">
-
-            We joyfully invite you and your family
-            to celebrate our wedding with us.
-
-        </p>
-
-        <button id="openInvitation" type="button">
-
-            💌 Open Invitation
-
-        </button>
-
-    </div>
+Together With Our Families
 
 </div>
 
 
-<!-- =====================================================
-     MUSIC CONTROL
-===================================================== -->
+<h1>Nikitha</h1>
 
-<button id="musicButton" type="button">
 
-    Ⅱ Pause Music
+<div class="invitation-heart">
+
+♥
+
+</div>
+
+
+<h1>Tom</h1>
+
+
+<div class="invitation-date">
+
+September 10, 2026
+
+</div>
+
+
+<p class="invitation-message">
+
+We joyfully invite you and your family
+to celebrate our wedding with us.
+
+</p>
+
+
+<button
+id="openInvitation"
+type="button">
+
+💌 Open Invitation
 
 </button>
+
+
+</div>
+
+
+</div>
+
+
+
+<!-- =====================================================
+     MUSIC BUTTON
+===================================================== -->
+
+<button
+id="musicButton"
+type="button">
+
+Ⅱ Pause Music
+
+</button>
+
 
 
 <!-- =====================================================
@@ -886,60 +1089,75 @@ body.no-scroll {
 
 <section class="hero">
 
-    <img
-        class="hero-image"
-        src="images/Cover%202.jpg"
-        alt="Tom and Nikitha Wedding">
 
-    <div class="hero-overlay"></div>
+<img
+class="hero-image"
+src="images/Cover2.jpg"
+alt="Tom and Nikitha Wedding Invitation">
 
-    <a href="#details" class="scroll-button">
 
-        Scroll Down for Details ↓
+<div class="hero-overlay"></div>
 
-    </a>
+
+<a
+href="#details"
+class="scroll-button">
+
+Scroll Down for Details ↓
+
+</a>
+
 
 </section>
+
 
 
 <!-- =====================================================
      INTRO
 ===================================================== -->
 
-<section class="section light" id="details">
+<section
+class="section light"
+id="details">
 
-    <div class="small-title">
 
-        Together With Our Families
+<div class="small-title">
 
-    </div>
+Together With Our Families
 
-    <h2>
+</div>
 
-        We're Getting Married
 
-    </h2>
+<h2>
 
-    <div class="heart">
+We're Getting Married
 
-        ♥
+</h2>
 
-    </div>
 
-    <p class="intro">
+<div class="heart">
 
-        With great joy and the blessings of our families,
-        we invite you to celebrate the beginning
-        of our new journey together.
+♥
 
-        <br><br>
+</div>
 
-        Your presence and blessings will make
-        our celebration even more special.
 
-    </p>
+<p class="intro">
+
+With great joy and the blessings of our families,
+we invite you to celebrate the beginning
+of our new journey together.
+
+<br><br>
+
+Your presence and blessings will make
+our celebration even more special.
+
+</p>
+
 
 </section>
+
 
 
 <!-- =====================================================
@@ -948,89 +1166,119 @@ body.no-scroll {
 
 <section class="section pink">
 
-    <div class="small-title">
 
-        Bride & Groom
+<div class="small-title">
 
-    </div>
+Bride & Groom
 
-    <h2>
-
-        Meet the Couple
-
-    </h2>
-
-    <div class="couple-grid">
+</div>
 
 
-        <!-- NIKITHA -->
+<h2>
 
-        <div class="couple-card">
+Meet the Couple
 
-            <div class="heart">
-                ♡
-            </div>
-
-            <h3>
-                Nikitha Joemon
-            </h3>
-
-            <div class="relationship">
-                Daughter of
-            </div>
-
-            <div class="parents">
-
-                Mr. Joemon V Jacob
-
-                <br>
-
-                &
-
-                <br>
-
-                Mrs. Rinta Joemon
-
-            </div>
-
-        </div>
+</h2>
 
 
-        <!-- TOM -->
+<div class="couple-grid">
 
-        <div class="couple-card">
 
-            <div class="heart">
-                ♡
-            </div>
 
-            <h3>
-                Tom Palakkadan
-            </h3>
+<!-- NIKITHA -->
 
-            <div class="relationship">
-                Son of
-            </div>
+<div class="couple-card">
 
-            <div class="parents">
 
-                Mr. Binu Palakkadan
+<div class="heart">
 
-                <br>
+♡
 
-                &
+</div>
 
-                <br>
 
-                Mrs. Mini Palakkadan
+<h3>
 
-            </div>
+Nikitha Joemon
 
-        </div>
+</h3>
 
-    </div>
+
+<div class="relationship">
+
+Daughter of
+
+</div>
+
+
+<div class="parents">
+
+Mr. Joemon V Jacob
+
+<br>
+
+&
+
+<br>
+
+Mrs. Rinta Joemon
+
+</div>
+
+
+</div>
+
+
+
+<!-- TOM -->
+
+<div class="couple-card">
+
+
+<div class="heart">
+
+♡
+
+</div>
+
+
+<h3>
+
+Tom Palakkadan
+
+</h3>
+
+
+<div class="relationship">
+
+Son of
+
+</div>
+
+
+<div class="parents">
+
+Mr. Binu Palakkadan
+
+<br>
+
+&
+
+<br>
+
+Mrs. Mini Palakkadan
+
+</div>
+
+
+</div>
+
+
+</div>
+
 
 </section>
+
 
 
 <!-- =====================================================
@@ -1039,335 +1287,418 @@ body.no-scroll {
 
 <section class="section light">
 
-    <div class="small-title">
 
-        Save The Date
+<div class="small-title">
 
-    </div>
+Save The Date
 
-    <h2>
-
-        Counting Down to Our Wedding ❤️
-
-    </h2>
-
-    <p class="countdown-description">
-
-        Thursday, September 10, 2026
-
-        <br>
-
-        10:00 AM
-
-    </p>
+</div>
 
 
-    <div class="countdown" id="countdown">
+<h2>
+
+Counting Down to Our Wedding ❤️
+
+</h2>
 
 
-        <div class="count-box">
+<p class="countdown-description">
 
-            <span class="count-number" id="days">
-                00
-            </span>
+Thursday, September 10, 2026
 
-            <span class="count-label">
-                Days
-            </span>
+<br>
 
-        </div>
+10:00 AM
+
+</p>
 
 
-        <div class="count-box">
-
-            <span class="count-number" id="hours">
-                00
-            </span>
-
-            <span class="count-label">
-                Hours
-            </span>
-
-        </div>
+<div
+class="countdown"
+id="countdown">
 
 
-        <div class="count-box">
+<div class="count-box">
 
-            <span class="count-number" id="minutes">
-                00
-            </span>
+<span
+class="count-number"
+id="days">
 
-            <span class="count-label">
-                Minutes
-            </span>
+00
 
-        </div>
+</span>
 
+<span class="count-label">
 
-        <div class="count-box">
+Days
 
-            <span class="count-number" id="seconds">
-                00
-            </span>
+</span>
 
-            <span class="count-label">
-                Seconds
-            </span>
-
-        </div>
+</div>
 
 
-    </div>
+
+<div class="count-box">
+
+<span
+class="count-number"
+id="hours">
+
+00
+
+</span>
+
+<span class="count-label">
+
+Hours
+
+</span>
+
+</div>
+
+
+
+<div class="count-box">
+
+<span
+class="count-number"
+id="minutes">
+
+00
+
+</span>
+
+<span class="count-label">
+
+Minutes
+
+</span>
+
+</div>
+
+
+
+<div class="count-box">
+
+<span
+class="count-number"
+id="seconds">
+
+00
+
+</span>
+
+<span class="count-label">
+
+Seconds
+
+</span>
+
+</div>
+
+
+</div>
+
 
 </section>
 
 
+
 <!-- =====================================================
-     EVENTS
+     WEDDING + RECEPTION
 ===================================================== -->
 
 <section class="section pink">
 
-    <div class="small-title">
 
-        Celebrate With Us
+<div class="small-title">
 
-    </div>
+Celebrate With Us
 
-    <h2>
-
-        Wedding Celebrations
-
-    </h2>
+</div>
 
 
-    <div class="events">
+<h2>
+
+Wedding Celebrations
+
+</h2>
 
 
-        <!-- WEDDING -->
-
-        <div class="event-card">
-
-            <div class="event-icon">
-                💍
-            </div>
-
-            <h3>
-                The Wedding
-            </h3>
-
-            <div class="event-date">
-
-                Thursday
-
-                <br>
-
-                September 10, 2026
-
-            </div>
-
-            <div class="event-time">
-
-                10:00 AM
-
-            </div>
-
-            <div class="event-location">
-
-                <strong>
-                    Mar Thoma Cheriapally
-                </strong>
-
-                <br>
-
-                Kothamangalam
-
-                <br>
-
-                Kerala
-
-            </div>
-
-            <a
-                class="map-button"
-                href="https://www.google.com/maps/search/?api=1&query=Mar+Thoma+Cheriapally+Kothamangalam+Kerala"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                📍 View Wedding Location
-
-            </a>
-
-        </div>
+<div class="events">
 
 
-        <!-- RECEPTION -->
 
-        <div class="event-card">
+<!-- WEDDING -->
 
-            <div class="event-icon">
-                ✨
-            </div>
-
-            <h3>
-                The Reception
-            </h3>
-
-            <div class="event-date">
-
-                Monday
-
-                <br>
-
-                September 14, 2026
-
-            </div>
-
-            <div class="event-time">
-
-                12:00 PM
-
-            </div>
-
-            <div class="event-location">
-
-                <strong>
-                    Casa Sanjo's Parish Hall
-                </strong>
-
-                <br>
-
-                Thundiyil
-
-                <br>
-
-                Kannur, Kerala
-
-            </div>
-
-            <a
-                class="map-button"
-                href="https://www.google.com/maps/search/?api=1&query=Casa+Sanjos+Parish+Hall+Thundiyil+Kannur+Kerala"
-                target="_blank"
-                rel="noopener noreferrer">
-
-                📍 View Reception Location
-
-            </a>
-
-        </div>
+<div class="event-card">
 
 
-    </div>
+<div class="event-icon">
+
+💍
+
+</div>
+
+
+<h3>
+
+The Wedding
+
+</h3>
+
+
+<div class="event-date">
+
+Thursday
+
+<br>
+
+September 10, 2026
+
+</div>
+
+
+<div class="event-time">
+
+10:00 AM
+
+</div>
+
+
+<div class="event-location">
+
+<strong>
+
+Mar Thoma Cheriapally
+
+</strong>
+
+<br>
+
+Kothamangalam
+
+<br>
+
+Kerala
+
+</div>
+
+
+<a
+class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Mar+Thoma+Cheriapally+Kothamangalam+Kerala"
+target="_blank"
+rel="noopener noreferrer">
+
+📍 View Wedding Location
+
+</a>
+
+
+</div>
+
+
+
+<!-- RECEPTION -->
+
+<div class="event-card">
+
+
+<div class="event-icon">
+
+✨
+
+</div>
+
+
+<h3>
+
+The Reception
+
+</h3>
+
+
+<div class="event-date">
+
+Monday
+
+<br>
+
+September 14, 2026
+
+</div>
+
+
+<div class="event-time">
+
+12:00 PM
+
+</div>
+
+
+<div class="event-location">
+
+<strong>
+
+Casa Sanjo's Parish Hall
+
+</strong>
+
+<br>
+
+Thundiyil
+
+<br>
+
+Kannur, Kerala
+
+</div>
+
+
+<a
+class="map-button"
+href="https://www.google.com/maps/search/?api=1&query=Casa+Sanjos+Parish+Hall+Thundiyil+Kannur+Kerala"
+target="_blank"
+rel="noopener noreferrer">
+
+📍 View Reception Location
+
+</a>
+
+
+</div>
+
+
+</div>
+
 
 </section>
 
 
+
 <!-- =====================================================
-     MEMORIES
+     OUR MEMORIES
 ===================================================== -->
 
 <section class="section light">
 
-    <div class="small-title">
 
-        Our Journey
+<div class="small-title">
 
-    </div>
+Our Journey
 
-    <h2>
-
-        Our Memories
-
-    </h2>
-
-    <p class="gallery-text">
-
-        📸
-
-        <br><br>
-
-        A few beautiful moments
-        from our journey together.
-
-    </p>
+</div>
 
 
-    <div class="gallery">
+<h2>
 
-        <img
-            src="images/Image%201.jpg"
-            alt="Tom and Nikitha"
-            loading="lazy">
+Our Memories
 
-        <img
-            src="images/Image%202.jpg"
-            alt="Tom and Nikitha"
-            loading="lazy">
+</h2>
 
-        <img
-            src="images/Image%203.jpg"
-            alt="Tom and Nikitha"
-            loading="lazy">
 
-        <img
-            src="images/Image%204.jpg"
-            alt="Tom and Nikitha"
-            loading="lazy">
+<p class="gallery-text">
 
-        <img
-            src="images/Image%205.jpg"
-            alt="Tom and Nikitha"
-            loading="lazy">
+📸
 
-        <img
-            src="images/Image%206.jpg"
-            alt="Tom and Nikitha"
-            loading="lazy">
+<br><br>
 
-    </div>
+A few beautiful moments
+from our journey together.
+
+</p>
+
+
+<div class="gallery">
+
+
+<img
+src="images/Image%201.jpg"
+alt="Tom and Nikitha"
+loading="lazy">
+
+
+<img
+src="images/Image%202.jpg"
+alt="Tom and Nikitha"
+loading="lazy">
+
+
+<img
+src="images/Image%203.jpg"
+alt="Tom and Nikitha"
+loading="lazy">
+
+
+<img
+src="images/Image%204.jpg"
+alt="Tom and Nikitha"
+loading="lazy">
+
+
+<img
+src="images/Image%205.jpg"
+alt="Tom and Nikitha"
+loading="lazy">
+
+
+<img
+src="images/Image%206.jpg"
+alt="Tom and Nikitha"
+loading="lazy">
+
+
+</div>
+
 
 </section>
 
 
+
 <!-- =====================================================
-     END
+     ENDING
 ===================================================== -->
 
 <section class="ending">
 
-    <div class="ending-heart">
 
-        ♥
+<div class="ending-heart">
 
-    </div>
+♥
 
-    <h2>
+</div>
 
-        Our Forever Begins
 
-    </h2>
+<h2>
 
-    <p>
+Our Forever Begins
 
-        We look forward to celebrating
-        this beautiful occasion with you.
+</h2>
 
-        <br><br>
 
-        With love,
+<p>
 
-        <br><br>
+We look forward to celebrating
+this beautiful occasion with you.
 
-        <strong>
+<br><br>
 
-            Nikitha Joemon & Tom Palakkadan
+With love,
 
-        </strong>
+<br><br>
 
-    </p>
+<strong>
+
+Nikitha Joemon & Tom Palakkadan
+
+</strong>
+
+</p>
+
 
 </section>
+
 
 
 <!-- =====================================================
@@ -1394,6 +1725,7 @@ document.getElementById("musicButton");
 
 
 weddingMusic.volume = 0.55;
+
 
 
 /* =====================================================
@@ -1437,11 +1769,12 @@ function() {
         0
     );
 
+
 });
 
 
 /* =====================================================
-   MUSIC CONTROL
+   MUSIC BUTTON
 ===================================================== */
 
 musicButton.addEventListener(
@@ -1469,7 +1802,9 @@ function() {
         });
 
 
-    } else {
+    }
+
+    else {
 
 
         weddingMusic.pause();
@@ -1489,10 +1824,12 @@ function() {
    COUNTDOWN
 ===================================================== */
 
+
 const weddingDate =
 new Date(
 "2026-09-10T10:00:00+05:30"
 ).getTime();
+
 
 
 function updateCountdown() {
@@ -1510,7 +1847,7 @@ function updateCountdown() {
 
 
         document.getElementById(
-            "countdown"
+        "countdown"
         ).innerHTML =
 
         "<h3 style='color:#b76e79;font-size:30px;'>Today is our Wedding Day! ❤️</h3>";
@@ -1556,25 +1893,25 @@ function updateCountdown() {
 
 
     document.getElementById(
-        "days"
+    "days"
     ).textContent =
     days;
 
 
     document.getElementById(
-        "hours"
+    "hours"
     ).textContent =
     String(hours).padStart(2,"0");
 
 
     document.getElementById(
-        "minutes"
+    "minutes"
     ).textContent =
     String(minutes).padStart(2,"0");
 
 
     document.getElementById(
-        "seconds"
+    "seconds"
     ).textContent =
     String(seconds).padStart(2,"0");
 
@@ -1586,8 +1923,8 @@ updateCountdown();
 
 
 setInterval(
-    updateCountdown,
-    1000
+updateCountdown,
+1000
 );
 
 
